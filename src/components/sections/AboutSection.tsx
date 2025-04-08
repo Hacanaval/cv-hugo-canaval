@@ -1,0 +1,64 @@
+
+import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/utils/translations";
+import { Card, CardContent } from "@/components/ui/card";
+
+const AboutSection: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  return (
+    <section id="about" className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <h2 className="section-heading text-center">{t.aboutTitle}</h2>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
+          <div className="md:w-1/3 flex justify-center">
+            <div className="w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1">
+              <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                <div className="w-full h-full bg-[url('/profile-placeholder.jpg')] bg-cover bg-center"></div>
+              </div>
+            </div>
+          </div>
+          <div className="md:w-2/3">
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-6">
+                <p className="text-lg leading-relaxed text-gray-700">
+                  {t.aboutText}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+        
+        <div className="mt-20">
+          <h3 className="section-subheading text-center mb-10">{t.differenceTitle}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              t.differenceItem1,
+              t.differenceItem2,
+              t.differenceItem3,
+              t.differenceItem4,
+              t.differenceItem5,
+            ].map((item, index) => (
+              <Card 
+                key={index}
+                className="border-none shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+              >
+                <div className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+                <CardContent className="p-6 flex">
+                  <div className="h-10 w-10 min-w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4 mt-1">
+                    {index + 1}
+                  </div>
+                  <p className="text-gray-700">{item}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
