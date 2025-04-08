@@ -35,9 +35,12 @@ const LanguageSelect: React.FC = () => {
       </div>
 
       <div className="relative z-10 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-14 text-white">
-          Data Science Portfolio
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          Hugo Canaval
         </h1>
+        <p className="text-xl md:text-2xl font-light mb-14 text-gray-300">
+          Data Scientist
+        </p>
         <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8 items-center justify-center">
           <Button
             variant="outline"
