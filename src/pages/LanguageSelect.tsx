@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const LanguageSelect: React.FC = () => {
   const { setLanguage } = useLanguage();
   const navigate = useNavigate();
+  const [isHoveringSpanish, setIsHoveringSpanish] = useState(false);
 
   const handleLanguageSelect = (lang: "es" | "en") => {
     setLanguage(lang);
@@ -39,13 +40,15 @@ const LanguageSelect: React.FC = () => {
           Hugo Canaval
         </h1>
         <p className="text-xl md:text-2xl font-light mb-14 text-gray-300">
-          Data Scientist
+          {isHoveringSpanish ? "Científico de Datos" : "Data Scientist"}
         </p>
         <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8 items-center justify-center">
           <Button
             variant="outline"
             size="lg"
             onClick={() => handleLanguageSelect("es")}
+            onMouseEnter={() => setIsHoveringSpanish(true)}
+            onMouseLeave={() => setIsHoveringSpanish(false)}
             className="text-xl border-2 border-indigo-600 bg-transparent hover:bg-indigo-600/20 text-white px-10 py-6 h-auto transition-all duration-300"
           >
             🇪🇸 Español
