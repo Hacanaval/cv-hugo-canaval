@@ -23,7 +23,6 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<LanguageSelect />} />
               <Route path="/home" element={<Index />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
