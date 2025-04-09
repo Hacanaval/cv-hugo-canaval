@@ -59,8 +59,9 @@ export const translations = {
     viewAllProjects: "View All Projects on GitHub",
     
     // CV Optimizer
-    cvOptimizerDesc: "Tired of manually rewriting my resume for every job? I built CV Optimizer, a web app that uses AI to automatically adapt your CV to any LinkedIn job posting.\n\nThis personal project combines job scraping, NLP, and generative AI to deliver ATS-friendly resumes—fully customized in both English and Spanish. It identifies keywords, aligns experience to role requirements, and streamlines applications.\n\nMore than a tool, it was my way of proving I could build meaningful tech from scratch. And it cemented my conviction: this is the path I want to follow.",
-
+    cvOptimizerTitle: "CV Optimizer: AI-powered resume tailoring",
+    cvOptimizerDesc: "Tired of tweaking my resume for every job, I built this app to automate the process using AI. It combines scraping, NLP, and language models to generate customized, ATS-friendly resumes.\n\nA personal project that solved a real problem—and confirmed I'm on the right path.",
+    
     // Project 1
     project1Title: "Advanced Predictive Analytics",
     project1Desc: "Built regression models to predict gold recovery efficiency, improving accuracy by 15%. Implemented cross-validation to reduce overfitting and enhance generalization.",
@@ -160,7 +161,8 @@ export const translations = {
     viewAllProjects: "Ver todos los proyectos en GitHub",
     
     // CV Optimizer
-    cvOptimizerDesc: "Como alguien que ha aplicado a decenas de vacantes, me cansé de adaptar manualmente mi hoja de vida a cada puesto. Así nació CV Optimizer, una aplicación web que desarrollé desde cero para automatizar ese proceso con inteligencia artificial.\n\nEste proyecto personal combina scraping de LinkedIn, procesamiento de texto, y generación de CVs optimizados (en español e inglés) usando modelos de lenguaje. Detecta palabras clave, adapta el contenido al perfil del puesto, y entrega resultados compatibles con sistemas ATS.\n\nNo solo me permitió aplicar mejor. Me permitió crear valor real con código, para mí y para otros. Y fue un punto clave para confirmar: sí, este es el camino correcto.",
+    cvOptimizerTitle: "CV Optimizer: IA para adaptar tu hoja de vida",
+    cvOptimizerDesc: "Cansado de ajustar mi CV para cada vacante, creé esta app que automatiza el proceso con IA. Usa scraping, NLP y modelos de lenguaje para generar CVs personalizados y compatibles con sistemas ATS.\n\nUn proyecto personal que resolvió un problema real y confirmó que este es el camino correcto.",
     
     // Proyecto 1
     project1Title: "Analítica Predictiva Avanzada",

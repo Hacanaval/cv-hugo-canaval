@@ -7,15 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-interface Project {
-  title: string;
-  description: string;
-  githubUrl: string;
-  tech: string[];
-  metrics?: { label: string; value: string }[];
-  paragraphs?: string[];
-}
-
 const ProjectsSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
@@ -25,15 +16,15 @@ const ProjectsSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center mb-10">{t.projectsTitle}</h2>
         
-        {/* Featured Project - CV Optimizer */}
-        <div className="mb-16">
-          <Card className="glass-card border-gray-800 overflow-hidden max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Project 1 - CV Optimizer */}
+          <Card className="glass-card border-gray-800 overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
-              <CardTitle className="text-2xl flex items-center justify-between">
-                <span>CV Optimizer: {language === 'es' ? 'La IA que redacta tu mejor versión' : 'AI-powered resume tailoring'}</span>
-              </CardTitle>
+              <CardTitle>{t.cvOptimizerTitle}</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
+              <p className="text-gray-300 mb-4">{t.cvOptimizerDesc}</p>
+              
               <div className="flex flex-wrap gap-2 mb-4">
                 <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
                   Python
@@ -51,13 +42,8 @@ const ProjectsSection: React.FC = () => {
                   Flask
                 </Badge>
               </div>
-              
-              <div className="text-gray-300 space-y-4">
-                {t.cvOptimizerDesc.split('\n\n').map((paragraph, i) => (
-                  <p key={i} className="mb-2">{paragraph}</p>
-                ))}
-              </div>
             </CardContent>
+            
             <CardFooter>
               <Button 
                 variant="outline" 
@@ -69,10 +55,8 @@ const ProjectsSection: React.FC = () => {
               </Button>
             </CardFooter>
           </Card>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Project 1 */}
+          {/* Project 2 - Advanced Predictive */}
           <Card className="glass-card border-gray-800 overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
               <CardTitle>{t.project1Title}</CardTitle>
@@ -112,7 +96,7 @@ const ProjectsSection: React.FC = () => {
             </CardFooter>
           </Card>
 
-          {/* Project 2 */}
+          {/* Project 3 - Linear Regression */}
           <Card className="glass-card border-gray-800 overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
               <CardTitle>{t.project2Title}</CardTitle>
@@ -152,7 +136,7 @@ const ProjectsSection: React.FC = () => {
             </CardFooter>
           </Card>
 
-          {/* Project 3 */}
+          {/* Project 4 - Imbalanced Classes */}
           <Card className="glass-card border-gray-800 overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
               <CardTitle>{t.project3Title}</CardTitle>
