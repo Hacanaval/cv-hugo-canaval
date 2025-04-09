@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     // Navigation
@@ -84,7 +83,7 @@ export const translations = {
     education1Title: "Data Science Program",
     education1Place: "TripleTen (Remote, International)",
     education1Period: "2025",
-    education2Title: "Postgraduate in Data Analytics for Business",
+    education2Title: "Postgraduate Degree in Data Analytics for Business",
     education2Place: "Universidad Icesi – Cali, Colombia",
     education2Period: "2020 – 2021",
     education3Title: "Bachelor's in Economics and International Business",

@@ -16,12 +16,8 @@ const ContactSection: React.FC = () => {
   const socialLinks = {
     linkedin: "https://www.linkedin.com/in/hugo-canaval/",
     github: "https://github.com/Hacanaval",
-    email: "hacanaval@hotmail.com"
-  };
-  
-  const cvLinks = {
-    es: "/cv-es.pdf",
-    en: "/cv-en.pdf"
+    email: "hacanaval@hotmail.com",
+    cvDrive: "https://drive.google.com/drive/folders/12Qbaw-A-fZOzItcqYn17MQ4J7KdkGrQ7?usp=sharing"
   };
 
   const copyEmail = () => {
@@ -45,7 +41,7 @@ const ContactSection: React.FC = () => {
         <div className="max-w-md mx-auto">
           <Button 
             className="w-full mb-4 text-lg py-6 bg-indigo-600 hover:bg-indigo-700"
-            onClick={() => window.open(cvLinks[language], "_blank")}
+            onClick={() => window.open(socialLinks.cvDrive, "_blank")}
           >
             <FileDown className="mr-2" size={20} />
             {t.downloadCV}
@@ -75,18 +71,15 @@ const ContactSection: React.FC = () => {
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="relative">
-                    <Button 
-                      variant="outline" 
-                      size="icon" 
-                      className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
-                      onClick={sendEmail}
-                      onMouseEnter={() => {}}
-                    >
-                      <Mail size={20} />
-                      <span className="sr-only">{t.contactMe}</span>
-                    </Button>
-                  </div>
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
+                    onClick={sendEmail}
+                  >
+                    <Mail size={20} />
+                    <span className="sr-only">{t.contactMe}</span>
+                  </Button>
                 </TooltipTrigger>
                 <TooltipContent>
                   <div className="flex items-center gap-2">

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
@@ -60,7 +59,9 @@ const SkillsSection: React.FC = () => {
     {
       icon: <Terminal size={24} />,
       title: t.programmingTitle,
-      skills: ["Python", "SQL", "Shell scripting (Zsh/Bash)"]
+      skills: language === 'es' ? 
+        ["Python", "SQL", "Shell scripting (Zsh/Bash)"] : 
+        ["Python", "SQL", "Shell scripting (Zsh/Bash)"]
     },
     {
       icon: <Database size={24} />,
@@ -70,12 +71,16 @@ const SkillsSection: React.FC = () => {
     {
       icon: <BrainCircuit size={24} />,
       title: t.mlTitle,
-      skills: ["Scikit-learn", "Modelos Supervisados", "Clasificación y Regresión"]
+      skills: language === 'es' ? 
+        ["Scikit-learn", "Modelos Supervisados", "Clasificación y Regresión"] : 
+        ["Scikit-learn", "Supervised Models", "Classification & Regression"]
     },
     {
       icon: <LineChart size={24} />,
       title: t.statsTitle,
-      skills: ["Pruebas de hipótesis (Scipy)", "Bootstrapping", "Validación cruzada"]
+      skills: language === 'es' ? 
+        ["Pruebas de hipótesis (Scipy)", "Bootstrapping", "Validación cruzada"] : 
+        ["Hypothesis Testing (Scipy)", "Bootstrapping", "Cross-validation"]
     },
     {
       icon: <BarChart size={24} />,
@@ -90,7 +95,9 @@ const SkillsSection: React.FC = () => {
     {
       icon: <FileSpreadsheet size={24} />,
       title: t.officeTitle,
-      skills: ["Excel avanzado", "Macros (VBA)", "Dashboards"]
+      skills: language === 'es' ? 
+        ["Excel avanzado", "Macros (VBA)", "Dashboards"] : 
+        ["Advanced Excel", "Macros (VBA)", "Dashboards"]
     }
   ];
 
