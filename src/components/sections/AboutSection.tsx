@@ -17,7 +17,7 @@ const AboutSection: React.FC = () => {
             <div className="w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img 
-                  src="/lovable-uploads/5aaa6811-19ca-4b8e-bc34-da8d9cd6f5fc.png"
+                  src="/lovable-uploads/1ceae4d6-5d9f-465b-8cd7-cb5d929f932e.png"
                   alt="Hugo Canaval" 
                   className="w-full h-full object-cover"
                 />
@@ -27,9 +27,11 @@ const AboutSection: React.FC = () => {
           <div className="md:w-2/3">
             <Card className="dark-card border-gray-800">
               <CardContent className="p-6">
-                <p className="text-lg leading-relaxed text-gray-300">
-                  {t.aboutText}
-                </p>
+                <div className="text-lg leading-relaxed text-gray-300 space-y-4">
+                  {t.aboutText.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="mb-2">{paragraph}</p>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </div>

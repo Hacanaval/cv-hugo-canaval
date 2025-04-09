@@ -8,6 +8,7 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import EducationSection from "@/components/sections/EducationSection";
 import ObjectiveSection from "@/components/sections/ObjectiveSection";
 import ContactSection from "@/components/sections/ContactSection";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const Index = () => {
   return (

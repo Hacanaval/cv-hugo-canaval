@@ -1,2 +1,62 @@
 
-[This is a binary file placeholder. You would need to upload your Spanish CV]
+%PDF-1.5
+%����
+1 0 obj
+<</Type/Catalog/Pages 2 0 R/Lang(es-ES)>>
+endobj
+2 0 obj
+<</Type/Pages/Count 1/Kids[3 0 R]>>
+endobj
+3 0 obj
+<</Type/Page/Contents 4 0 R/MediaBox[0 0 612 792]/Resources<</Font<</F1 5 0 R/F2 6 0 R/F3 7 0 R>>>>/Parent 2 0 R>>
+endobj
+4 0 obj
+<</Length 472>>stream
+BT
+/F1 24 Tf
+50 700 Td
+(CV de Hugo Canaval - Español) Tj
+ET
+BT
+/F2 12 Tf
+50 650 Td
+(Este es un archivo PDF de marcador de posición.) Tj
+ET
+BT
+/F2 12 Tf
+50 630 Td
+(Por favor, genere el PDF real desde el código LaTeX proporcionado.) Tj
+ET
+BT
+/F3 10 Tf
+50 580 Td
+(Nota: Este archivo es solo un marcador de posición para la funcionalidad del sitio.) Tj
+50 560 Td
+(Cuando el sitio esté en producción, deberá reemplazarse con el CV real.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Bold>>
+endobj
+6 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica>>
+endobj
+7 0 obj
+<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Oblique>>
+endobj
+xref
+0 8
+0000000000 65535 f
+0000000015 00000 n
+0000000078 00000 n
+0000000135 00000 n
+0000000264 00000 n
+0000000789 00000 n
+0000000851 00000 n
+0000000908 00000 n
+trailer
+<</Size 8/Root 1 0 R/ID[<4F9ED3824F9ED3824F9ED382>]>>
+startxref
+971
+%%EOF

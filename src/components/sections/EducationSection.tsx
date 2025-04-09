@@ -7,10 +7,10 @@ import { GraduationCap } from "lucide-react";
 interface TimelineItemProps {
   title: string;
   place: string;
-  year: string;
+  period: string;
 }
 
-const TimelineItem: React.FC<TimelineItemProps> = ({ title, place, year }) => {
+const TimelineItem: React.FC<TimelineItemProps> = ({ title, place, period }) => {
   return (
     <div className="timeline-item">
       <div className="timeline-dot flex items-center justify-center">
@@ -20,7 +20,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, place, year }) => {
         <h4 className="text-lg font-bold text-indigo-400">{title}</h4>
         <div className="flex justify-between items-center mt-2">
           <p className="text-gray-300">{place}</p>
-          <p className="text-indigo-400 font-semibold">{year}</p>
+          <p className="text-indigo-400 font-semibold">{period}</p>
         </div>
       </div>
     </div>
@@ -35,22 +35,22 @@ const EducationSection: React.FC = () => {
     {
       title: t.education1Title,
       place: t.education1Place,
-      year: t.education1Year
+      period: t.education1Period
     },
     {
       title: t.education2Title,
       place: t.education2Place,
-      year: t.education2Year
+      period: t.education2Period
     },
     {
       title: t.education3Title,
       place: t.education3Place,
-      year: t.education3Year
+      period: t.education3Period
     }
   ];
 
   return (
-    <section id="education" className="py-24 dark-section">
+    <section id="education" className="py-24 dark-section-alt">
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center">{t.educationTitle}</h2>
         
@@ -60,7 +60,7 @@ const EducationSection: React.FC = () => {
               key={index}
               title={item.title}
               place={item.place}
-              year={item.year}
+              period={item.period}
             />
           ))}
         </div>

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
 import { 
@@ -7,9 +7,19 @@ import {
   Database, 
   BarChart, 
   FileSpreadsheet, 
-  Github,
-  Globe
+  Globe,
+  BrainCircuit,
+  LineChart,
+  Terminal,
+  Server,
+  Users,
+  Presentation,
+  BarChart3,
+  Brain,
+  Target,
+  Shuffle
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface SkillCardProps {
   icon: React.ReactNode;
@@ -39,41 +49,110 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
 const SkillsSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [showTechnical, setShowTechnical] = useState(true);
   
-  const skillCategories = [
+  const technicalSkills = [
     {
-      icon: <Code size={24} />,
+      icon: <Globe size={24} />,
+      title: t.languagesTitle,
+      skills: t.languageSkills
+    },
+    {
+      icon: <Terminal size={24} />,
       title: t.programmingTitle,
-      skills: ["Python", "SQL", "Shell scripting"]
+      skills: ["Python", "SQL", "Shell scripting (Zsh/Bash)"]
     },
     {
       icon: <Database size={24} />,
       title: t.dataTitle,
-      skills: ["Scikit-learn", "Pandas", "NumPy", "PySpark"]
+      skills: ["Pandas", "NumPy", "PySpark"]
+    },
+    {
+      icon: <BrainCircuit size={24} />,
+      title: t.mlTitle,
+      skills: ["Scikit-learn", "Modelos Supervisados", "Clasificación y Regresión"]
+    },
+    {
+      icon: <LineChart size={24} />,
+      title: t.statsTitle,
+      skills: ["Pruebas de hipótesis (Scipy)", "Bootstrapping", "Validación cruzada"]
     },
     {
       icon: <BarChart size={24} />,
       title: t.visualizationTitle,
-      skills: ["Matplotlib", "Seaborn", "Plotly"]
+      skills: ["Matplotlib", "Seaborn"]
+    },
+    {
+      icon: <Server size={24} />,
+      title: t.versionControlTitle,
+      skills: ["Git", "GitHub"]
     },
     {
       icon: <FileSpreadsheet size={24} />,
-      title: t.otherTitle,
-      skills: ["Excel + VBA", "Git/GitHub"]
-    },
-    {
-      icon: <Globe size={24} />,
-      title: t.languagesTitle,
-      skills: ["English (B2)", "German (Conversational)", "Spanish (Native)"]
+      title: t.officeTitle,
+      skills: ["Excel avanzado", "Macros (VBA)", "Dashboards"]
     }
   ];
 
+  const professionalSkills = [
+    {
+      icon: <Presentation size={24} />,
+      title: t.communicationTitle,
+      skills: [t.communicationSkill]
+    },
+    {
+      icon: <Users size={24} />,
+      title: t.leadershipTitle,
+      skills: [t.leadershipSkill]
+    },
+    {
+      icon: <Brain size={24} />,
+      title: t.analyticalTitle,
+      skills: [t.analyticalSkill]
+    },
+    {
+      icon: <BarChart3 size={24} />,
+      title: t.storytellingTitle,
+      skills: [t.storytellingSkill]
+    },
+    {
+      icon: <Shuffle size={24} />,
+      title: t.adaptabilityTitle,
+      skills: [t.adaptabilitySkill]
+    },
+    {
+      icon: <Target size={24} />,
+      title: t.resultsTitle,
+      skills: [t.resultsSkill]
+    }
+  ];
+
+  const displaySkills = showTechnical ? technicalSkills : professionalSkills;
+
   return (
-    <section id="skills" className="py-24 dark-section">
+    <section id="skills" className="py-24 dark-section-alt">
       <div className="container mx-auto px-6">
-        <h2 className="section-heading text-center mb-10">{t.skillsTitle}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => (
+        <h2 className="section-heading text-center mb-6">{t.skillsTitle}</h2>
+        
+        <div className="flex justify-center gap-4 mb-12">
+          <Button 
+            variant={showTechnical ? "default" : "outline"} 
+            onClick={() => setShowTechnical(true)}
+            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""}`}
+          >
+            {t.technicalSkillsBtn}
+          </Button>
+          <Button 
+            variant={!showTechnical ? "default" : "outline"} 
+            onClick={() => setShowTechnical(false)}
+            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""}`}
+          >
+            {t.professionalSkillsBtn}
+          </Button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {displaySkills.map((category, index) => (
             <SkillCard 
               key={index}
               icon={category.icon}
