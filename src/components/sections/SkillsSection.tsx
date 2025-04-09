@@ -18,18 +18,18 @@ interface SkillCardProps {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
-  <div className="tech-card">
+  <div className="bg-card rounded-xl shadow-md p-5 transition-all hover:shadow-lg hover:scale-[1.02] border border-gray-800">
     <div className="flex items-center mb-4">
-      <div className="mr-3 text-indigo-600">
+      <div className="mr-3 text-indigo-400">
         {icon}
       </div>
-      <h4 className="font-semibold text-lg">{title}</h4>
+      <h4 className="font-semibold text-lg text-gray-200">{title}</h4>
     </div>
     <ul className="space-y-2">
       {skills.map((skill, index) => (
         <li key={index} className="flex items-center">
           <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-2"></span>
-          <span className="text-gray-700">{skill}</span>
+          <span className="text-gray-300">{skill}</span>
         </li>
       ))}
     </ul>
@@ -69,7 +69,7 @@ const SkillsSection: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="skills" className="py-24 dark-section">
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center mb-10">{t.skillsTitle}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">

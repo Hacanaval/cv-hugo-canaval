@@ -42,12 +42,12 @@ const Header: React.FC = () => {
     <header
       className={`fixed w-full top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-white/90 backdrop-blur-md shadow-sm"
+          ? "py-3 bg-black/80 backdrop-blur-md border-b border-gray-800"
           : "py-5 bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="text-2xl font-bold text-indigo-600">DS</div>
+        <div className="text-2xl font-bold text-indigo-400">DS</div>
 
         <Navigation className="hidden md:flex" />
 
@@ -57,18 +57,18 @@ const Header: React.FC = () => {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu />
+                <Button variant="outline" size="icon" className="border-gray-700 bg-gray-900/50">
+                  <Menu className="text-gray-300" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="flex flex-col pt-16">
+              <SheetContent className="flex flex-col pt-16 bg-gray-900 border-gray-800">
                 <nav>
                   <ul className="flex flex-col space-y-4">
                     {navItems.map((item) => (
                       <li key={item.href}>
                         <a
                           href={item.href}
-                          className="text-lg text-gray-700 hover:text-indigo-600 font-medium transition duration-300 block py-2"
+                          className="text-lg text-gray-300 hover:text-indigo-400 font-medium transition duration-300 block py-2"
                         >
                           {item.label}
                         </a>

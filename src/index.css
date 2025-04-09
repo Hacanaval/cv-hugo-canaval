@@ -8,7 +8,7 @@
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 240 10% 7%;
     --card-foreground: 0 0% 98%;
 
     --popover: 240 10% 3.9%;
@@ -21,7 +21,7 @@
     --secondary-foreground: 238 78% 58%;
 
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted-foreground: 240 5% 80%;
 
     --accent: 243 75% 59%;
     --accent-foreground: 0 0% 98%;
@@ -74,11 +74,11 @@
 
   /* Custom styling */
   .gradient-bg {
-    background: linear-gradient(135deg, rgb(26, 32, 44) 0%, rgb(17, 24, 39) 100%);
+    background: linear-gradient(135deg, rgb(13, 16, 22) 0%, rgb(10, 12, 18) 100%);
   }
 
   .tech-card {
-    @apply bg-gray-800 rounded-xl shadow-md p-4 transition-all hover:shadow-lg hover:scale-[1.02] border border-gray-700;
+    @apply bg-card rounded-xl shadow-md p-4 transition-all hover:shadow-lg hover:scale-[1.02] border border-gray-700;
   }
 
   .section-heading {
@@ -121,4 +121,22 @@
       opacity: 0.8;
     }
   }
+
+  /* Dark mode specific styles */
+  .dark-card {
+    @apply bg-card border-gray-800 text-gray-100 shadow-lg shadow-black/20;
+  }
+
+  .dark-section {
+    @apply bg-gradient-to-b from-gray-900 to-black;
+  }
+
+  .dark-section-alt {
+    @apply bg-gradient-to-b from-black to-gray-900;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
+  }
 }
+

@@ -59,21 +59,21 @@ const ProjectsSection: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section id="projects" className="py-24 dark-section-alt">
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center mb-10">{t.projectsTitle}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white rounded-t-lg">
+            <Card key={index} className="glass-card border-gray-800 overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
                 <CardTitle>{project.title}</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
-                <p className="text-gray-700 mb-4">{project.description}</p>
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="outline" className="bg-indigo-50 text-indigo-700 border-indigo-200">
+                    <Badge key={techIndex} variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
                       {tech}
                     </Badge>
                   ))}
@@ -82,9 +82,9 @@ const ProjectsSection: React.FC = () => {
                 {project.metrics && (
                   <div className="flex gap-3 mb-4">
                     {project.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="flex flex-col items-center bg-gray-50 rounded-lg p-2">
-                        <span className="text-sm text-gray-600">{metric.label}</span>
-                        <span className="font-bold text-indigo-600">{metric.value}</span>
+                      <div key={metricIndex} className="flex flex-col items-center bg-gray-900/50 rounded-lg p-2 border border-gray-800">
+                        <span className="text-sm text-gray-400">{metric.label}</span>
+                        <span className="font-bold text-indigo-400">{metric.value}</span>
                       </div>
                     ))}
                   </div>
@@ -94,7 +94,7 @@ const ProjectsSection: React.FC = () => {
               <CardFooter>
                 <Button 
                   variant="outline" 
-                  className="w-full flex items-center justify-center gap-2"
+                  className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
                   onClick={() => window.open(project.githubUrl, "_blank")}
                 >
                   <Github size={16} />

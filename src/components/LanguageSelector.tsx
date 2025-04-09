@@ -12,7 +12,7 @@ const LanguageSelector: React.FC = () => {
         variant={language === "es" ? "default" : "outline"}
         size="sm"
         onClick={() => setLanguage("es")}
-        className="flex items-center gap-1"
+        className={`flex items-center gap-1 ${language === "es" ? "" : "border-gray-700 text-gray-300 bg-gray-900/30"}`}
       >
         🇪🇸 ES
       </Button>
@@ -20,7 +20,7 @@ const LanguageSelector: React.FC = () => {
         variant={language === "en" ? "default" : "outline"}
         size="sm"
         onClick={() => setLanguage("en")}
-        className="flex items-center gap-1"
+        className={`flex items-center gap-1 ${language === "en" ? "" : "border-gray-700 text-gray-300 bg-gray-900/30"}`}
       >
         🇬🇧 EN
       </Button>

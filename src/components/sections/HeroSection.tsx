@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-gray-900 to-indigo-950 overflow-hidden"
+      className="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-gray-900 to-black overflow-hidden"
     >
       {/* Background with code pattern effect */}
       <div className="absolute inset-0 z-0 opacity-[0.07]">

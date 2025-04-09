@@ -27,7 +27,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
           <li key={item.href}>
             <a
               href={item.href}
-              className="text-gray-700 hover:text-indigo-600 font-medium transition duration-300"
+              className="text-gray-300 hover:text-indigo-400 font-medium transition duration-300"
             >
               {item.label}
             </a>

@@ -22,7 +22,7 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="py-24 bg-gray-50">
+    <footer id="contact" className="py-24 dark-section-alt">
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-md mx-auto">
           <Button 
@@ -37,30 +37,30 @@ const ContactSection: React.FC = () => {
             <Button 
               variant="outline" 
               size="icon" 
-              className="h-12 w-12 rounded-full border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50"
+              className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
               onClick={() => window.open(socialLinks.linkedin, "_blank")}
             >
-              <Linkedin size={20} className="text-indigo-700" />
+              <Linkedin size={20} />
               <span className="sr-only">{t.viewLinkedIn}</span>
             </Button>
             
             <Button 
               variant="outline" 
               size="icon" 
-              className="h-12 w-12 rounded-full border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50"
+              className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
               onClick={() => window.open(socialLinks.github, "_blank")}
             >
-              <Github size={20} className="text-indigo-700" />
+              <Github size={20} />
               <span className="sr-only">{t.viewGitHub}</span>
             </Button>
             
             <Button 
               variant="outline" 
               size="icon" 
-              className="h-12 w-12 rounded-full border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50"
+              className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
               onClick={() => window.open(socialLinks.email, "_blank")}
             >
-              <Mail size={20} className="text-indigo-700" />
+              <Mail size={20} />
               <span className="sr-only">{t.contactMe}</span>
             </Button>
           </div>

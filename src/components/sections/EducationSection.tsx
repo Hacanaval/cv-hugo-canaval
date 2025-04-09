@@ -14,13 +14,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, place, year }) => {
   return (
     <div className="timeline-item">
       <div className="timeline-dot flex items-center justify-center">
-        <GraduationCap size={16} className="text-indigo-600" />
+        <GraduationCap size={16} className="text-indigo-400" />
       </div>
-      <div className="bg-white p-5 rounded-lg shadow-md">
-        <h4 className="text-lg font-bold text-indigo-700">{title}</h4>
+      <div className="bg-card p-5 rounded-lg shadow-md border border-gray-800">
+        <h4 className="text-lg font-bold text-indigo-400">{title}</h4>
         <div className="flex justify-between items-center mt-2">
-          <p className="text-gray-600">{place}</p>
-          <p className="text-indigo-600 font-semibold">{year}</p>
+          <p className="text-gray-300">{place}</p>
+          <p className="text-indigo-400 font-semibold">{year}</p>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ const EducationSection: React.FC = () => {
   ];
 
   return (
-    <section id="education" className="py-24 bg-white">
+    <section id="education" className="py-24 dark-section">
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center">{t.educationTitle}</h2>
         
