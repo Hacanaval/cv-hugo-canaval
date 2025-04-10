@@ -15,21 +15,21 @@ const AboutSection: React.FC = () => {
         <h2 className="section-heading text-center">{t.aboutTitle}</h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
           <div className="md:w-1/3 flex justify-center">
-            <div className="w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-verde-menta to-verde-suave p-1">
+            <div className="w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1">
               <Avatar className="w-full h-full">
                 <AvatarImage 
                   src="/lovable-uploads/e9032196-55dd-45b5-9dac-702cc42c3896.png"
                   alt="Hugo Canaval" 
                   className="w-full h-full object-cover"
                 />
-                <AvatarFallback className="text-4xl text-verde-bosque bg-verde-menta">HC</AvatarFallback>
+                <AvatarFallback className="text-4xl">HC</AvatarFallback>
               </Avatar>
             </div>
           </div>
           <div className="md:w-2/3">
-            <Card className="dark-card border-verde-oscuro">
+            <Card className="dark-card border-gray-800">
               <CardContent className="p-6">
-                <div className="text-lg leading-relaxed text-verde-pastel space-y-4">
+                <div className="text-lg leading-relaxed text-gray-300 space-y-4">
                   <div dangerouslySetInnerHTML={{ __html: t.aboutHtml }} />
                 </div>
               </CardContent>
@@ -49,14 +49,14 @@ const AboutSection: React.FC = () => {
             ].map((item, index) => (
               <Card 
                 key={index}
-                className="glass-card hover:border-verde-suave transition-all hover:transform hover:scale-[1.02]"
+                className="glass-card hover:border-indigo-700 transition-all hover:transform hover:scale-[1.02]"
               >
-                <div className="h-1 bg-gradient-to-r from-verde-menta to-verde-suave"></div>
+                <div className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
                 <CardContent className="p-6 flex">
-                  <div className="h-10 w-10 min-w-10 rounded-full bg-verde-oscuro/60 flex items-center justify-center text-verde-menta mr-4 mt-1">
+                  <div className="h-10 w-10 min-w-10 rounded-full bg-indigo-900/60 flex items-center justify-center text-indigo-400 mr-4 mt-1">
                     {index + 1}
                   </div>
-                  <p className="text-verde-pastel">{item}</p>
+                  <p className="text-gray-300">{item}</p>
                 </CardContent>
               </Card>
             ))}

@@ -67,7 +67,7 @@ const Header: React.FC = () => {
     <header
       className={`fixed w-full top-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-verde-bosque/80 backdrop-blur-md border-b border-verde-oscuro/60"
+          ? "py-3 bg-black/80 backdrop-blur-md border-b border-gray-800"
           : "py-5 bg-transparent"
       }`}
     >
@@ -81,11 +81,11 @@ const Header: React.FC = () => {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="border-verde-oscuro bg-verde-bosque/50">
-                <Menu className="text-verde-pastel" />
+              <Button variant="outline" size="icon" className="border-gray-700 bg-gray-900/50">
+                <Menu className="text-gray-300" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="flex flex-col pt-16 bg-verde-oscuro border-verde-bosque">
+            <SheetContent className="flex flex-col pt-16 bg-gray-900 border-gray-800">
               <nav>
                 <ul className="flex flex-col space-y-4">
                   {navItems.map((item) => (
@@ -94,8 +94,8 @@ const Header: React.FC = () => {
                         href={item.href}
                         className={`text-lg font-medium transition duration-300 block py-2 ${
                           activeSection === item.href.substring(1) 
-                            ? "text-verde-menta"
-                            : "text-verde-pastel hover:text-verde-menta"
+                            ? "text-indigo-400"
+                            : "text-gray-300 hover:text-indigo-400"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();

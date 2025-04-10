@@ -5,44 +5,44 @@
 
 @layer base {
   :root {
-    --background: 164 25% 9%;
-    --foreground: 154 40% 95%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 163 24% 12%;
-    --card-foreground: 154 40% 95%;
+    --card: 240 10% 7%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 164 25% 9%;
-    --popover-foreground: 154 40% 95%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 152 55% 82%;
-    --primary-foreground: 163 35% 12%;
+    --primary: 238 78% 58%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 163 22% 12%;
-    --secondary-foreground: 152 55% 82%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 238 78% 58%;
 
-    --muted: 163 22% 12%;
-    --muted-foreground: 152 20% 80%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 80%;
 
-    --accent: 152 55% 82%;
-    --accent-foreground: 163 35% 12%;
+    --accent: 243 75% 59%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 154 40% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 163 22% 15%;
-    --input: 163 22% 15%;
-    --ring: 152 40% 70%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 164 25% 9%;
-    --sidebar-foreground: 152 20% 80%;
-    --sidebar-primary: 152 55% 82%;
-    --sidebar-primary-foreground: 163 35% 12%;
-    --sidebar-accent: 163 22% 15%;
-    --sidebar-accent-foreground: 154 40% 95%;
-    --sidebar-border: 163 22% 15%;
-    --sidebar-ring: 152 55% 82%;
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 240 5% 64.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -75,19 +75,19 @@
 
   /* Custom styling */
   .gradient-bg {
-    background: linear-gradient(135deg, #1b2d2a 0%, #0e1f1c 100%);
+    background: linear-gradient(135deg, rgb(13, 16, 22) 0%, rgb(10, 12, 18) 100%);
   }
 
   .tech-card {
-    @apply bg-card rounded-xl shadow-md p-4 transition-all hover:shadow-lg hover:scale-[1.02] border border-verde-oscuro/40;
+    @apply bg-card rounded-xl shadow-md p-4 transition-all hover:shadow-lg hover:scale-[1.02] border border-gray-700;
   }
 
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-verde-menta mb-6;
+    @apply text-3xl md:text-4xl font-bold text-indigo-400 mb-6;
   }
 
   .section-subheading {
-    @apply text-xl font-semibold text-verde-suave mb-4;
+    @apply text-xl font-semibold text-indigo-300 mb-4;
   }
 
   /* Timeline styles */
@@ -97,7 +97,7 @@
   
   .timeline-container::after {
     content: '';
-    @apply absolute top-0 left-[15px] w-1 h-full bg-verde-oscuro rounded z-0;
+    @apply absolute top-0 left-[15px] w-1 h-full bg-indigo-900 rounded z-0;
   }
   
   .timeline-item {
@@ -105,7 +105,7 @@
   }
   
   .timeline-dot {
-    @apply absolute left-0 top-2 w-[30px] h-[30px] rounded-full bg-verde-bosque border-4 border-verde-menta z-20;
+    @apply absolute left-0 top-2 w-[30px] h-[30px] rounded-full bg-gray-800 border-4 border-indigo-500 z-20;
   }
 
   @keyframes pulse {
@@ -125,19 +125,19 @@
 
   /* Dark mode specific styles */
   .dark-card {
-    @apply bg-verde-bosque border-verde-oscuro text-verde-pastel shadow-lg shadow-black/20;
+    @apply bg-card border-gray-800 text-gray-100 shadow-lg shadow-black/20;
   }
 
   .dark-section {
-    @apply bg-gradient-to-b from-verde-oscuro to-verde-bosque;
+    @apply bg-gradient-to-b from-gray-900 to-black;
   }
 
   .dark-section-alt {
-    @apply bg-gradient-to-b from-verde-bosque to-verde-oscuro;
+    @apply bg-gradient-to-b from-black to-gray-900;
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-verde-menta/10 rounded-xl shadow-lg;
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
   }
   
   /* Fade in animation for sections */
@@ -155,7 +155,7 @@
   /* Skill icon hover effect */
   .skill-card:hover .skill-icon {
     transform: scale(1.2);
-    color: theme('colors.verde.menta');
+    color: theme('colors.indigo.300');
   }
   
   /* Mobile navigation swipe */
@@ -170,6 +170,7 @@
   
   /* Bold text styling for special sections */
   .highlight-text {
-    @apply font-bold text-verde-menta;
+    @apply font-bold text-indigo-300;
   }
 }
+

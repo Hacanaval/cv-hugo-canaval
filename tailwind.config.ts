@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,15 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for the portfolio - green palette
-				verde: {
-					oscuro: '#1b2d2a',
-					bosque: '#0e1f1c',
-					menta: '#b4f1cb',
-					suave: '#9bd0b4',
-					pastel: '#dcf3e8'
-				},
-				// Keep existing indigo palette for reference
+				// Custom colors for the portfolio
 				indigo: {
 					50: '#eef2ff',
 					100: '#e0e7ff',
@@ -87,7 +80,6 @@ export default {
 			backgroundImage: {
 				'data-pattern': "url('/data-pattern.png')",
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-verde': 'linear-gradient(135deg, #1b2d2a 0%, #0e1f1c 100%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
