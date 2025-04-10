@@ -8,9 +8,9 @@ const ObjectiveSection: React.FC = () => {
   const t = translations[language];
 
   return (
-    <section id="objective" className="py-20 bg-indigo-900/70 text-white reveal-section">
+    <section id="objective" className="py-20 bg-verde-oscuro/70 text-verde-pastel reveal-section">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">{t.objectiveTitle}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center text-verde-menta">{t.objectiveTitle}</h2>
         <div className="max-w-4xl mx-auto" dangerouslySetInnerHTML={{ __html: t.objectiveHtml }} />
       </div>
     </section>

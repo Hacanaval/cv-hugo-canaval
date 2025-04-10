@@ -29,18 +29,18 @@ interface SkillCardProps {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
-  <div className="bg-card rounded-xl shadow-md p-5 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card">
+  <div className="bg-card rounded-xl shadow-md p-5 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-verde-menta border border-verde-oscuro/50 skill-card">
     <div className="flex items-center mb-4">
-      <div className="mr-3 text-indigo-400 skill-icon transition-all duration-300">
+      <div className="mr-3 text-verde-menta skill-icon transition-all duration-300">
         {icon}
       </div>
-      <h4 className="font-semibold text-lg text-gray-200">{title}</h4>
+      <h4 className="font-semibold text-lg text-verde-pastel">{title}</h4>
     </div>
     <ul className="space-y-2">
       {skills.map((skill, index) => (
         <li key={index} className="flex items-center">
-          <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-2"></span>
-          <span className="text-gray-300">{skill}</span>
+          <span className="h-1.5 w-1.5 bg-verde-menta rounded-full mr-2"></span>
+          <span className="text-verde-pastel">{skill}</span>
         </li>
       ))}
     </ul>
@@ -149,14 +149,14 @@ const SkillsSection: React.FC = () => {
           <Button 
             variant={showTechnical ? "default" : "outline"} 
             onClick={() => setShowTechnical(true)}
-            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+            className={`${!showTechnical ? "border-verde-oscuro/50 bg-verde-bosque/30 text-verde-pastel" : "bg-verde-menta text-verde-bosque"} min-w-[160px]`}
           >
             {t.technicalSkillsBtn}
           </Button>
           <Button 
             variant={!showTechnical ? "default" : "outline"} 
             onClick={() => setShowTechnical(false)}
-            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+            className={`${showTechnical ? "border-verde-oscuro/50 bg-verde-bosque/30 text-verde-pastel" : "bg-verde-menta text-verde-bosque"} min-w-[160px]`}
           >
             {t.professionalSkillsBtn}
           </Button>
@@ -177,14 +177,14 @@ const SkillsSection: React.FC = () => {
           <Button 
             variant={showTechnical ? "default" : "outline"} 
             onClick={() => handleSwitchSkills(true)}
-            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+            className={`${!showTechnical ? "border-verde-oscuro/50 bg-verde-bosque/30 text-verde-pastel" : "bg-verde-menta text-verde-bosque"} min-w-[160px]`}
           >
             {t.technicalSkillsBtn}
           </Button>
           <Button 
             variant={!showTechnical ? "default" : "outline"} 
             onClick={() => handleSwitchSkills(false)}
-            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+            className={`${showTechnical ? "border-verde-oscuro/50 bg-verde-bosque/30 text-verde-pastel" : "bg-verde-menta text-verde-bosque"} min-w-[160px]`}
           >
             {t.professionalSkillsBtn}
           </Button>

@@ -14,13 +14,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, place, period }) => 
   return (
     <div className="timeline-item">
       <div className="timeline-dot flex items-center justify-center">
-        <GraduationCap size={16} className="text-indigo-400" />
+        <GraduationCap size={16} className="text-verde-menta" />
       </div>
-      <div className="bg-card p-5 rounded-lg shadow-md border border-gray-800">
-        <h4 className="text-lg font-bold text-indigo-400">{title}</h4>
+      <div className="bg-card p-5 rounded-lg shadow-md border border-verde-oscuro/50">
+        <h4 className="text-lg font-bold text-verde-menta">{title}</h4>
         <div className="flex justify-between items-center mt-2">
-          <p className="text-gray-300">{place}</p>
-          <p className="text-indigo-400 font-semibold">{period}</p>
+          <p className="text-verde-pastel">{place}</p>
+          <p className="text-verde-menta font-semibold">{period}</p>
         </div>
       </div>
     </div>
