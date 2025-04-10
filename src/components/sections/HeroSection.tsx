@@ -46,9 +46,22 @@ const HeroSection: React.FC = () => {
         </h2>
         
         <div className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 animate-fade-in animate-delay-200 space-y-4">
-          {t.welcomeText.split('\n\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          {t.welcomeText.split('\n\n').map((paragraph, index) => {
+            // Handle the goal paragraph specially
+            if (paragraph.includes("Mi objetivo?") || paragraph.includes("My goal?")) {
+              const parts = paragraph.split(/Mi objetivo\?|My goal\?/);
+              return (
+                <p key={index}>
+                  {parts[0]}
+                  <span className="text-indigo-400 font-semibold">
+                    {paragraph.includes("Mi objetivo?") ? "Mi objetivo?" : "My goal?"}
+                  </span>
+                  {parts[1]}
+                </p>
+              );
+            }
+            return <p key={index}>{paragraph}</p>;
+          })}
         </div>
         
         <div className="animate-bounce absolute bottom-12 left-1/2 transform -translate-x-1/2">

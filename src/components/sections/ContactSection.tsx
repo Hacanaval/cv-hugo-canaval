@@ -48,7 +48,7 @@ const ContactSection: React.FC = () => {
           </Button>
           
           <div className="flex justify-center gap-4 mt-8">
-            <TooltipProvider delayDuration={1000}>
+            <TooltipProvider delayDuration={500}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button 
@@ -78,7 +78,7 @@ const ContactSection: React.FC = () => {
               </Tooltip>
             </TooltipProvider>
             
-            <TooltipProvider delayDuration={1000}>
+            <TooltipProvider delayDuration={500}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button 
@@ -108,7 +108,7 @@ const ContactSection: React.FC = () => {
               </Tooltip>
             </TooltipProvider>
             
-            <TooltipProvider>
+            <TooltipProvider delayDuration={500}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button 
@@ -138,7 +138,7 @@ const ContactSection: React.FC = () => {
               </Tooltip>
             </TooltipProvider>
             
-            <TooltipProvider delayDuration={1000}>
+            <TooltipProvider delayDuration={500}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button 
