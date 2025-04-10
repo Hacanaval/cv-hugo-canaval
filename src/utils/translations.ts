@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     // Navigation
@@ -32,7 +31,7 @@ export const translations = {
     // Skills
     skillsTitle: "Skills & Tools",
     technicalSkillsBtn: "Technical Skills",
-    professionalSkillsBtn: "Pro Skills",
+    professionalSkillsBtn: "Professional Skills",
     programmingTitle: "Programming",
     dataTitle: "Data Analysis",
     mlTitle: "Machine Learning",
@@ -150,7 +149,7 @@ export const translations = {
     // Habilidades
     skillsTitle: "Habilidades y Herramientas",
     technicalSkillsBtn: "Habilidades Técnicas",
-    professionalSkillsBtn: "Aptitudes Pro",
+    professionalSkillsBtn: "Aptitudes",
     programmingTitle: "Programación",
     dataTitle: "Análisis de Datos",
     mlTitle: "Machine Learning",

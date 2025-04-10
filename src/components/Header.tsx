@@ -72,7 +72,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="md:flex md:items-center">
+        <div className="flex items-center">
           <LanguageSelector />
         </div>
 
@@ -86,25 +86,6 @@ const Header: React.FC = () => {
               </Button>
             </SheetTrigger>
             <SheetContent className="flex flex-col pt-16 bg-gray-900 border-gray-800">
-              <div className="flex overflow-x-auto py-4 mb-6 gap-2 nav-swipe">
-                {navItems.map((item) => (
-                  <div 
-                    key={item.href}
-                    className={`px-4 py-2 whitespace-nowrap ${
-                      activeSection === item.href.substring(1) 
-                        ? "text-indigo-400 font-medium"
-                        : "text-gray-300"
-                    }`}
-                    onClick={() => {
-                      handleNavClick(item.href);
-                      // Close sheet on smaller screens
-                      document.body.click();
-                    }}
-                  >
-                    {item.label}
-                  </div>
-                ))}
-              </div>
               <nav>
                 <ul className="flex flex-col space-y-4">
                   {navItems.map((item) => (
