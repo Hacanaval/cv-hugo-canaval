@@ -30,7 +30,10 @@ const Header: React.FC = () => {
       const section = document.getElementById(sections[i]);
       if (section) {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 200) { // 200px offset for better UX
+        // Ensure bottom sections like "contact" are properly activated
+        // Adjust threshold for better contact section detection
+        const threshold = i === sections.length - 1 ? 100 : 200;
+        if (window.scrollY >= sectionTop - threshold) {
           setActiveSection(sections[i]);
           break;
         }
@@ -40,6 +43,8 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    // Initial check for active section
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -60,6 +65,8 @@ const Header: React.FC = () => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      // Set active section when clicking directly
+      setActiveSection(href.substring(1));
     }
   };
 
