@@ -53,6 +53,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    scroll-behavior: smooth;
   }
 
   /* Custom animations */
@@ -137,6 +138,39 @@
 
   .glass-card {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg;
+  }
+  
+  /* Fade in animation for sections */
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .reveal-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Skill icon hover effect */
+  .skill-card:hover .skill-icon {
+    transform: scale(1.2);
+    color: theme('colors.indigo.300');
+  }
+  
+  /* Mobile navigation swipe */
+  .nav-swipe {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .nav-swipe::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  /* Bold text styling for special sections */
+  .highlight-text {
+    @apply font-bold text-indigo-300;
   }
 }
 

@@ -37,14 +37,20 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-6 py-24 relative z-10 text-left md:text-center max-w-5xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-fade-in">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white animate-fade-in">
           {t.welcomeTitle}
         </h1>
+        
+        <h2 className="text-xl md:text-2xl text-indigo-400 mb-8 animate-fade-in animate-delay-100">
+          {t.welcomeSubtitle}
+        </h2>
+        
         <div className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 animate-fade-in animate-delay-200 space-y-4">
           {t.welcomeText.split('\n\n').map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>
+        
         <div className="animate-bounce absolute bottom-12 left-1/2 transform -translate-x-1/2">
           <a href="#about" className="text-indigo-400 hover:text-indigo-300 transition">
             <ArrowDown size={30} />

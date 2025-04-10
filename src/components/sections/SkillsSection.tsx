@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import React, { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
 import { 
@@ -16,7 +17,8 @@ import {
   BarChart3,
   Brain,
   Target,
-  Shuffle
+  Shuffle,
+  ArrowUp
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -27,9 +29,9 @@ interface SkillCardProps {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
-  <div className="bg-card rounded-xl shadow-md p-5 transition-all hover:shadow-lg hover:scale-[1.02] border border-gray-800">
+  <div className="bg-card rounded-xl shadow-md p-5 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card">
     <div className="flex items-center mb-4">
-      <div className="mr-3 text-indigo-400">
+      <div className="mr-3 text-indigo-400 skill-icon transition-all duration-300">
         {icon}
       </div>
       <h4 className="font-semibold text-lg text-gray-200">{title}</h4>
@@ -49,6 +51,7 @@ const SkillsSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const [showTechnical, setShowTechnical] = useState(true);
+  const sectionRef = useRef<HTMLElement>(null);
   
   const technicalSkills = [
     {
@@ -59,9 +62,7 @@ const SkillsSection: React.FC = () => {
     {
       icon: <Terminal size={24} />,
       title: t.programmingTitle,
-      skills: language === 'es' ? 
-        ["Python", "SQL", "Shell scripting (Zsh/Bash)"] : 
-        ["Python", "SQL", "Shell scripting (Zsh/Bash)"]
+      skills: ["Python", "SQL", "Shell scripting (Zsh/Bash)"]
     },
     {
       icon: <Database size={24} />,
@@ -71,16 +72,12 @@ const SkillsSection: React.FC = () => {
     {
       icon: <BrainCircuit size={24} />,
       title: t.mlTitle,
-      skills: language === 'es' ? 
-        ["Scikit-learn", "Modelos Supervisados", "Clasificación y Regresión"] : 
-        ["Scikit-learn", "Supervised Models", "Classification & Regression"]
+      skills: ["Scikit-learn", "Supervised Models", "Classification & Regression"]
     },
     {
       icon: <LineChart size={24} />,
       title: t.statsTitle,
-      skills: language === 'es' ? 
-        ["Pruebas de hipótesis (Scipy)", "Bootstrapping", "Validación cruzada"] : 
-        ["Hypothesis Testing (Scipy)", "Bootstrapping", "Cross-validation"]
+      skills: ["Hypothesis Testing (Scipy)", "Bootstrapping", "Cross-validation"]
     },
     {
       icon: <BarChart size={24} />,
@@ -95,9 +92,7 @@ const SkillsSection: React.FC = () => {
     {
       icon: <FileSpreadsheet size={24} />,
       title: t.officeTitle,
-      skills: language === 'es' ? 
-        ["Excel avanzado", "Macros (VBA)", "Dashboards"] : 
-        ["Advanced Excel", "Macros (VBA)", "Dashboards"]
+      skills: ["Advanced Excel", "Macros (VBA)", "Dashboards"]
     }
   ];
 
@@ -136,8 +131,17 @@ const SkillsSection: React.FC = () => {
 
   const displaySkills = showTechnical ? technicalSkills : professionalSkills;
 
+  const scrollToTop = () => {
+    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSwitchSkills = (technical: boolean) => {
+    setShowTechnical(technical);
+    setTimeout(scrollToTop, 100);
+  };
+
   return (
-    <section id="skills" className="py-24 dark-section-alt">
+    <section id="skills" ref={sectionRef} className="py-24 dark-section-alt reveal-section">
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center mb-6">{t.skillsTitle}</h2>
         
@@ -145,14 +149,14 @@ const SkillsSection: React.FC = () => {
           <Button 
             variant={showTechnical ? "default" : "outline"} 
             onClick={() => setShowTechnical(true)}
-            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""}`}
+            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
           >
             {t.technicalSkillsBtn}
           </Button>
           <Button 
             variant={!showTechnical ? "default" : "outline"} 
             onClick={() => setShowTechnical(false)}
-            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""}`}
+            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
           >
             {t.professionalSkillsBtn}
           </Button>
@@ -167,6 +171,23 @@ const SkillsSection: React.FC = () => {
               skills={category.skills}
             />
           ))}
+        </div>
+        
+        <div className="flex justify-center gap-4 mt-16">
+          <Button 
+            variant={showTechnical ? "default" : "outline"} 
+            onClick={() => handleSwitchSkills(true)}
+            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+          >
+            {t.technicalSkillsBtn}
+          </Button>
+          <Button 
+            variant={!showTechnical ? "default" : "outline"} 
+            onClick={() => handleSwitchSkills(false)}
+            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+          >
+            {t.professionalSkillsBtn}
+          </Button>
         </div>
       </div>
     </section>

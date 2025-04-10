@@ -10,6 +10,7 @@ import { translations } from "@/utils/translations";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const { language } = useLanguage();
   const t = translations[language];
 
@@ -19,6 +20,21 @@ const Header: React.FC = () => {
       setScrolled(true);
     } else {
       setScrolled(false);
+    }
+    
+    // Calculate current section based on scroll position
+    const sections = ["home", "about", "skills", "projects", "education", "courses", "objective", "contact"];
+    
+    // Find the current active section
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = document.getElementById(sections[i]);
+      if (section) {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) { // 200px offset for better UX
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
     }
   };
 
@@ -35,8 +51,17 @@ const Header: React.FC = () => {
     { label: t.skills, href: "#skills" },
     { label: t.projects, href: "#projects" },
     { label: t.education, href: "#education" },
+    { label: t.coursesTitle, href: "#courses" },
+    { label: t.objective, href: "#objective" },
     { label: t.contact, href: "#contact" },
   ];
+  
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header
@@ -47,12 +72,18 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="text-2xl font-bold text-indigo-400">DS</div>
+        <div className="hidden md:block text-2xl font-bold text-indigo-400">DS</div>
 
-        <Navigation className="hidden md:flex" />
+        <div className="md:hidden">
+          <LanguageSelector />
+        </div>
+
+        <Navigation className="hidden md:flex" activeSection={activeSection} onNavClick={handleNavClick} />
 
         <div className="flex items-center gap-3">
-          <LanguageSelector />
+          <div className="hidden md:block">
+            <LanguageSelector />
+          </div>
           
           <div className="md:hidden">
             <Sheet>
@@ -62,13 +93,42 @@ const Header: React.FC = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent className="flex flex-col pt-16 bg-gray-900 border-gray-800">
+                <div className="flex overflow-x-auto py-4 mb-6 gap-2 nav-swipe">
+                  {navItems.map((item) => (
+                    <div 
+                      key={item.href}
+                      className={`px-4 py-2 whitespace-nowrap ${
+                        activeSection === item.href.substring(1) 
+                          ? "text-indigo-400 font-medium"
+                          : "text-gray-300"
+                      }`}
+                      onClick={() => {
+                        handleNavClick(item.href);
+                        // Close sheet on smaller screens
+                        document.body.click();
+                      }}
+                    >
+                      {item.label}
+                    </div>
+                  ))}
+                </div>
                 <nav>
                   <ul className="flex flex-col space-y-4">
                     {navItems.map((item) => (
                       <li key={item.href}>
                         <a
                           href={item.href}
-                          className="text-lg text-gray-300 hover:text-indigo-400 font-medium transition duration-300 block py-2"
+                          className={`text-lg font-medium transition duration-300 block py-2 ${
+                            activeSection === item.href.substring(1) 
+                              ? "text-indigo-400"
+                              : "text-gray-300 hover:text-indigo-400"
+                          }`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleNavClick(item.href);
+                            // Close sheet on nav click
+                            document.body.click();
+                          }}
                         >
                           {item.label}
                         </a>

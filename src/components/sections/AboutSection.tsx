@@ -3,34 +3,34 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const AboutSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
   return (
-    <section id="about" className="py-24 dark-section">
+    <section id="about" className="py-24 dark-section reveal-section">
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center">{t.aboutTitle}</h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-6xl mx-auto">
           <div className="md:w-1/3 flex justify-center">
             <div className="w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1">
-              <div className="w-full h-full rounded-full overflow-hidden">
-                <img 
-                  src="/lovable-uploads/1ceae4d6-5d9f-465b-8cd7-cb5d929f932e.png"
+              <Avatar className="w-full h-full">
+                <AvatarImage 
+                  src="/lovable-uploads/e9032196-55dd-45b5-9dac-702cc42c3896.png"
                   alt="Hugo Canaval" 
                   className="w-full h-full object-cover"
                 />
-              </div>
+                <AvatarFallback className="text-4xl">HC</AvatarFallback>
+              </Avatar>
             </div>
           </div>
           <div className="md:w-2/3">
             <Card className="dark-card border-gray-800">
               <CardContent className="p-6">
                 <div className="text-lg leading-relaxed text-gray-300 space-y-4">
-                  {t.aboutText.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-2">{paragraph}</p>
-                  ))}
+                  <div dangerouslySetInnerHTML={{ __html: t.aboutHtml }} />
                 </div>
               </CardContent>
             </Card>
@@ -49,7 +49,7 @@ const AboutSection: React.FC = () => {
             ].map((item, index) => (
               <Card 
                 key={index}
-                className="glass-card"
+                className="glass-card hover:border-indigo-700 transition-all hover:transform hover:scale-[1.02]"
               >
                 <div className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
                 <CardContent className="p-6 flex">
