@@ -31,7 +31,13 @@ const EducationSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
   
+  // Reorganizado en orden cronológico: Data Science programa, Posgrado, Pregrado
   const educationItems = [
+    {
+      title: t.education3Title,
+      place: t.education3Place,
+      period: t.education3Period
+    },
     {
       title: t.education1Title,
       place: t.education1Place,
@@ -41,11 +47,6 @@ const EducationSection: React.FC = () => {
       title: t.education2Title,
       place: t.education2Place,
       period: t.education2Period
-    },
-    {
-      title: t.education3Title,
-      place: t.education3Place,
-      period: t.education3Period
     }
   ];
 
