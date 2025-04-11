@@ -40,12 +40,14 @@ const AboutSection: React.FC = () => {
         <div className="mt-20">
           <h3 className="section-subheading text-center mb-10">{t.differenceTitle}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Add 6 items instead of 5 */}
             {[
               t.differenceItem1,
               t.differenceItem2,
               t.differenceItem3,
               t.differenceItem4,
               t.differenceItem5,
+              t.differenceItem6,
             ].map((item, index) => (
               <Card 
                 key={index}

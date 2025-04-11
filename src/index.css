@@ -158,6 +158,26 @@
     color: theme('colors.indigo.300');
   }
   
+  /* Project card hover effect */
+  .project-card {
+    @apply transition-all duration-300;
+  }
+  
+  .project-card:hover {
+    @apply transform scale-[1.02] shadow-lg shadow-indigo-900/20;
+    border-color: theme('colors.indigo.500');
+  }
+  
+  /* Education card hover effect */
+  .timeline-item .dark-card {
+    @apply transition-all duration-300;
+  }
+  
+  .timeline-item:hover .dark-card {
+    @apply transform scale-[1.02] shadow-lg shadow-indigo-900/20;
+    border-color: theme('colors.indigo.500');
+  }
+  
   /* Mobile navigation swipe */
   .nav-swipe {
     -webkit-overflow-scrolling: touch;
@@ -173,4 +193,3 @@
     @apply font-bold text-indigo-300;
   }
 }
-

@@ -33,6 +33,16 @@ const Index = () => {
       observer.observe(section);
     });
 
+    // Add hover effects for project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.classList.add('hover:shadow-lg', 'hover:border-indigo-500', 'transition-all', 'duration-300', 'hover:scale-[1.02]');
+    });
+
+    // Add hover effects for education timeline items
+    document.querySelectorAll('.timeline-item .dark-card').forEach(card => {
+      card.classList.add('hover:shadow-lg', 'hover:border-indigo-500', 'transition-all', 'duration-300', 'hover:scale-[1.02]');
+    });
+
     return () => observer.disconnect();
   }, []);
 

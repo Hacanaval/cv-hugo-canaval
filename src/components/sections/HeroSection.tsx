@@ -48,8 +48,8 @@ const HeroSection: React.FC = () => {
         <div className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 animate-fade-in animate-delay-200 space-y-4">
           {t.welcomeText.split('\n\n').map((paragraph, index) => {
             // Handle the goal paragraph specially
-            if (paragraph.includes("Mi objetivo?")) {
-              const parts = paragraph.split("Mi objetivo?");
+            if (paragraph.includes("Mi objetivo")) {
+              const parts = paragraph.split("Mi objetivo");
               return (
                 <p key={index}>
                   {parts[0]}
@@ -61,8 +61,8 @@ const HeroSection: React.FC = () => {
               );
             }
             // Handle English case
-            if (paragraph.includes("My goal?")) {
-              const parts = paragraph.split("My goal?");
+            if (paragraph.includes("My goal")) {
+              const parts = paragraph.split("My goal");
               return (
                 <p key={index}>
                   {parts[0]}
