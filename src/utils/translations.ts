@@ -112,6 +112,27 @@ type TranslationType = {
   coursesRecentTitle: string;
   viewAllCoursesBtn: string;
   
+  // Course specific descriptions
+  pythonCourseDesc: string;
+  productCourseDesc: string;
+  statsCourseDesc: string;
+  mlCourseDesc: string;
+  sparkCourseDesc: string;
+  
+  // Project specific properties
+  cvOptimizerTitle: string;
+  cvOptimizerDesc: string;
+  project1Desc: string;
+  project2Desc: string;
+  project3Desc: string;
+  projectButton: string;
+  accuracyLabel: string;
+  errorLabel: string;
+  accuracyMetricLabel: string;
+  recallLabel: string;
+  precisionLabel: string;
+  viewAllProjects: string;
+  
   // Objective section
   objectiveTitle: string;
   objectiveHtml: string;
@@ -229,6 +250,27 @@ export const translations: Record<LanguageType, TranslationType> = {
     coursesRecentTitle: "Certificaciones recientes",
     viewAllCoursesBtn: "Ver todos los cursos",
     
+    // Course descriptions
+    pythonCourseDesc: "Curso completo sobre Python para ciencia de datos. Incluye manejo de librerías como NumPy, Pandas y Matplotlib para el análisis y visualización de datos.",
+    productCourseDesc: "Formación integral en gestión de productos digitales. Metodologías ágiles, design thinking y estrategias de producto.",
+    statsCourseDesc: "Estadística inferencial aplicada con Python. Técnicas de muestreo, intervalos de confianza y pruebas de hipótesis.",
+    mlCourseDesc: "Introducción al aprendizaje automático. Conceptos fundamentales, modelos supervisados y evaluación de rendimiento.",
+    sparkCourseDesc: "Fundamentos de Apache Spark para procesamiento de grandes volúmenes de datos. Arquitectura, RDDs y operaciones básicas.",
+    
+    // Project specific properties
+    cvOptimizerTitle: "Optimizador de CV",
+    cvOptimizerDesc: "Herramienta basada en NLP que analiza ofertas de trabajo y optimiza el CV para aumentar la compatibilidad con la posición deseada.",
+    project1Desc: "Modelo de machine learning para predecir la probabilidad de abandono de clientes en una empresa de telecomunicaciones.",
+    project2Desc: "Análisis estadístico avanzado utilizando técnicas de bootstrapping para mejorar la precisión de modelos de regresión.",
+    project3Desc: "Solución para el manejo de clases desbalanceadas en problemas de clasificación mediante técnicas de remuestreo y algoritmos especializados.",
+    projectButton: "Ver en GitHub",
+    accuracyLabel: "Incremento de precisión",
+    errorLabel: "Reducción de error",
+    accuracyMetricLabel: "Exactitud",
+    recallLabel: "Sensibilidad",
+    precisionLabel: "Precisión",
+    viewAllProjects: "Ver todos los proyectos",
+    
     // Objective section
     objectiveTitle: "Mi Objetivo Profesional",
     objectiveHtml: "Estoy en una misión clara:<br><br>🚀 Convertirme en un Data Scientist remoto para empresas internacionales<br>📈 Aportar valor real mediante soluciones basadas en datos<br>🧑‍💼 Crecer profesionalmente en Machine Learning, Inteligencia Artificial y proyectos de impacto<br><br>Mi propósito no es solo cambiar de industria, sino transformar mi carrera desde la experiencia comercial hacia el mundo IT, con una ventaja competitiva única:<br><br>💡 Conocimiento profundo del negocio<br>📊 Entendimiento del consumidor<br>🧰 Dominio de datos<br><br>Trabajo cada día por ese objetivo: estudiando con disciplina, desarrollando proyectos propios y preparándome para aportar valor en equipos globales."
@@ -343,6 +385,27 @@ export const translations: Record<LanguageType, TranslationType> = {
     totalCoursesCompleted: "completed certificates",
     coursesRecentTitle: "Recent certifications",
     viewAllCoursesBtn: "View all courses",
+    
+    // Course descriptions
+    pythonCourseDesc: "Complete course on Python for data science. Includes libraries such as NumPy, Pandas, and Matplotlib for data analysis and visualization.",
+    productCourseDesc: "Comprehensive training in digital product management. Agile methodologies, design thinking, and product strategies.",
+    statsCourseDesc: "Applied inferential statistics with Python. Sampling techniques, confidence intervals, and hypothesis testing.",
+    mlCourseDesc: "Introduction to machine learning. Fundamental concepts, supervised models, and performance evaluation.",
+    sparkCourseDesc: "Apache Spark fundamentals for big data processing. Architecture, RDDs, and basic operations.",
+    
+    // Project specific properties
+    cvOptimizerTitle: "CV Optimizer",
+    cvOptimizerDesc: "NLP-based tool that analyzes job offers and optimizes your resume to increase compatibility with the desired position.",
+    project1Desc: "Machine learning model to predict customer churn probability in a telecommunications company.",
+    project2Desc: "Advanced statistical analysis using bootstrapping techniques to improve the accuracy of regression models.",
+    project3Desc: "Solution for handling imbalanced classes in classification problems using resampling techniques and specialized algorithms.",
+    projectButton: "View on GitHub",
+    accuracyLabel: "Accuracy Increase",
+    errorLabel: "Error Reduction",
+    accuracyMetricLabel: "Accuracy",
+    recallLabel: "Recall",
+    precisionLabel: "Precision",
+    viewAllProjects: "View all projects",
     
     // Objective section
     objectiveTitle: "My Professional Goal",
