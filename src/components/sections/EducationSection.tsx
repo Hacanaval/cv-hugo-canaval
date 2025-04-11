@@ -16,7 +16,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ title, place, period }) => 
       <div className="timeline-dot flex items-center justify-center">
         <GraduationCap size={16} className="text-indigo-400" />
       </div>
-      <div className="bg-card p-5 rounded-lg shadow-md border border-gray-800 transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02]">
+      <div className="bg-card p-5 rounded-lg shadow-md border border-gray-800 transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
         <h4 className="text-lg font-bold text-indigo-400">{title}</h4>
         <div className="flex justify-between items-center mt-2">
           <p className="text-gray-300">{place}</p>

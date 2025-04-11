@@ -18,7 +18,7 @@ const ProjectsSection: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Project 1 - CV Optimizer */}
-          <Card className="glass-card border-gray-800 overflow-hidden">
+          <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
               <CardTitle>{t.cvOptimizerTitle}</CardTitle>
             </CardHeader>
@@ -57,7 +57,7 @@ const ProjectsSection: React.FC = () => {
           </Card>
 
           {/* Project 2 - Advanced Predictive */}
-          <Card className="glass-card border-gray-800 overflow-hidden">
+          <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
               <CardTitle>{t.project1Title}</CardTitle>
             </CardHeader>
@@ -97,7 +97,7 @@ const ProjectsSection: React.FC = () => {
           </Card>
 
           {/* Project 3 - Linear Regression */}
-          <Card className="glass-card border-gray-800 overflow-hidden">
+          <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
               <CardTitle>{t.project2Title}</CardTitle>
             </CardHeader>
@@ -137,7 +137,7 @@ const ProjectsSection: React.FC = () => {
           </Card>
 
           {/* Project 4 - Imbalanced Classes */}
-          <Card className="glass-card border-gray-800 overflow-hidden">
+          <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
               <CardTitle>{t.project3Title}</CardTitle>
             </CardHeader>

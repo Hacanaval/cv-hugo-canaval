@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
@@ -72,12 +71,16 @@ const SkillsSection: React.FC = () => {
     {
       icon: <BrainCircuit size={24} />,
       title: t.mlTitle,
-      skills: ["Scikit-learn", "Supervised Models", "Classification & Regression"]
+      skills: language === 'es' ? 
+        ["Scikit-learn", "Modelos supervisados", "Clasificación & Regresión"] : 
+        ["Scikit-learn", "Supervised Models", "Classification & Regression"]
     },
     {
       icon: <LineChart size={24} />,
       title: t.statsTitle,
-      skills: ["Hypothesis Testing (Scipy)", "Bootstrapping", "Cross-validation"]
+      skills: language === 'es' ? 
+        ["Pruebas de hipótesis (Scipy)", "Bootstrapping", "Validación cruzada"] : 
+        ["Hypothesis Testing (Scipy)", "Bootstrapping", "Cross-validation"]
     },
     {
       icon: <BarChart size={24} />,
@@ -92,7 +95,9 @@ const SkillsSection: React.FC = () => {
     {
       icon: <FileSpreadsheet size={24} />,
       title: t.officeTitle,
-      skills: ["Advanced Excel", "Macros (VBA)", "Dashboards"]
+      skills: language === 'es' ? 
+        ["Excel avanzado", "Macros (VBA)", "Dashboards"] : 
+        ["Advanced Excel", "Macros (VBA)", "Dashboards"]
     }
   ];
 
