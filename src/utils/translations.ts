@@ -1,4 +1,3 @@
-
 import { LanguageType } from "@/contexts/LanguageContext";
 
 type TranslationType = {
@@ -175,7 +174,7 @@ export const translations: Record<LanguageType, TranslationType> = {
     // Skills section
     skillsTitle: "Habilidades y Herramientas",
     technicalSkillsBtn: "Habilidades Técnicas",
-    professionalSkillsBtn: "Habilidades Profesionales",
+    professionalSkillsBtn: "Aptitudes",
     
     languagesTitle: "Idiomas",
     languageSkills: ["Español (Nativo)", "Inglés (C1)"],
@@ -233,15 +232,15 @@ export const translations: Record<LanguageType, TranslationType> = {
     
     // Education section
     educationTitle: "Mi Formación",
-    education1Title: "Postgrado en Analítica de Datos",
-    education1Place: "Universidad EAFIT",
-    education1Period: "2022 - 2023",
-    education2Title: "Economista",
-    education2Place: "Universidad Nacional de Colombia",
-    education2Period: "2011 - 2016",
-    education3Title: "Bootcamp Data Science",
-    education3Place: "Coderhouse",
-    education3Period: "2023",
+    education1Title: "Posgrado en Analítica de Datos Aplicada a los Negocios",
+    education1Place: "Universidad Icesi – Cali, Colombia",
+    education1Period: "2020 – 2021",
+    education2Title: "Pregrado en Economía y Negocios Internacionales",
+    education2Place: "Universidad Icesi – Cali, Colombia",
+    education2Period: "2012 – 2018",
+    education3Title: "Programa en Data Science",
+    education3Place: "TripleTen (Remoto – Internacional)",
+    education3Period: "2025",
     
     // Courses section
     coursesTitle: "Cursos y Certificaciones",
@@ -369,15 +368,15 @@ export const translations: Record<LanguageType, TranslationType> = {
     
     // Education section
     educationTitle: "My Education",
-    education1Title: "Postgraduate in Data Analytics",
-    education1Place: "EAFIT University",
-    education1Period: "2022 - 2023",
-    education2Title: "Economist",
-    education2Place: "National University of Colombia",
-    education2Period: "2011 - 2016",
-    education3Title: "Data Science Bootcamp",
-    education3Place: "Coderhouse",
-    education3Period: "2023",
+    education1Title: "Postgraduate Degree in Data Analytics for Business",
+    education1Place: "Universidad Icesi – Cali, Colombia",
+    education1Period: "2020 – 2021",
+    education2Title: "Bachelor's in Economics and International Business",
+    education2Place: "Universidad Icesi – Cali, Colombia",
+    education2Period: "2012 – 2018",
+    education3Title: "Data Science Program",
+    education3Place: "TripleTen (Remote – International)",
+    education3Period: "2025",
     
     // Courses section
     coursesTitle: "Courses and Certifications",
