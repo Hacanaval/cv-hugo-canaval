@@ -177,7 +177,7 @@ export const translations: Record<LanguageType, TranslationType> = {
     professionalSkillsBtn: "Aptitudes",
     
     languagesTitle: "Idiomas",
-    languageSkills: ["Español (Nativo)", "Inglés (C1)"],
+    languageSkills: ["Español (Nativo)", "Inglés (Alto)", "Alemán (Conversacional)"],
     
     programmingTitle: "Programación",
     
@@ -313,7 +313,7 @@ export const translations: Record<LanguageType, TranslationType> = {
     professionalSkillsBtn: "Professional Skills",
     
     languagesTitle: "Languages",
-    languageSkills: ["Spanish (Native)", "English (C1)"],
+    languageSkills: ["Spanish (Native)", "English (Proficient)", "German (Conversational)"],
     
     programmingTitle: "Programming",
     
