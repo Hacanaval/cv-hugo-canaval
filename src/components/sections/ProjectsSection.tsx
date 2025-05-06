@@ -88,7 +88,7 @@ const ProjectsSection: React.FC = () => {
               <Button 
                 variant="outline" 
                 className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
-                onClick={() => window.open("https://github.com/Hacanaval/Advanced-Predictive-Analytics-CV-Regression", "_blank")}
+                onClick={() => window.open("https://github.com/Hacanaval/ML-User-Behavior-Prediction", "_blank")}
               >
                 <Github size={16} />
                 <span>{t.projectButton}</span>
