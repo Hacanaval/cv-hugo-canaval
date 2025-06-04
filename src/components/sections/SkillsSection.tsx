@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
@@ -72,8 +73,8 @@ const SkillsSection: React.FC = () => {
       icon: <BrainCircuit size={24} />,
       title: t.mlTitle,
       skills: language === 'es' ? 
-        ["Scikit-learn", "Modelos supervisados", "Clasificación & Regresión"] : 
-        ["Scikit-learn", "Supervised Models", "Classification & Regression"]
+        ["Scikit-learn, PyTorch, Tensorflow", "Modelos Supervisados (Clasificación, Regresión)", "modelos Predictivos y Embeddings (BERT, TF-IDF)"] : 
+        ["Scikit-learn, PyTorch, Tensorflow", "Supervised Models (Classification, Regression)", "Predictive Models and Embeddings (BERT, TF-IDF)"]
     },
     {
       icon: <LineChart size={24} />,

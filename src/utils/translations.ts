@@ -1,3 +1,4 @@
+
 import { LanguageType } from "@/contexts/LanguageContext";
 
 type TranslationType = {
@@ -158,7 +159,7 @@ export const translations: Record<LanguageType, TranslationType> = {
     // Hero section
     welcomeTitle: "¡Hola! Soy Hugo Canaval.",
     welcomeSubtitle: "Del mundo comercial al mundo IT. Transformando negocios con datos, visión y tecnología.",
-    welcomeText: "Durante más de seis años me enfoqué en el mundo comercial de empresas como Nielsen, Mondelēz, Bavaria (AB InBev) y British American Tobacco.Fui reconocido por alcanzar objetivos exigentes, utilizando los datos de forma inteligente, liderando equipos, negociando con grandes clientes y construyendo estrategias comerciales exitosas.\n\nPero algo me faltaba...\n\nQuería ir más allá. No solo usar los datos, sino crear con ellos, convertirlos en inteligencia y construir soluciones.\n\nAsí que me enfoqué en aprender y decidí dedicarme tiempo completo a estudiar ciencia de datos, machine learning e inteligencia artificial. Estoy transformando mi carrera desde las raíces para seguir el camino que verdaderamente me apasiona.\n\nMi objetivo es convertirme en un Data Scientist que combine lo mejor de dos mundos:\n🚀 Capacidades técnicas robustas + 🧠 Visión estratégica de negocio",
+    welcomeText: "Durante más de seis años me enfoqué en el mundo comercial de empresas como Nielsen, Mondelēz, Bavaria (AB InBev) y British American Tobacco. Fui reconocido por alcanzar objetivos exigentes, utilizando los datos de forma inteligente, liderando equipos, negociando con grandes clientes y construyendo estrategias comerciales exitosas.\n\nPero algo me faltaba...\n\nQuería ir más allá. No solo usar los datos, sino crear con ellos, convertirlos en inteligencia y construir soluciones.\n\nAsí que me enfoqué en aprender y decidí dedicarme tiempo completo a estudiar ciencia de datos, machine learning e inteligencia artificial. Estoy transformando mi carrera desde las raíces para seguir el camino que verdaderamente me apasiona.\n\nMi objetivo es convertirme en un Data Scientist que combine lo mejor de dos mundos:\n🚀 Capacidades técnicas robustas + 🧠 Visión estratégica de negocio",
     
     // About section
     aboutTitle: "¿Quién soy?",
