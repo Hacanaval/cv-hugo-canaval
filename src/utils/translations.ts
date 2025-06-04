@@ -1,4 +1,5 @@
 
+
 import { LanguageType } from "@/contexts/LanguageContext";
 
 type TranslationType = {
@@ -132,6 +133,34 @@ type TranslationType = {
   recallLabel: string;
   precisionLabel: string;
   viewAllProjects: string;
+  
+  // New project properties
+  highlightsLabel: string;
+  githubInvitation: string;
+  
+  // SaaS Agent project
+  saasAgentTitle: string;
+  saasAgentDesc: string;
+  saasAgentHighlights: string[];
+  saasAgentStack: string[];
+  
+  // Age Classification project
+  ageClassificationTitle: string;
+  ageClassificationDesc: string;
+  ageClassificationHighlights: string[];
+  ageClassificationStack: string[];
+  
+  // Sentiment Analysis project
+  sentimentAnalysisTitle: string;
+  sentimentAnalysisDesc: string;
+  sentimentAnalysisHighlights: string[];
+  sentimentAnalysisStack: string[];
+  
+  // Taxi Demand project
+  taxiDemandTitle: string;
+  taxiDemandDesc: string;
+  taxiDemandHighlights: string[];
+  taxiDemandStack: string[];
   
   // Objective section
   objectiveTitle: string;
@@ -271,6 +300,50 @@ export const translations: Record<LanguageType, TranslationType> = {
     precisionLabel: "Precisión",
     viewAllProjects: "Ver todos los proyectos",
     
+    // New project properties
+    highlightsLabel: "Logros",
+    githubInvitation: "Te invito a explorar mi GitHub, donde podrás encontrar proyectos prácticos en Machine Learning, NLP aplicado, análisis predictivo, manejo avanzado de clases desbalanceadas y desarrollos con tecnologías como Python, FastAPI y Scikit-learn.",
+    
+    // SaaS Agent project
+    saasAgentTitle: "Agente Vendedor SaaS",
+    saasAgentDesc: "Chatbot modular que automatiza ventas para PYMES vía WhatsApp y Telegram. Integra arquitectura RAG (Retrieval-Augmented Generation) con LLMs y memoria conversacional.",
+    saasAgentHighlights: [
+      "Multiempresa y desplegado en producción.",
+      "Registra ventas, busca productos y responde dudas en lenguaje natural.",
+      "Vector search con FAISS y persistencia de contexto.",
+      "Con esto es usuario optimiza su canal de comunicación generando mas ventas a un menor costo"
+    ],
+    saasAgentStack: ["Python", "FastAPI", "PostgreSQL", "FAISS", "JWT", "OpenAI API"],
+    
+    // Age Classification project
+    ageClassificationTitle: "Clasificación de Edad con Visión por Computadora",
+    ageClassificationDesc: "Modelo basado en CNN (ResNet50) para detectar si una persona es mayor o menor de edad usando imágenes faciales. Aplicable a controles automatizados de venta de productos restringidos.",
+    ageClassificationHighlights: [
+      "Clasificación binaria robusta (<18 vs. ≥18) con precisión > 91%",
+      "Aumento de datos, análisis exploratorio y transferencia de aprendizaje.",
+      "Diseñado para tiendas de venta al público para detectar menos de edad para venta de artículos como alcohol y tabaco"
+    ],
+    ageClassificationStack: ["Python", "TensorFlow", "Keras", "ResNet50", "Matplotlib", "PIL"],
+    
+    // Sentiment Analysis project
+    sentimentAnalysisTitle: "Comparación de Modelos de Sentimiento con NLP",
+    sentimentAnalysisDesc: "Clasificación de sentimiento en reseñas de películas. Se comparan pipelines con distintos preprocesadores (NLTK vs. spaCy) y clasificadores (Logistic Regression, LGBM).",
+    sentimentAnalysisHighlights: [
+      "Todos los modelos superaron F1 > 0.85.",
+      "Evaluación multiclase con ROC AUC y Precisión Promedio."
+    ],
+    sentimentAnalysisStack: ["Python", "NLP", "NLTK", "spaCy", "TF-IDF", "LGBMClassifier", "Scikit-learn"],
+    
+    // Taxi Demand project
+    taxiDemandTitle: "Predicción de Demanda de Taxis por Hora",
+    taxiDemandDesc: "Predicción de demanda horaria de taxis usando modelos supervisados y de series de tiempo. Proyecto orientado a optimizar disponibilidad de conductores.",
+    taxiDemandHighlights: [
+      "Ingeniería temporal, modelos SARIMA, XGBoost y Prophet.",
+      "RMSE: 44.49",
+      "Permite anticipar picos y planificar turnos."
+    ],
+    taxiDemandStack: ["Python", "Pandas", "SARIMA", "XGBoost", "Prophet", "Scikit-learn"],
+    
     // Objective section
     objectiveTitle: "Mi Objetivo Profesional",
     objectiveHtml: "Estoy en una misión clara:<br><br>🚀 Convertirme en un Data Scientist remoto para empresas internacionales<br>📈 Aportar valor real mediante soluciones basadas en datos<br>🧑‍💼 Crecer profesionalmente en Machine Learning, Inteligencia Artificial y proyectos de impacto<br><br>Mi propósito no es solo cambiar de industria, sino transformar mi carrera desde la experiencia comercial hacia el mundo IT, con una ventaja competitiva única:<br><br>💡 Conocimiento profundo del negocio<br>📊 Entendimiento del consumidor<br>🧰 Dominio de datos<br><br>Trabajo cada día por ese objetivo: estudiando con disciplina, desarrollando proyectos propios y preparándome para aportar valor en equipos globales."
@@ -406,6 +479,50 @@ export const translations: Record<LanguageType, TranslationType> = {
     recallLabel: "Recall",
     precisionLabel: "Precision",
     viewAllProjects: "View all projects",
+    
+    // New project properties
+    highlightsLabel: "Highlights",
+    githubInvitation: "I invite you to explore my GitHub, where you'll find practical projects in Machine Learning, applied NLP, predictive modeling, imbalanced class handling, and real-world development using technologies like Python, FastAPI, and Scikit-learn.",
+    
+    // SaaS Agent project
+    saasAgentTitle: "SaaS Sales Agent",
+    saasAgentDesc: "Modular chatbot that automates sales for SMEs via WhatsApp and Telegram. Integrates RAG (Retrieval-Augmented Generation) architecture with LLMs and conversational memory.",
+    saasAgentHighlights: [
+      "Multi-tenant and deployed in production.",
+      "Handles product queries, registers sales, and responds in natural language.",
+      "Uses FAISS for vector search and persistent memory.",
+      "Helps businesses boost sales while reducing communication costs."
+    ],
+    saasAgentStack: ["Python", "FastAPI", "PostgreSQL", "FAISS", "JWT", "OpenAI API"],
+    
+    // Age Classification project
+    ageClassificationTitle: "Image-Based Age Classification with Computer Vision",
+    ageClassificationDesc: "CNN-based model (ResNet50) to determine whether a person is under or over 18 based on facial images. Designed for use in automated age verification for restricted product sales.",
+    ageClassificationHighlights: [
+      "Robust binary classification (<18 vs. ≥18) with accuracy > 91%.",
+      "Data augmentation, EDA, and transfer learning implemented.",
+      "Designed for retail stores to detect underage customers for regulated products like alcohol or tobacco."
+    ],
+    ageClassificationStack: ["Python", "TensorFlow", "Keras", "ResNet50", "Matplotlib", "PIL"],
+    
+    // Sentiment Analysis project
+    sentimentAnalysisTitle: "Sentiment Model Comparison with NLP",
+    sentimentAnalysisDesc: "Sentiment classification for movie reviews, comparing NLP pipelines using different preprocessing (NLTK vs. spaCy) and classifiers (Logistic Regression, LGBM).",
+    sentimentAnalysisHighlights: [
+      "All models achieved F1 scores above 0.85.",
+      "Multiclass evaluation with ROC AUC and Average Precision Score."
+    ],
+    sentimentAnalysisStack: ["Python", "NLP", "NLTK", "spaCy", "TF-IDF", "LGBMClassifier", "Scikit-learn"],
+    
+    // Taxi Demand project
+    taxiDemandTitle: "Hourly Taxi Demand Forecasting",
+    taxiDemandDesc: "Hourly ride demand forecasting using both time series and supervised learning models. Aimed at improving driver availability based on demand peaks.",
+    taxiDemandHighlights: [
+      "Feature engineering, SARIMA, XGBoost, and Prophet models.",
+      "RMSE: 44.49",
+      "Enables proactive shift planning and peak demand prediction."
+    ],
+    taxiDemandStack: ["Python", "Pandas", "SARIMA", "XGBoost", "Prophet", "Scikit-learn"],
     
     // Objective section
     objectiveTitle: "My Professional Goal",

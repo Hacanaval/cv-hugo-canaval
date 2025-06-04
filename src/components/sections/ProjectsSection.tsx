@@ -17,30 +17,32 @@ const ProjectsSection: React.FC = () => {
         <h2 className="section-heading text-center mb-10">{t.projectsTitle}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Project 1 - CV Optimizer */}
+          {/* Project 1 - SaaS Sales Agent */}
           <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
-              <CardTitle>{t.cvOptimizerTitle}</CardTitle>
+              <CardTitle>{t.saasAgentTitle}</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
-              <p className="text-gray-300 mb-4">{t.cvOptimizerDesc}</p>
+              <p className="text-gray-300 mb-4">{t.saasAgentDesc}</p>
+              
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-indigo-400 mb-2">{t.highlightsLabel}:</h4>
+                <ul className="text-sm text-gray-300 space-y-1">
+                  {t.saasAgentHighlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-indigo-400 mr-2">•</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               
               <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Python
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  NLP
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  GPT-4
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Web Scraping
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Flask
-                </Badge>
+                {t.saasAgentStack.map((tech, index) => (
+                  <Badge key={index} variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </CardContent>
             
@@ -48,7 +50,7 @@ const ProjectsSection: React.FC = () => {
               <Button 
                 variant="outline" 
                 className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
-                onClick={() => window.open("https://github.com/Hacanaval/cv-optimizer", "_blank")}
+                onClick={() => window.open("https://github.com/Hacanaval/agente_vendedor_backend", "_blank")}
               >
                 <Github size={16} />
                 <span>{t.projectButton}</span>
@@ -56,31 +58,32 @@ const ProjectsSection: React.FC = () => {
             </CardFooter>
           </Card>
 
-          {/* Project 2 - Advanced Predictive */}
+          {/* Project 2 - Age Classification */}
           <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
-              <CardTitle>{t.project1Title}</CardTitle>
+              <CardTitle>{t.ageClassificationTitle}</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
-              <p className="text-gray-300 mb-4">{t.project1Desc}</p>
+              <p className="text-gray-300 mb-4">{t.ageClassificationDesc}</p>
               
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Python
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Scikit-learn
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Cross-Validation
-                </Badge>
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-indigo-400 mb-2">{t.highlightsLabel}:</h4>
+                <ul className="text-sm text-gray-300 space-y-1">
+                  {t.ageClassificationHighlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-indigo-400 mr-2">•</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
               </div>
               
-              <div className="flex gap-3 mb-4">
-                <div className="flex flex-col items-center bg-gray-900/50 rounded-lg p-2 border border-gray-800">
-                  <span className="text-sm text-gray-400">{t.accuracyLabel}</span>
-                  <span className="font-bold text-indigo-400">+15%</span>
-                </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {t.ageClassificationStack.map((tech, index) => (
+                  <Badge key={index} variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </CardContent>
             
@@ -88,7 +91,7 @@ const ProjectsSection: React.FC = () => {
               <Button 
                 variant="outline" 
                 className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
-                onClick={() => window.open("https://github.com/Hacanaval/ML-User-Behavior-Prediction", "_blank")}
+                onClick={() => window.open("https://github.com/Hacanaval/cnn-image-based-age-verification", "_blank")}
               >
                 <Github size={16} />
                 <span>{t.projectButton}</span>
@@ -96,31 +99,32 @@ const ProjectsSection: React.FC = () => {
             </CardFooter>
           </Card>
 
-          {/* Project 3 - Linear Regression */}
+          {/* Project 3 - Sentiment Analysis */}
           <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
-              <CardTitle>{t.project2Title}</CardTitle>
+              <CardTitle>{t.sentimentAnalysisTitle}</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
-              <p className="text-gray-300 mb-4">{t.project2Desc}</p>
+              <p className="text-gray-300 mb-4">{t.sentimentAnalysisDesc}</p>
               
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Python
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Regression
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Bootstrapping
-                </Badge>
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-indigo-400 mb-2">{t.highlightsLabel}:</h4>
+                <ul className="text-sm text-gray-300 space-y-1">
+                  {t.sentimentAnalysisHighlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-indigo-400 mr-2">•</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
               </div>
               
-              <div className="flex gap-3 mb-4">
-                <div className="flex flex-col items-center bg-gray-900/50 rounded-lg p-2 border border-gray-800">
-                  <span className="text-sm text-gray-400">{t.errorLabel}</span>
-                  <span className="font-bold text-indigo-400">-10%</span>
-                </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {t.sentimentAnalysisStack.map((tech, index) => (
+                  <Badge key={index} variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </CardContent>
             
@@ -128,7 +132,7 @@ const ProjectsSection: React.FC = () => {
               <Button 
                 variant="outline" 
                 className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
-                onClick={() => window.open("https://github.com/Hacanaval/Linear_Regression_and_Bootstrapping_Analysis", "_blank")}
+                onClick={() => window.open("https://github.com/Hacanaval/nlp-sentiment-models-comparison", "_blank")}
               >
                 <Github size={16} />
                 <span>{t.projectButton}</span>
@@ -136,43 +140,32 @@ const ProjectsSection: React.FC = () => {
             </CardFooter>
           </Card>
 
-          {/* Project 4 - Imbalanced Classes */}
+          {/* Project 4 - Taxi Demand Forecasting */}
           <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
             <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
-              <CardTitle>{t.project3Title}</CardTitle>
+              <CardTitle>{t.taxiDemandTitle}</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
-              <p className="text-gray-300 mb-4">{t.project3Desc}</p>
+              <p className="text-gray-300 mb-4">{t.taxiDemandDesc}</p>
               
-              <div className="flex flex-wrap gap-2 mb-4">
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Python
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Random Forest
-                </Badge>
-                <Badge variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
-                  Classification
-                </Badge>
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-indigo-400 mb-2">{t.highlightsLabel}:</h4>
+                <ul className="text-sm text-gray-300 space-y-1">
+                  {t.taxiDemandHighlights.map((highlight, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="text-indigo-400 mr-2">•</span>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
               </div>
               
-              <div className="flex flex-wrap gap-3 mb-4">
-                <div className="flex flex-col items-center bg-gray-900/50 rounded-lg p-2 border border-gray-800">
-                  <span className="text-sm text-gray-400">F1-Score</span>
-                  <span className="font-bold text-indigo-400">0.85</span>
-                </div>
-                <div className="flex flex-col items-center bg-gray-900/50 rounded-lg p-2 border border-gray-800">
-                  <span className="text-sm text-gray-400">{t.accuracyMetricLabel}</span>
-                  <span className="font-bold text-indigo-400">86%</span>
-                </div>
-                <div className="flex flex-col items-center bg-gray-900/50 rounded-lg p-2 border border-gray-800">
-                  <span className="text-sm text-gray-400">{t.recallLabel}</span>
-                  <span className="font-bold text-indigo-400">82%</span>
-                </div>
-                <div className="flex flex-col items-center bg-gray-900/50 rounded-lg p-2 border border-gray-800">
-                  <span className="text-sm text-gray-400">{t.precisionLabel}</span>
-                  <span className="font-bold text-indigo-400">88%</span>
-                </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {t.taxiDemandStack.map((tech, index) => (
+                  <Badge key={index} variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
+                    {tech}
+                  </Badge>
+                ))}
               </div>
             </CardContent>
             
@@ -180,7 +173,7 @@ const ProjectsSection: React.FC = () => {
               <Button 
                 variant="outline" 
                 className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
-                onClick={() => window.open("https://github.com/Hacanaval/ML-Imbalanced-Class-Handling", "_blank")}
+                onClick={() => window.open("https://github.com/Hacanaval/ride-demand-timeseries", "_blank")}
               >
                 <Github size={16} />
                 <span>{t.projectButton}</span>
@@ -189,7 +182,14 @@ const ProjectsSection: React.FC = () => {
           </Card>
         </div>
 
-        <div className="flex justify-center mt-12">
+        {/* Call to action text before the button */}
+        <div className="text-center mt-12 mb-6">
+          <p className="text-gray-300 max-w-4xl mx-auto text-lg">
+            {t.githubInvitation}
+          </p>
+        </div>
+
+        <div className="flex justify-center">
           <Button 
             variant="outline" 
             size="lg"
