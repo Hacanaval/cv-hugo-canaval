@@ -73,8 +73,8 @@ const SkillsSection: React.FC = () => {
       icon: <BrainCircuit size={24} />,
       title: t.mlTitle,
       skills: language === 'es' ? 
-        ["Scikit-learn, PyTorch, Tensorflow", "Modelos Supervisados (Clasificación, Regresión)", "modelos Predictivos y Embeddings (BERT, TF-IDF)"] : 
-        ["Scikit-learn, PyTorch, Tensorflow", "Supervised Models (Classification, Regression)", "Predictive Models and Embeddings (BERT, TF-IDF)"]
+        ["Scikit-learn, PyTorch, Tensorflow", "Modelos Supervisados (Clasificación, Regresión)", "Modelos Predictivos y Embeddings"] : 
+        ["Scikit-learn, PyTorch, Tensorflow", "Supervised Models (Classification, Regression)", "Predictive Models and Embeddings"]
     },
     {
       icon: <LineChart size={24} />,
