@@ -18,7 +18,7 @@ const AboutSection: React.FC = () => {
             <div className="w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1">
               <Avatar className="w-full h-full">
                 <AvatarImage 
-                  src="/lovable-uploads/e9032196-55dd-45b5-9dac-702cc42c3896.png"
+                  src="/lovable-uploads/hugo-profile-2024.png"
                   alt="Hugo Canaval" 
                   className="w-full h-full object-cover"
                 />
