@@ -54,17 +54,17 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 py-24 relative z-10 text-left md:text-center max-w-5xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white animate-fade-in">
+      <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-24 relative z-10 text-left md:text-center max-w-5xl">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-4 text-white animate-fade-in leading-tight">
           {t.welcomeTitle}
         </h1>
         
-        <h2 className="text-xl md:text-2xl text-indigo-400 mb-8 animate-fade-in animate-delay-100">
+        <h2 className="text-lg sm:text-xl md:text-2xl text-indigo-400 mb-6 sm:mb-8 animate-fade-in animate-delay-100">
           {t.welcomeSubtitle}
         </h2>
         
-        {/* Main Text - Original */}
-        <div className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in animate-delay-200 space-y-6 leading-relaxed">
+        {/* Main Text - Mobile optimized */}
+        <div className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-12 animate-fade-in animate-delay-200 space-y-4 sm:space-y-6 leading-relaxed">
           {t.welcomeText.split('\n\n').map((paragraph, index) => {
             // Handle the goal paragraph specially
             if (paragraph.includes("Mi objetivo")) {
@@ -96,13 +96,13 @@ const HeroSection: React.FC = () => {
           })}
         </div>
 
-        {/* CTAs - All with same style and loading states */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animate-delay-300">
+        {/* CTAs - Mobile optimized */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16 animate-fade-in animate-delay-300 w-full max-w-2xl mx-auto px-4">
           <Button 
             variant="outline"
             size="lg"
             disabled={loadingStates.projects}
-            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden"
+            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation"
             onClick={() => handleCTAClick('projects', () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }))}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
@@ -118,7 +118,7 @@ const HeroSection: React.FC = () => {
             variant="outline"
             size="lg"
             disabled={loadingStates.cv}
-            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden"
+            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation"
             onClick={() => handleCTAClick('cv', () => window.open('https://drive.google.com/drive/u/3/folders/12Qbaw-A-fZOzItcqYn17MQ4J7KdkGrQ7', '_blank'))}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
@@ -134,7 +134,7 @@ const HeroSection: React.FC = () => {
             variant="outline"
             size="lg"
             disabled={loadingStates.contact}
-            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden"
+            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation"
             onClick={() => handleCTAClick('contact', () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }))}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>

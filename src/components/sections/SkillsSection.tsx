@@ -32,18 +32,18 @@ interface SkillCardProps {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
-  <div className="bg-card rounded-xl shadow-md p-5 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card">
-    <div className="flex items-center mb-4">
-      <div className="mr-3 text-indigo-400 skill-icon transition-all duration-300">
+  <div className="bg-card rounded-xl shadow-md p-4 sm:p-5 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card touch-manipulation">
+    <div className="flex items-center mb-3 sm:mb-4">
+      <div className="mr-2 sm:mr-3 text-indigo-400 skill-icon transition-all duration-300">
         {icon}
       </div>
-      <h4 className="font-semibold text-lg text-gray-200">{title}</h4>
+      <h4 className="font-semibold text-base sm:text-lg text-gray-200">{title}</h4>
     </div>
-    <ul className="space-y-2">
+    <ul className="space-y-1.5 sm:space-y-2">
       {skills.map((skill, index) => (
-        <li key={index} className="flex items-center">
-          <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-2"></span>
-          <span className="text-gray-300">{skill}</span>
+        <li key={index} className="flex items-start">
+          <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-2 mt-1.5 sm:mt-2 flex-shrink-0"></span>
+          <span className="text-gray-300 text-sm sm:text-base leading-relaxed">{skill}</span>
         </li>
       ))}
     </ul>
@@ -169,24 +169,24 @@ const SkillsSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <h2 className="section-heading text-center mb-6">{t.skillsTitle}</h2>
         
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-4">
           <Button 
             variant={!showTechnical ? "default" : "outline"} 
             onClick={() => setShowTechnical(false)}
-            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+            className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} w-full sm:min-w-[160px] sm:w-auto py-3 touch-manipulation`}
           >
             {t.professionalSkillsBtn}
           </Button>
           <Button 
             variant={showTechnical ? "default" : "outline"} 
             onClick={() => setShowTechnical(true)}
-            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} w-full sm:min-w-[160px] sm:w-auto py-3 touch-manipulation`}
           >
             {t.technicalSkillsBtn}
           </Button>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto px-4">
           {displaySkills.map((category, index) => (
             <SkillCard 
               key={index}
