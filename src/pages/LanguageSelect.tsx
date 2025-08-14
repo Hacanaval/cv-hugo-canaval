@@ -40,7 +40,7 @@ const LanguageSelect: React.FC = () => {
           Hugo Canaval
         </h1>
         <p className="text-xl md:text-2xl font-light mb-14 text-gray-300">
-          {isHoveringSpanish ? "Científico de Datos" : "Data Scientist"}
+          {isHoveringSpanish ? "Científico de Datos | Product Manager" : "Data Scientist | Product Manager"}
         </p>
         <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8 items-center justify-center">
           <Button
