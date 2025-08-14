@@ -11,15 +11,15 @@ const ProjectsSection: React.FC = () => {
   const t = translations[language];
   
   return (
-    <section id="projects" className="py-24 dark-section">
+    <section id="projects" className="section-spacing dark-section">
       <div className="container mx-auto px-6">
-        <h2 className="section-heading text-center mb-10">{t.projectsTitle}</h2>
+        <h2 className="section-heading text-center">{t.projectsTitle}</h2>
         
         <ProjectsList />
 
         {/* Call to action text before the button */}
-        <div className="text-center mt-12 mb-6">
-          <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+        <div className="text-center element-spacing">
+          <p className="text-body text-medium-contrast max-w-4xl mx-auto">
             {t.githubInvitation}
           </p>
         </div>

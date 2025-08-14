@@ -23,10 +23,10 @@ const AboutSection: React.FC = () => {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 dark-section reveal-section">
+    <section id="about" className="section-spacing dark-section reveal-section">
       <div className="container mx-auto px-4 sm:px-6">
         <h2 className="section-heading text-center">{t.aboutTitle}</h2>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 max-w-6xl mx-auto element-spacing">
           <div className="md:w-1/3 flex justify-center">
             <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1">
               <Avatar className="w-full h-full">
@@ -41,8 +41,8 @@ const AboutSection: React.FC = () => {
           </div>
           <div className="md:w-2/3 w-full">
             <Card className="dark-card border-gray-800">
-              <CardContent className="p-4 sm:p-6 md:p-8">
-                <div className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-300 space-y-4 sm:space-y-6 max-w-3xl">
+              <CardContent className="p-6 sm:p-8 md:p-10">
+                <div className="text-body text-medium-contrast content-spacing max-w-4xl">
                   <div dangerouslySetInnerHTML={{ __html: t.aboutHtml }} />
                 </div>
               </CardContent>
@@ -50,9 +50,9 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-12 sm:mt-20">
-          <h3 className="section-subheading text-center mb-6 sm:mb-10">{t.differenceTitle}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="mt-16 sm:mt-24">
+          <h3 className="section-subheading text-center">{t.differenceTitle}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
             {/* Add 6 items instead of 5 */}
             {[
               t.differenceItem1,
@@ -74,7 +74,7 @@ const AboutSection: React.FC = () => {
                       {getDifferenceIcon(index)}
                     </div>
                   </div>
-                  <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{item}</p>
+                  <p className="text-body-small text-medium-contrast">{item}</p>
                 </CardContent>
               </Card>
             ))}

@@ -54,17 +54,17 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 py-16 sm:py-24 relative z-10 text-left md:text-center max-w-5xl">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-3 sm:mb-4 text-white animate-fade-in leading-tight">
+      <div className="container mx-auto px-4 sm:px-6 py-20 sm:py-28 lg:py-32 relative z-10 text-left md:text-center max-w-6xl">
+        <h1 className="text-hierarchy-1 text-high-contrast mb-4 sm:mb-6 animate-fade-in">
           {t.welcomeTitle}
         </h1>
         
-        <h2 className="text-lg sm:text-xl md:text-2xl text-indigo-400 mb-6 sm:mb-8 animate-fade-in animate-delay-100">
+        <h2 className="text-hierarchy-3 text-indigo-400 mb-8 sm:mb-12 animate-fade-in animate-delay-100">
           {t.welcomeSubtitle}
         </h2>
         
-        {/* Main Text - Mobile optimized */}
-        <div className="text-sm sm:text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-12 animate-fade-in animate-delay-200 space-y-4 sm:space-y-6 leading-relaxed">
+        {/* Main Text - Enhanced typography */}
+        <div className="text-body max-w-4xl mx-auto mb-12 sm:mb-16 animate-fade-in animate-delay-200 content-spacing text-medium-contrast">
           {t.welcomeText.split('\n\n').map((paragraph, index) => {
             // Handle the goal paragraph specially
             if (paragraph.includes("Mi objetivo")) {

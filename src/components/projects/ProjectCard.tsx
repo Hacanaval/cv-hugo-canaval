@@ -48,14 +48,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="flex-shrink-0">
             {getProjectIcon(title)}
           </div>
-          <CardTitle className="group-hover:text-indigo-100 transition-colors duration-300 text-lg sm:text-xl">{title}</CardTitle>
+          <CardTitle className="group-hover:text-indigo-100 transition-colors duration-300 text-hierarchy-3 text-high-contrast">{title}</CardTitle>
         </div>
       </CardHeader>
       <CardContent className="pt-4 sm:pt-6 px-4 sm:px-6">
-        <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base leading-relaxed">{description}</p>
+        <p className="text-medium-contrast mb-4 group-hover:text-gray-200 transition-colors duration-300 text-body-small">{description}</p>
         
         <div className="mb-4">
-          <h4 className="text-sm font-semibold text-indigo-400 mb-2 group-hover:text-indigo-300 transition-colors duration-300">{highlightsLabel}:</h4>
+          <h4 className="text-sm font-semibold text-indigo-400 mb-3 group-hover:text-indigo-300 transition-colors duration-300">{highlightsLabel}:</h4>
           <ul className="text-xs sm:text-sm text-gray-300 space-y-2">
             {highlights.map((highlight, index) => (
               <li 
@@ -64,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
                 <span className="text-indigo-400 mr-2 group-hover:text-indigo-300 transition-colors duration-300 mt-1">•</span>
-                <span className="group-hover:text-gray-200 transition-colors duration-300 leading-relaxed">{highlight}</span>
+                <span className="group-hover:text-gray-200 transition-colors duration-300 text-body-small text-medium-contrast">{highlight}</span>
               </li>
             ))}
           </ul>

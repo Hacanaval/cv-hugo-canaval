@@ -50,18 +50,18 @@ interface SkillCardProps {
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
-  <div className="bg-card rounded-xl shadow-md p-4 sm:p-5 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card touch-manipulation">
-    <div className="flex items-center mb-3 sm:mb-4">
-      <div className="mr-2 sm:mr-3 text-indigo-400 skill-icon transition-all duration-300">
+  <div className="bg-card rounded-xl shadow-md p-5 sm:p-6 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card touch-manipulation">
+    <div className="flex items-center mb-4 sm:mb-5">
+      <div className="mr-3 sm:mr-4 text-indigo-400 skill-icon transition-all duration-300">
         {icon}
       </div>
-      <h4 className="font-semibold text-base sm:text-lg text-gray-200">{title}</h4>
+      <h4 className="text-hierarchy-3 text-high-contrast">{title}</h4>
     </div>
-    <ul className="space-y-1.5 sm:space-y-2">
+    <ul className="space-y-2 sm:space-y-3">
       {skills.map((skill, index) => (
         <li key={index} className="flex items-start">
-          <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-2 mt-1.5 sm:mt-2 flex-shrink-0"></span>
-          <span className="text-gray-300 text-sm sm:text-base leading-relaxed">{skill}</span>
+          <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+          <span className="text-body-small text-medium-contrast">{skill}</span>
         </li>
       ))}
     </ul>
@@ -183,9 +183,9 @@ const SkillsSection: React.FC = () => {
   };
 
   return (
-    <section id="skills" ref={sectionRef} className="py-24 dark-section-alt reveal-section">
+    <section id="skills" ref={sectionRef} className="section-spacing-large dark-section-alt reveal-section">
       <div className="container mx-auto px-6">
-        <h2 className="section-heading text-center mb-6">{t.skillsTitle}</h2>
+        <h2 className="section-heading text-center">{t.skillsTitle}</h2>
         
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 px-4">
           <Button 
@@ -204,7 +204,7 @@ const SkillsSection: React.FC = () => {
           </Button>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto px-4">
           {displaySkills.map((category, index) => (
             <SkillCard 
               key={index}
