@@ -25,42 +25,41 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   projectButton,
 }) => {
   return (
-    <Card className="dark-card border-gray-800 transition-all duration-300 hover:border-indigo-600 hover:shadow-md">
-      <CardHeader className="pb-4">
-        <CardTitle className="text-lg text-gray-200">{title}</CardTitle>
+    <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-indigo-500 hover:scale-[1.02] hover:bg-gray-900/60">
+      <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white">
+        <CardTitle>{title}</CardTitle>
       </CardHeader>
-      <CardContent className="pt-0">
-        <p className="text-gray-400 text-sm mb-4 leading-relaxed">{description}</p>
+      <CardContent className="pt-6">
+        <p className="text-gray-300 mb-4">{description}</p>
         
         <div className="mb-4">
-          <h4 className="text-xs font-medium text-gray-500 mb-2 uppercase tracking-wide">{highlightsLabel}:</h4>
-          <ul className="text-xs text-gray-400 space-y-1">
+          <h4 className="text-sm font-semibold text-indigo-400 mb-2">{highlightsLabel}:</h4>
+          <ul className="text-sm text-gray-300 space-y-1">
             {highlights.map((highlight, index) => (
               <li key={index} className="flex items-start">
-                <span className="text-indigo-500 mr-2 text-xs">•</span>
+                <span className="text-indigo-400 mr-2">•</span>
                 {highlight}
               </li>
             ))}
           </ul>
         </div>
         
-        <div className="flex flex-wrap gap-1 mb-4">
+        <div className="flex flex-wrap gap-2 mb-4">
           {stack.map((tech, index) => (
-            <Badge key={index} variant="outline" className="bg-gray-800/50 text-gray-400 border-gray-700 text-xs py-0">
+            <Badge key={index} variant="outline" className="bg-indigo-900/30 text-indigo-300 border-indigo-700">
               {tech}
             </Badge>
           ))}
         </div>
       </CardContent>
       
-      <CardFooter className="pt-0">
+      <CardFooter>
         <Button 
           variant="outline" 
-          size="sm"
-          className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-gray-800 text-gray-400 hover:text-gray-300 text-xs"
+          className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
           onClick={() => window.open(githubUrl, "_blank")}
         >
-          <Github size={14} />
+          <Github size={16} />
           <span>{projectButton}</span>
         </Button>
       </CardFooter>
