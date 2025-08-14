@@ -18,7 +18,10 @@ import {
   Brain,
   Target,
   Shuffle,
-  ArrowUp
+  ArrowUp,
+  Search,
+  Map,
+  MessageSquare
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -50,7 +53,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
 const SkillsSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
-  const [showTechnical, setShowTechnical] = useState(true);
+  const [showTechnical, setShowTechnical] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   
   const technicalSkills = [
@@ -104,6 +107,21 @@ const SkillsSection: React.FC = () => {
 
   const professionalSkills = [
     {
+      icon: <Search size={24} />,
+      title: t.productDiscoveryTitle,
+      skills: [t.productDiscoverySkill]
+    },
+    {
+      icon: <Map size={24} />,
+      title: t.roadmapTitle,
+      skills: [t.roadmapSkill]
+    },
+    {
+      icon: <MessageSquare size={24} />,
+      title: t.stakeholderTitle,
+      skills: [t.stakeholderSkill]
+    },
+    {
       icon: <Presentation size={24} />,
       title: t.communicationTitle,
       skills: [t.communicationSkill]
@@ -153,18 +171,18 @@ const SkillsSection: React.FC = () => {
         
         <div className="flex justify-center gap-4 mb-12">
           <Button 
-            variant={showTechnical ? "default" : "outline"} 
-            onClick={() => setShowTechnical(true)}
-            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
-          >
-            {t.technicalSkillsBtn}
-          </Button>
-          <Button 
             variant={!showTechnical ? "default" : "outline"} 
             onClick={() => setShowTechnical(false)}
             className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
           >
             {t.professionalSkillsBtn}
+          </Button>
+          <Button 
+            variant={showTechnical ? "default" : "outline"} 
+            onClick={() => setShowTechnical(true)}
+            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+          >
+            {t.technicalSkillsBtn}
           </Button>
         </div>
         
@@ -181,18 +199,18 @@ const SkillsSection: React.FC = () => {
         
         <div className="flex justify-center gap-4 mt-16">
           <Button 
-            variant={showTechnical ? "default" : "outline"} 
-            onClick={() => handleSwitchSkills(true)}
-            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
-          >
-            {t.technicalSkillsBtn}
-          </Button>
-          <Button 
             variant={!showTechnical ? "default" : "outline"} 
             onClick={() => handleSwitchSkills(false)}
             className={`${showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
           >
             {t.professionalSkillsBtn}
+          </Button>
+          <Button 
+            variant={showTechnical ? "default" : "outline"} 
+            onClick={() => handleSwitchSkills(true)}
+            className={`${!showTechnical ? "border-gray-700 bg-gray-900/30 text-gray-300" : ""} min-w-[160px]`}
+          >
+            {t.technicalSkillsBtn}
           </Button>
         </div>
       </div>

@@ -26,6 +26,12 @@ export const skillsTranslations: Record<LanguageType, {
   adaptabilitySkill: string;
   resultsTitle: string;
   resultsSkill: string;
+  productDiscoveryTitle: string;
+  productDiscoverySkill: string;
+  roadmapTitle: string;
+  roadmapSkill: string;
+  stakeholderTitle: string;
+  stakeholderSkill: string;
 }> = {
   es: {
     skillsTitle: "Habilidades y Herramientas",
@@ -52,6 +58,12 @@ export const skillsTranslations: Record<LanguageType, {
     adaptabilitySkill: "Capacidad para aprender rápidamente, adaptarme a nuevas tecnologías y prosperar en entornos cambiantes.",
     resultsTitle: "Orientación a Resultados",
     resultsSkill: "Enfoque claro en generar valor medible. Experiencia comprobada en la consecución de objetivos comerciales y de negocio a través de soluciones basadas en datos.",
+    productDiscoveryTitle: "Product Discovery",
+    productDiscoverySkill: "Identificación y validación de necesidades del usuario. Definición de problemas, hipótesis y métricas de producto para guiar el desarrollo de soluciones.",
+    roadmapTitle: "Roadmaps y Priorización",
+    roadmapSkill: "Creación de roadmaps de producto basados en impacto de negocio. Priorización de features usando frameworks como RICE y análisis costo-beneficio.",
+    stakeholderTitle: "Stakeholder Management",
+    stakeholderSkill: "Gestión de expectativas y comunicación efectiva con equipos técnicos, comerciales y directivos. Traducción entre lenguaje de negocio y técnico.",
   },
   en: {
     skillsTitle: "Skills and Tools",
@@ -78,5 +90,11 @@ export const skillsTranslations: Record<LanguageType, {
     adaptabilitySkill: "Capacity to learn quickly, adapt to new technologies, and thrive in changing environments.",
     resultsTitle: "Results-Oriented",
     resultsSkill: "Clear focus on generating measurable value. Proven experience in achieving business and commercial objectives through data-driven solutions.",
+    productDiscoveryTitle: "Product Discovery",
+    productDiscoverySkill: "User needs identification and validation. Problem definition, hypothesis formulation, and product metrics to guide solution development.",
+    roadmapTitle: "Roadmaps & Prioritization",
+    roadmapSkill: "Product roadmap creation based on business impact. Feature prioritization using frameworks like RICE and cost-benefit analysis.",
+    stakeholderTitle: "Stakeholder Management",
+    stakeholderSkill: "Expectation management and effective communication with technical, commercial, and executive teams. Translation between business and technical language.",
   }
 };
