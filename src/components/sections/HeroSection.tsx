@@ -45,13 +45,13 @@ const HeroSection: React.FC = () => {
           {t.welcomeSubtitle}
         </h2>
         
-        <div className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 animate-fade-in animate-delay-200 space-y-4">
+        <div className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in animate-delay-200 space-y-6 leading-relaxed">
           {t.welcomeText.split('\n\n').map((paragraph, index) => {
             // Handle the goal paragraph specially
             if (paragraph.includes("Mi objetivo")) {
               const parts = paragraph.split("Mi objetivo");
               return (
-                <p key={index}>
+                <p key={index} className="leading-relaxed">
                   {parts[0]}
                   <span className="text-indigo-400 font-semibold">
                     Mi objetivo
@@ -64,7 +64,7 @@ const HeroSection: React.FC = () => {
             if (paragraph.includes("My goal")) {
               const parts = paragraph.split("My goal");
               return (
-                <p key={index}>
+                <p key={index} className="leading-relaxed">
                   {parts[0]}
                   <span className="text-indigo-400 font-semibold">
                     My goal
@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
                 </p>
               );
             }
-            return <p key={index}>{paragraph}</p>;
+            return <p key={index} className="leading-relaxed">{paragraph}</p>;
           })}
         </div>
         

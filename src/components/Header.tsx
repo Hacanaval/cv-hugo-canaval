@@ -72,9 +72,9 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed w-full top-0 z-40 transition-all duration-300 ${
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-black/80 backdrop-blur-md border-b border-gray-800"
+          ? "py-3 bg-black/90 backdrop-blur-md border-b border-gray-800 shadow-lg"
           : "py-5 bg-transparent"
       }`}
     >
@@ -88,21 +88,21 @@ const Header: React.FC = () => {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="border-gray-700 bg-gray-900/50">
+              <Button variant="outline" size="icon" className="border-gray-700 bg-gray-900/70 hover:bg-gray-800/80 backdrop-blur-sm">
                 <Menu className="text-gray-300" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="flex flex-col pt-16 bg-gray-900 border-gray-800">
+            <SheetContent className="flex flex-col pt-16 bg-gray-900/95 backdrop-blur-md border-gray-800">
               <nav>
                 <ul className="flex flex-col space-y-4">
                   {navItems.map((item) => (
                     <li key={item.href}>
                       <a
                         href={item.href}
-                        className={`text-lg font-medium transition duration-300 block py-2 ${
+                        className={`text-lg font-medium transition duration-300 block py-3 px-4 rounded-lg ${
                           activeSection === item.href.substring(1) 
-                            ? "text-indigo-400"
-                            : "text-gray-300 hover:text-indigo-400"
+                            ? "text-indigo-400 bg-indigo-900/20 border-l-4 border-indigo-400"
+                            : "text-gray-300 hover:text-indigo-400 hover:bg-gray-800/50"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();

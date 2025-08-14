@@ -19,7 +19,7 @@ const ProjectsSection: React.FC = () => {
 
         {/* Call to action text before the button */}
         <div className="text-center mt-12 mb-6">
-          <p className="text-gray-300 max-w-4xl mx-auto text-lg">
+          <p className="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
             {t.githubInvitation}
           </p>
         </div>
@@ -28,7 +28,7 @@ const ProjectsSection: React.FC = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="gap-2 border-gray-700 hover:bg-indigo-900/20 text-gray-300"
+            className="gap-2 border-gray-700 hover:bg-indigo-900/20 hover:border-indigo-600 text-gray-300 hover:text-indigo-400 transition-all duration-300"
             onClick={() => window.open("https://github.com/Hacanaval", "_blank")}
           >
             <Github size={20} />
