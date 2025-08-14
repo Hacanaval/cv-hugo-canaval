@@ -37,18 +37,34 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-[url('/data-pattern.png')] bg-repeat"></div>
       </div>
       
-      {/* Digital particles */}
+      {/* Enhanced digital particles */}
       <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <div 
             key={i}
-            className="absolute rounded-full bg-indigo-500/30"
+            className="absolute rounded-full bg-indigo-500/20 animate-float"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 8 + 4}px`,
-              height: `${Math.random() * 8 + 4}px`,
-              animation: `pulse ${Math.random() * 4 + 3}s infinite ease-in-out ${Math.random() * 2}s`
+              width: `${Math.random() * 12 + 6}px`,
+              height: `${Math.random() * 12 + 6}px`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${Math.random() * 2 + 4}s`
+            }}
+          />
+        ))}
+        {/* Larger floating elements */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={`large-${i}`}
+            className="absolute rounded-full bg-gradient-to-r from-indigo-400/10 to-purple-400/10 animate-float"
+            style={{
+              top: `${Math.random() * 80 + 10}%`,
+              left: `${Math.random() * 80 + 10}%`,
+              width: `${Math.random() * 20 + 15}px`,
+              height: `${Math.random() * 20 + 15}px`,
+              animationDelay: `${Math.random() * 4}s`,
+              animationDuration: `${Math.random() * 3 + 5}s`
             }}
           />
         ))}
@@ -96,13 +112,14 @@ const HeroSection: React.FC = () => {
           })}
         </div>
 
-        {/* CTAs - Mobile optimized */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16 animate-fade-in animate-delay-300 w-full max-w-2xl mx-auto px-4">
+        {/* CTAs - Mobile optimized with staggered animation */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16 w-full max-w-2xl mx-auto px-4">
           <Button 
             variant="outline"
             size="lg"
             disabled={loadingStates.projects}
-            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation"
+            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation animate-slide-up"
+            style={{ animationDelay: '600ms' }}
             onClick={() => handleCTAClick('projects', () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }))}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
@@ -118,7 +135,8 @@ const HeroSection: React.FC = () => {
             variant="outline"
             size="lg"
             disabled={loadingStates.cv}
-            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation"
+            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation animate-slide-up"
+            style={{ animationDelay: '800ms' }}
             onClick={() => handleCTAClick('cv', () => window.open('https://drive.google.com/drive/u/3/folders/12Qbaw-A-fZOzItcqYn17MQ4J7KdkGrQ7', '_blank'))}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
@@ -134,7 +152,8 @@ const HeroSection: React.FC = () => {
             variant="outline"
             size="lg"
             disabled={loadingStates.contact}
-            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation"
+            className="w-full sm:w-auto border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-6 sm:px-8 py-4 sm:py-3 text-base sm:text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden min-h-[56px] touch-manipulation animate-slide-up"
+            style={{ animationDelay: '1000ms' }}
             onClick={() => handleCTAClick('contact', () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }))}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>

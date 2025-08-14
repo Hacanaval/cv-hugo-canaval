@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
 import ProjectCard from "./ProjectCard";
@@ -7,6 +7,34 @@ import ProjectCard from "./ProjectCard";
 const ProjectsList: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [visibleProjects, setVisibleProjects] = useState<boolean[]>([]);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observers = projectRefs.current.map((ref, index) => {
+      if (!ref) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleProjects(prev => {
+              const newState = [...prev];
+              newState[index] = true;
+              return newState;
+            });
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
 
   const projects = [
     {
@@ -42,16 +70,28 @@ const ProjectsList: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
       {projects.map((project, index) => (
-        <ProjectCard
+        <div
           key={index}
-          title={project.title}
-          description={project.description}
-          highlights={project.highlights}
-          stack={project.stack}
-          githubUrl={project.githubUrl}
-          highlightsLabel={t.highlightsLabel}
-          projectButton={t.projectButton}
-        />
+          ref={el => projectRefs.current[index] = el}
+          className={`transition-all duration-700 ${
+            visibleProjects[index] 
+              ? index % 2 === 0 
+                ? 'animate-slide-left opacity-100' 
+                : 'animate-slide-right opacity-100'
+              : 'opacity-0 translate-y-8'
+          }`}
+          style={{ transitionDelay: `${index * 200}ms` }}
+        >
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            highlights={project.highlights}
+            stack={project.stack}
+            githubUrl={project.githubUrl}
+            highlightsLabel={t.highlightsLabel}
+            projectButton={t.projectButton}
+          />
+        </div>
       ))}
     </div>
   );

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,6 +9,9 @@ import { TrendingUp, Users, Target, Zap, Award, Lightbulb } from "lucide-react";
 const AboutSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const getDifferenceIcon = (index: number) => {
     const icons = [
@@ -22,20 +25,41 @@ const AboutSection: React.FC = () => {
     return icons[index] || <TrendingUp size={16} className="text-indigo-400" />;
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="about" className="section-spacing dark-section reveal-section">
+    <section id="about" ref={sectionRef} className="section-spacing dark-section reveal-section">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="section-heading text-center">{t.aboutTitle}</h2>
+        <h2 className="section-heading text-center animate-fade-in">{t.aboutTitle}</h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 max-w-6xl mx-auto element-spacing">
           <div className="md:w-1/3 flex justify-center">
-            <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1">
+            <div className={`w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1 transition-all duration-1000 ${isVisible ? 'animate-fade-in scale-100' : 'scale-95 opacity-0'}`}>
               <Avatar className="w-full h-full">
                 <AvatarImage 
-                  src="/lovable-uploads/hugo-profile-2024.png"
+                  src={isVisible ? "/lovable-uploads/hugo-profile-2024.png" : ""}
                   alt="Hugo Canaval" 
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                  onLoad={() => setImageLoaded(true)}
+                  loading="lazy"
                 />
-                <AvatarFallback className="text-3xl sm:text-4xl">HC</AvatarFallback>
+                <AvatarFallback className={`text-3xl sm:text-4xl transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}>
+                  HC
+                </AvatarFallback>
               </Avatar>
             </div>
           </div>
