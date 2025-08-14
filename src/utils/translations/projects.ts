@@ -47,8 +47,8 @@ export const projectsTranslations: Record<LanguageType, {
   taxiDemandStack: string[];
 }> = {
   es: {
-    projectsTitle: "Proyectos Técnicos",
-    projectDescription: "Estos proyectos demuestran mi capacidad para aplicar mis conocimientos técnicos en problemas reales.",
+    projectsTitle: "Proyectos de Aprendizaje",
+    projectDescription: "Proyectos personales desarrollados durante mi formación en ciencia de datos y desarrollo.",
     viewProjectBtn: "Ver proyecto",
     viewCodeBtn: "Ver código",
     project1Title: "Predicción de Abandono",
@@ -72,44 +72,44 @@ export const projectsTranslations: Record<LanguageType, {
     recallLabel: "Sensibilidad",
     precisionLabel: "Precisión",
     viewAllProjects: "Ver todos los proyectos",
-    highlightsLabel: "Logros",
-    githubInvitation: "Te invito a explorar mi GitHub, donde podrás encontrar proyectos prácticos en Machine Learning, NLP aplicado, análisis predictivo, manejo avanzado de clases desbalanceadas y desarrollos con tecnologías como Python, FastAPI y Scikit-learn.",
+    highlightsLabel: "Características técnicas",
+    githubInvitation: "En mi GitHub encontrarás estos y otros proyectos que he desarrollado como parte de mi aprendizaje en ciencia de datos, machine learning y desarrollo de aplicaciones.",
     saasAgentTitle: "Agente Vendedor SaaS",
-    saasAgentDesc: "Chatbot modular que automatiza ventas para PYMES vía WhatsApp y Telegram. Integra arquitectura RAG (Retrieval-Augmented Generation) con LLMs y memoria conversacional.",
+    saasAgentDesc: "Chatbot experimental con arquitectura RAG para automatización de consultas vía WhatsApp y Telegram.",
     saasAgentHighlights: [
-      "Multiempresa y desplegado en producción.",
-      "Registra ventas, busca productos y responde dudas en lenguaje natural.",
-      "Vector search con FAISS y persistencia de contexto.",
-      "Con esto es usuario optimiza su canal de comunicación generando mas ventas a un menor costo"
+      "Integración de LLMs con memoria conversacional",
+      "Vector search implementado con FAISS",
+      "API REST con FastAPI y PostgreSQL"
     ],
     saasAgentStack: ["Python", "FastAPI", "PostgreSQL", "FAISS", "JWT", "OpenAI API"],
     ageClassificationTitle: "Clasificación de Edad con Visión por Computadora",
-    ageClassificationDesc: "Modelo basado en CNN (ResNet50) para detectar si una persona es mayor o menor de edad usando imágenes faciales. Aplicable a controles automatizados de venta de productos restringidos.",
+    ageClassificationDesc: "Modelo de clasificación de edad usando CNN (ResNet50) y transfer learning con imágenes faciales.",
     ageClassificationHighlights: [
-      "Clasificación binaria robusta (<18 vs. ≥18) con precisión > 91%",
-      "Aumento de datos, análisis exploratorio y transferencia de aprendizaje.",
-      "Diseñado para tiendas de venta al público para detectar menos de edad para venta de artículos como alcohol y tabaco"
+      "Clasificación binaria con transfer learning",
+      "Preprocesamiento y aumento de datos",
+      "Evaluación de métricas de clasificación"
     ],
     ageClassificationStack: ["Python", "TensorFlow", "Keras", "ResNet50", "Matplotlib", "PIL"],
     sentimentAnalysisTitle: "Comparación de Modelos de Sentimiento con NLP",
-    sentimentAnalysisDesc: "Clasificación de sentimiento en reseñas de películas. Se comparan pipelines con distintos preprocesadores (NLTK vs. spaCy) y clasificadores (Logistic Regression, LGBM).",
+    sentimentAnalysisDesc: "Comparación de modelos de NLP para análisis de sentimiento en reseñas de películas.",
     sentimentAnalysisHighlights: [
-      "Todos los modelos superaron F1 > 0.85.",
-      "Evaluación multiclase con ROC AUC y Precisión Promedio."
+      "Comparación de preprocesadores (NLTK vs spaCy)",
+      "Evaluación de múltiples clasificadores",
+      "Métricas de evaluación multiclase"
     ],
     sentimentAnalysisStack: ["Python", "NLP", "NLTK", "spaCy", "TF-IDF", "LGBMClassifier", "Scikit-learn"],
     taxiDemandTitle: "Predicción de Demanda de Taxis por Hora",
-    taxiDemandDesc: "Predicción de demanda horaria de taxis usando modelos supervisados y de series de tiempo. Proyecto orientado a optimizar disponibilidad de conductores.",
+    taxiDemandDesc: "Predicción de demanda de taxis usando modelos de series de tiempo y machine learning.",
     taxiDemandHighlights: [
-      "Ingeniería temporal, modelos SARIMA, XGBoost y Prophet.",
-      "RMSE: 44.49",
-      "Permite anticipar picos y planificar turnos."
+      "Ingeniería de features temporales",
+      "Comparación de modelos (SARIMA, XGBoost, Prophet)",
+      "Evaluación de métricas de regresión"
     ],
     taxiDemandStack: ["Python", "Pandas", "SARIMA", "XGBoost", "Prophet", "Scikit-learn"],
   },
   en: {
-    projectsTitle: "Technical Projects",
-    projectDescription: "These projects demonstrate my ability to apply my technical knowledge to solve real problems.",
+    projectsTitle: "Learning Projects",
+    projectDescription: "Personal projects developed during my training in data science and software development.",
     viewProjectBtn: "View project",
     viewCodeBtn: "View code",
     project1Title: "Customer Churn Prediction",
@@ -133,38 +133,38 @@ export const projectsTranslations: Record<LanguageType, {
     recallLabel: "Recall",
     precisionLabel: "Precision",
     viewAllProjects: "View all projects",
-    highlightsLabel: "Highlights",
-    githubInvitation: "I invite you to explore my GitHub, where you'll find practical projects in Machine Learning, applied NLP, predictive modeling, imbalanced class handling, and real-world development using technologies like Python, FastAPI, and Scikit-learn.",
+    highlightsLabel: "Technical features",
+    githubInvitation: "On my GitHub you'll find these and other projects I've developed as part of my learning journey in data science, machine learning, and application development.",
     saasAgentTitle: "SaaS Sales Agent",
-    saasAgentDesc: "Modular chatbot that automates sales for SMEs via WhatsApp and Telegram. Integrates RAG (Retrieval-Augmented Generation) architecture with LLMs and conversational memory.",
+    saasAgentDesc: "Experimental chatbot with RAG architecture for query automation via WhatsApp and Telegram.",
     saasAgentHighlights: [
-      "Multi-tenant and deployed in production.",
-      "Handles product queries, registers sales, and responds in natural language.",
-      "Uses FAISS for vector search and persistent memory.",
-      "Helps businesses boost sales while reducing communication costs."
+      "LLM integration with conversational memory",
+      "Vector search implemented with FAISS",
+      "REST API with FastAPI and PostgreSQL"
     ],
     saasAgentStack: ["Python", "FastAPI", "PostgreSQL", "FAISS", "JWT", "OpenAI API"],
     ageClassificationTitle: "Image-Based Age Classification with Computer Vision",
-    ageClassificationDesc: "CNN-based model (ResNet50) to determine whether a person is under or over 18 based on facial images. Designed for use in automated age verification for restricted product sales.",
+    ageClassificationDesc: "Age classification model using CNN (ResNet50) and transfer learning with facial images.",
     ageClassificationHighlights: [
-      "Robust binary classification (<18 vs. ≥18) with accuracy > 91%.",
-      "Data augmentation, EDA, and transfer learning implemented.",
-      "Designed for retail stores to detect underage customers for regulated products like alcohol or tobacco."
+      "Binary classification with transfer learning",
+      "Data preprocessing and augmentation",
+      "Classification metrics evaluation"
     ],
     ageClassificationStack: ["Python", "TensorFlow", "Keras", "ResNet50", "Matplotlib", "PIL"],
     sentimentAnalysisTitle: "Sentiment Model Comparison with NLP",
-    sentimentAnalysisDesc: "Sentiment classification for movie reviews, comparing NLP pipelines using different preprocessing (NLTK vs. spaCy) and classifiers (Logistic Regression, LGBM).",
+    sentimentAnalysisDesc: "NLP model comparison for sentiment analysis on movie reviews.",
     sentimentAnalysisHighlights: [
-      "All models achieved F1 scores above 0.85.",
-      "Multiclass evaluation with ROC AUC and Average Precision Score."
+      "Preprocessing comparison (NLTK vs spaCy)",
+      "Multiple classifier evaluation",
+      "Multiclass evaluation metrics"
     ],
     sentimentAnalysisStack: ["Python", "NLP", "NLTK", "spaCy", "TF-IDF", "LGBMClassifier", "Scikit-learn"],
     taxiDemandTitle: "Hourly Taxi Demand Forecasting",
-    taxiDemandDesc: "Hourly ride demand forecasting using both time series and supervised learning models. Aimed at improving driver availability based on demand peaks.",
+    taxiDemandDesc: "Taxi demand prediction using time series and machine learning models.",
     taxiDemandHighlights: [
-      "Feature engineering, SARIMA, XGBoost, and Prophet models.",
-      "RMSE: 44.49",
-      "Enables proactive shift planning and peak demand prediction."
+      "Temporal feature engineering",
+      "Model comparison (SARIMA, XGBoost, Prophet)",
+      "Regression metrics evaluation"
     ],
     taxiDemandStack: ["Python", "Pandas", "SARIMA", "XGBoost", "Prophet", "Scikit-learn"],
   }
