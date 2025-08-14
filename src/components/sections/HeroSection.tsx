@@ -1,13 +1,31 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
-import { ArrowDown, Eye, Download, Mail } from "lucide-react";
+import { ArrowDown, Eye, Download, Mail, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [loadingStates, setLoadingStates] = useState({
+    projects: false,
+    cv: false,
+    contact: false
+  });
+
+  const handleCTAClick = async (action: 'projects' | 'cv' | 'contact', callback: () => void) => {
+    setLoadingStates(prev => ({ ...prev, [action]: true }));
+    
+    // Simulate loading for better UX
+    await new Promise(resolve => setTimeout(resolve, 300));
+    
+    callback();
+    
+    setTimeout(() => {
+      setLoadingStates(prev => ({ ...prev, [action]: false }));
+    }, 500);
+  };
 
   return (
     <section
@@ -78,38 +96,54 @@ const HeroSection: React.FC = () => {
           })}
         </div>
 
-        {/* CTAs - All with same style */}
+        {/* CTAs - All with same style and loading states */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animate-delay-300">
           <Button 
             variant="outline"
             size="lg"
-            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105"
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            disabled={loadingStates.projects}
+            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden"
+            onClick={() => handleCTAClick('projects', () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }))}
           >
-            <Eye className="mr-2 h-5 w-5" />
-            {t.ctaViewCases}
-          </Button>
-          
-          <Button 
-            variant="outline"
-            size="lg" 
-            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105"
-            onClick={() => {
-              window.open('https://drive.google.com/drive/u/3/folders/12Qbaw-A-fZOzItcqYn17MQ4J7KdkGrQ7', '_blank');
-            }}
-          >
-            <Download className="mr-2 h-5 w-5" />
-            {t.ctaDownloadCV}
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
+            {loadingStates.projects ? (
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+            ) : (
+              <Eye className="mr-2 h-5 w-5 group-hover/cta:scale-110 transition-transform duration-300" />
+            )}
+            <span className="relative z-10">{t.ctaViewCases}</span>
           </Button>
           
           <Button 
             variant="outline"
             size="lg"
-            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            disabled={loadingStates.cv}
+            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden"
+            onClick={() => handleCTAClick('cv', () => window.open('https://drive.google.com/drive/u/3/folders/12Qbaw-A-fZOzItcqYn17MQ4J7KdkGrQ7', '_blank'))}
           >
-            <Mail className="mr-2 h-5 w-5" />
-            {t.ctaContact}
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
+            {loadingStates.cv ? (
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+            ) : (
+              <Download className="mr-2 h-5 w-5 group-hover/cta:scale-110 group-hover/cta:rotate-12 transition-transform duration-300" />
+            )}
+            <span className="relative z-10">{t.ctaDownloadCV}</span>
+          </Button>
+          
+          <Button 
+            variant="outline"
+            size="lg"
+            disabled={loadingStates.contact}
+            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 bg-transparent px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed group/cta relative overflow-hidden"
+            onClick={() => handleCTAClick('contact', () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }))}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-indigo-500/10 opacity-0 group-hover/cta:opacity-100 transition-opacity duration-300"></div>
+            {loadingStates.contact ? (
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+            ) : (
+              <Mail className="mr-2 h-5 w-5 group-hover/cta:scale-110 transition-transform duration-300" />
+            )}
+            <span className="relative z-10">{t.ctaContact}</span>
           </Button>
         </div>
         

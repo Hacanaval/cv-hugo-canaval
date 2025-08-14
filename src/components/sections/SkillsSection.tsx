@@ -29,26 +29,72 @@ interface SkillCardProps {
   icon: React.ReactNode;
   title: string;
   skills: string[];
+  skillLevels?: number[]; // Optional progress levels (0-100)
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills }) => (
-  <div className="bg-card rounded-xl shadow-md p-5 transition-all hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card">
-    <div className="flex items-center mb-4">
-      <div className="mr-3 text-indigo-400 skill-icon transition-all duration-300">
-        {icon}
+const SkillCard: React.FC<SkillCardProps> = ({ icon, title, skills, skillLevels }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div 
+      ref={cardRef}
+      className="bg-card rounded-xl shadow-md p-5 transition-all duration-500 hover:shadow-lg hover:scale-[1.02] hover:border-indigo-700 border border-gray-800 skill-card group"
+    >
+      <div className="flex items-center mb-4">
+        <div className="mr-3 text-indigo-400 skill-icon transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+          {icon}
+        </div>
+        <h4 className="font-semibold text-lg text-gray-200 group-hover:text-indigo-300 transition-colors duration-300">{title}</h4>
       </div>
-      <h4 className="font-semibold text-lg text-gray-200">{title}</h4>
+      <ul className="space-y-3">
+        {skills.map((skill, index) => (
+          <li key={index} className="space-y-1">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-2 group-hover:scale-125 transition-transform duration-300"></span>
+                <span className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300">{skill}</span>
+              </div>
+              {skillLevels && skillLevels[index] && (
+                <span className="text-xs text-indigo-400 font-medium">{skillLevels[index]}%</span>
+              )}
+            </div>
+            {skillLevels && skillLevels[index] && (
+              <div className="ml-4">
+                <div className="h-1 bg-gray-700 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-gradient-to-r from-indigo-500 to-indigo-400 rounded-full transition-all duration-1000 ease-out"
+                    style={{ 
+                      width: isVisible ? `${skillLevels[index]}%` : '0%',
+                      transitionDelay: `${index * 100}ms`
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
-    <ul className="space-y-2">
-      {skills.map((skill, index) => (
-        <li key={index} className="flex items-center">
-          <span className="h-1.5 w-1.5 bg-indigo-500 rounded-full mr-2"></span>
-          <span className="text-gray-300">{skill}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+  );
+};
 
 const SkillsSection: React.FC = () => {
   const { language } = useLanguage();
@@ -60,24 +106,28 @@ const SkillsSection: React.FC = () => {
     {
       icon: <Globe size={24} />,
       title: t.languagesTitle,
-      skills: t.languageSkills
+      skills: t.languageSkills,
+      skillLevels: [95, 100] // Spanish, English
     },
     {
       icon: <Terminal size={24} />,
       title: t.programmingTitle,
-      skills: ["Python", "SQL", "Shell scripting (Zsh/Bash)"]
+      skills: ["Python", "SQL", "Shell scripting (Zsh/Bash)"],
+      skillLevels: [90, 85, 75]
     },
     {
       icon: <Database size={24} />,
       title: t.dataTitle,
-      skills: ["Pandas", "NumPy", "PySpark"]
+      skills: ["Pandas", "NumPy", "PySpark"],
+      skillLevels: [90, 85, 70]
     },
     {
       icon: <BrainCircuit size={24} />,
       title: t.mlTitle,
       skills: language === 'es' ? 
         ["Scikit-learn, PyTorch, Tensorflow", "Modelos Supervisados (Clasificación, Regresión)", "Modelos Predictivos y Embeddings"] : 
-        ["Scikit-learn, PyTorch, Tensorflow", "Supervised Models (Classification, Regression)", "Predictive Models and Embeddings"]
+        ["Scikit-learn, PyTorch, Tensorflow", "Supervised Models (Classification, Regression)", "Predictive Models and Embeddings"],
+      skillLevels: [85, 80, 75]
     },
     {
       icon: <LineChart size={24} />,
@@ -193,6 +243,7 @@ const SkillsSection: React.FC = () => {
               icon={category.icon}
               title={category.title}
               skills={category.skills}
+              skillLevels={category.skillLevels}
             />
           ))}
         </div>
