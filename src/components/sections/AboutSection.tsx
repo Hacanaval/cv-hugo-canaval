@@ -4,10 +4,23 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { TrendingUp, Users, Target, Zap, Award, Lightbulb } from "lucide-react";
 
 const AboutSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+
+  const getDifferenceIcon = (index: number) => {
+    const icons = [
+      <TrendingUp size={16} className="text-indigo-400" />,
+      <Users size={16} className="text-indigo-400" />,
+      <Target size={16} className="text-indigo-400" />,
+      <Zap size={16} className="text-indigo-400" />,
+      <Award size={16} className="text-indigo-400" />,
+      <Lightbulb size={16} className="text-indigo-400" />
+    ];
+    return icons[index] || <TrendingUp size={16} className="text-indigo-400" />;
+  };
 
   return (
     <section id="about" className="py-16 sm:py-24 dark-section reveal-section">
@@ -55,8 +68,11 @@ const AboutSection: React.FC = () => {
               >
                 <div className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
                 <CardContent className="p-4 sm:p-6 flex">
-                  <div className="h-8 w-8 sm:h-10 sm:w-10 min-w-8 sm:min-w-10 rounded-full bg-indigo-900/60 flex items-center justify-center text-indigo-400 mr-3 sm:mr-4 mt-1 flex-shrink-0">
-                    <span className="text-sm sm:text-base font-medium">{index + 1}</span>
+                  <div className="h-8 w-8 sm:h-10 sm:w-10 min-w-8 sm:min-w-10 rounded-full bg-indigo-900/60 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0 relative">
+                    <span className="text-xs sm:text-sm font-bold text-indigo-400 absolute">{index + 1}</span>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                      {getDifferenceIcon(index)}
+                    </div>
                   </div>
                   <p className="text-gray-300 leading-relaxed text-sm sm:text-base">{item}</p>
                 </CardContent>

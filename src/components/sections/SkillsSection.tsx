@@ -21,7 +21,25 @@ import {
   ArrowUp,
   Search,
   Map,
-  MessageSquare
+  MessageSquare,
+  // Nuevos iconos específicos de tecnología
+  Cpu,
+  GitBranch,
+  Layers,
+  Zap,
+  Activity,
+  TrendingUp,
+  BarChart2,
+  PieChart,
+  Settings,
+  Workflow,
+  Network,
+  Shield,
+  Boxes,
+  Wrench,
+  Gauge,
+  FlaskConical,
+  Bot
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -63,7 +81,7 @@ const SkillsSection: React.FC = () => {
       skills: t.languageSkills
     },
     {
-      icon: <Terminal size={24} />,
+      icon: <Cpu size={24} />,
       title: t.programmingTitle,
       skills: ["Python", "SQL", "Shell scripting (Zsh/Bash)"]
     },
@@ -73,26 +91,26 @@ const SkillsSection: React.FC = () => {
       skills: ["Pandas", "NumPy", "PySpark"]
     },
     {
-      icon: <BrainCircuit size={24} />,
+      icon: <Bot size={24} />,
       title: t.mlTitle,
       skills: language === 'es' ? 
         ["Scikit-learn, PyTorch, Tensorflow", "Modelos Supervisados (Clasificación, Regresión)", "Modelos Predictivos y Embeddings"] : 
         ["Scikit-learn, PyTorch, Tensorflow", "Supervised Models (Classification, Regression)", "Predictive Models and Embeddings"]
     },
     {
-      icon: <LineChart size={24} />,
+      icon: <FlaskConical size={24} />,
       title: t.statsTitle,
       skills: language === 'es' ? 
         ["Pruebas de hipótesis (Scipy)", "Bootstrapping", "Validación cruzada"] : 
         ["Hypothesis Testing (Scipy)", "Bootstrapping", "Cross-validation"]
     },
     {
-      icon: <BarChart size={24} />,
+      icon: <BarChart2 size={24} />,
       title: t.visualizationTitle,
       skills: ["Matplotlib", "Seaborn"]
     },
     {
-      icon: <Server size={24} />,
+      icon: <GitBranch size={24} />,
       title: t.versionControlTitle,
       skills: ["Git", "GitHub"]
     },
@@ -117,7 +135,7 @@ const SkillsSection: React.FC = () => {
       skills: [t.roadmapSkill]
     },
     {
-      icon: <MessageSquare size={24} />,
+      icon: <Users size={24} />,
       title: t.stakeholderTitle,
       skills: [t.stakeholderSkill]
     },
@@ -127,7 +145,7 @@ const SkillsSection: React.FC = () => {
       skills: [t.communicationSkill]
     },
     {
-      icon: <Users size={24} />,
+      icon: <Shield size={24} />,
       title: t.leadershipTitle,
       skills: [t.leadershipSkill]
     },
@@ -137,12 +155,12 @@ const SkillsSection: React.FC = () => {
       skills: [t.analyticalSkill]
     },
     {
-      icon: <BarChart3 size={24} />,
+      icon: <PieChart size={24} />,
       title: t.storytellingTitle,
       skills: [t.storytellingSkill]
     },
     {
-      icon: <Shuffle size={24} />,
+      icon: <Zap size={24} />,
       title: t.adaptabilityTitle,
       skills: [t.adaptabilitySkill]
     },

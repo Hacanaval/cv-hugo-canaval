@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { Github, Bot, Eye, Brain, TrendingUp, Cpu } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 interface ProjectCardProps {
@@ -14,6 +14,22 @@ interface ProjectCardProps {
   highlightsLabel: string;
   projectButton: string;
 }
+
+const getProjectIcon = (title: string) => {
+  if (title.toLowerCase().includes('agente') || title.toLowerCase().includes('agent') || title.toLowerCase().includes('chatbot')) {
+    return <Bot size={20} className="text-indigo-200" />;
+  }
+  if (title.toLowerCase().includes('clasificación') || title.toLowerCase().includes('classification') || title.toLowerCase().includes('age')) {
+    return <Eye size={20} className="text-indigo-200" />;
+  }
+  if (title.toLowerCase().includes('sentimiento') || title.toLowerCase().includes('sentiment') || title.toLowerCase().includes('nlp')) {
+    return <Brain size={20} className="text-indigo-200" />;
+  }
+  if (title.toLowerCase().includes('demanda') || title.toLowerCase().includes('demand') || title.toLowerCase().includes('predicción')) {
+    return <TrendingUp size={20} className="text-indigo-200" />;
+  }
+  return <Cpu size={20} className="text-indigo-200" />;
+};
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
@@ -28,7 +44,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/25 hover:border-indigo-400 hover:scale-[1.03] hover:bg-gray-900/80 group touch-manipulation active:scale-[0.98] sm:active:scale-[1.03]">
       <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white relative overflow-hidden p-4 sm:p-6">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <CardTitle className="relative z-10 group-hover:text-indigo-100 transition-colors duration-300 text-lg sm:text-xl">{title}</CardTitle>
+        <div className="relative z-10 flex items-center gap-3">
+          <div className="flex-shrink-0">
+            {getProjectIcon(title)}
+          </div>
+          <CardTitle className="group-hover:text-indigo-100 transition-colors duration-300 text-lg sm:text-xl">{title}</CardTitle>
+        </div>
       </CardHeader>
       <CardContent className="pt-4 sm:pt-6 px-4 sm:px-6">
         <p className="text-gray-300 mb-4 group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base leading-relaxed">{description}</p>
