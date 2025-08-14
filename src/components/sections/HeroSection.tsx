@@ -2,7 +2,7 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Eye, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection: React.FC = () => {
@@ -45,36 +45,59 @@ const HeroSection: React.FC = () => {
           {t.welcomeSubtitle}
         </h2>
         
-        <div className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-12 animate-fade-in animate-delay-200 space-y-6 leading-relaxed">
-          {t.welcomeText.split('\n\n').map((paragraph, index) => {
-            // Handle the goal paragraph specially
-            if (paragraph.includes("Mi objetivo")) {
-              const parts = paragraph.split("Mi objetivo");
-              return (
-                <p key={index} className="leading-relaxed">
-                  {parts[0]}
-                  <span className="text-indigo-400 font-semibold">
-                    Mi objetivo
-                  </span>
-                  {parts[1]}
-                </p>
-              );
+        {/* Value Proposition Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8 animate-fade-in animate-delay-200">
+          {t.valueProps.map((prop, index) => (
+            <div key={index} className="flex items-center gap-2 text-sm md:text-base text-gray-300">
+              <div className="w-2 h-2 rounded-full bg-indigo-400"></div>
+              <span>{prop}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Main Text - More Concise */}
+        <div className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto mb-10 animate-fade-in animate-delay-300 leading-relaxed">
+          <p className="mb-4">
+            {language === 'es' 
+              ? "Combino capacidades técnicas en datos con visión estratégica de negocio para traducir necesidades en soluciones claras y accionables."
+              : "I combine technical data capabilities with strategic business vision to translate needs into clear, actionable solutions."
             }
-            // Handle English case
-            if (paragraph.includes("My goal")) {
-              const parts = paragraph.split("My goal");
-              return (
-                <p key={index} className="leading-relaxed">
-                  {parts[0]}
-                  <span className="text-indigo-400 font-semibold">
-                    My goal
-                  </span>
-                  {parts[1]}
-                </p>
-              );
-            }
-            return <p key={index} className="leading-relaxed">{paragraph}</p>;
-          })}
+          </p>
+        </div>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animate-delay-400">
+          <Button 
+            size="lg"
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105"
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            <Eye className="mr-2 h-5 w-5" />
+            {t.ctaViewCases}
+          </Button>
+          
+          <Button 
+            variant="outline"
+            size="lg" 
+            className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105"
+            onClick={() => {
+              const cvPath = language === 'es' ? '/cv-es.pdf' : '/cv-en.pdf';
+              window.open(cvPath, '_blank');
+            }}
+          >
+            <Download className="mr-2 h-5 w-5" />
+            {t.ctaDownloadCV}
+          </Button>
+          
+          <Button 
+            variant="ghost"
+            size="lg"
+            className="text-gray-300 hover:text-indigo-400 px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            {t.ctaContact}
+          </Button>
         </div>
         
         <div className="animate-bounce absolute bottom-12 left-1/2 transform -translate-x-1/2">
