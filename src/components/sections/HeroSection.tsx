@@ -81,8 +81,7 @@ const HeroSection: React.FC = () => {
             size="lg" 
             className="border-indigo-600 text-indigo-400 hover:bg-indigo-600/10 px-8 py-3 text-base font-medium transition-all duration-300 hover:scale-105"
             onClick={() => {
-              const cvPath = language === 'es' ? '/cv-es.pdf' : '/cv-en.pdf';
-              window.open(cvPath, '_blank');
+              window.open('https://drive.google.com/drive/u/3/folders/12Qbaw-A-fZOzItcqYn17MQ4J7KdkGrQ7', '_blank');
             }}
           >
             <Download className="mr-2 h-5 w-5" />
