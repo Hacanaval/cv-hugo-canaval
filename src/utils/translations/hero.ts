@@ -18,7 +18,7 @@ export const heroTranslations: Record<LanguageType, {
       "Productos con IA desplegados en producción",
       "Traductor entre negocio y equipos técnicos"
     ],
-    ctaViewCases: "Ver casos de estudio",
+    ctaViewCases: "Ver proyectos",
     ctaDownloadCV: "Descargar CV",
     ctaContact: "Contactar"
   },
@@ -31,7 +31,7 @@ export const heroTranslations: Record<LanguageType, {
       "AI products deployed in production",
       "Translator between business and tech teams"
     ],
-    ctaViewCases: "View case studies",
+    ctaViewCases: "View projects",
     ctaDownloadCV: "Download CV",
     ctaContact: "Get in touch"
   }
