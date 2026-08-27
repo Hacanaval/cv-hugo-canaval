@@ -21,6 +21,7 @@ Este archivo resume la versión activa, el despliegue y las verificaciones neces
 
 ## Contenido activo
 
+- Identidad pública `Product Management · Data Science · AI Builder` en el orden aprobado.
 - Selector inicial de español e inglés.
 - Perfil profesional explicado mediante capacidades y evidencia.
 - Cuatro casos profesionales sanitizados.
@@ -28,6 +29,12 @@ Este archivo resume la versión activa, el despliegue y las verificaciones neces
 - Órbitas de contacto en el hero y la sección final.
 - Favicon alineado con la paleta y la geometría del sistema visual.
 - PDF históricos del CV conservados por compatibilidad.
+
+## Relación con la marca
+
+**Expediente de producto** es la implementación web de la marca Hugo. La paleta, el tono y los principios editoriales son globales; la órbita de contacto, la señal líquida, el stack React y las decisiones responsive pertenecen a este sitio.
+
+El repositorio público contiene únicamente contexto operativo y de implementación. Las fuentes privadas de identidad, trayectoria y evidencia permanecen en el macroproyecto.
 
 ## Verificación de la entrega
 

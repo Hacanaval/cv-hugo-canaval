@@ -2,6 +2,8 @@
 
 Sitio público bilingüe de Hugo Canaval. Presenta su trabajo en producto, datos e inteligencia artificial mediante capacidades, casos sanitizados y resultados verificables.
 
+Implementa públicamente la identidad `Product Management · Data Science · AI Builder`. Su concepto, **expediente de producto**, traduce la marca Hugo a una experiencia web basada en decisiones y evidencia.
+
 **Última actualización:** 2026-08-27
 
 ## Estado
@@ -98,10 +100,19 @@ Las tres referencias investigadas se aplicaron de forma acotada:
 
 El detalle técnico y los límites del sistema están en `docs/[P]-Sistema-Visual-Portafolio.md`.
 
+La paleta, la voz y los principios editoriales provienen del sistema de marca privado. Este repositorio documenta solo su implementación pública. La órbita de contacto, la señal líquida, el comportamiento responsive y los componentes React son decisiones específicas del portafolio.
+
+## Contexto para agentes
+
+- `AGENTS.md` contiene las reglas públicas para Codex.
+- `CLAUDE.md` es un enlace relativo al mismo contenido para Claude Code.
+- La identidad completa, la trayectoria y los inventarios privados no pertenecen a este repositorio.
+- Antes de publicar se revisan secretos, nombres internos, métricas y documentos privados.
+
 ## Siguiente etapa del perfil
 
 El sitio está publicado y permanece abierto a ajustes visuales menores derivados de la revisión en dispositivos físicos.
 
-Después de aprobar la web, la siguiente etapa recomendada es investigar vacantes relacionadas con Product Manager, Technical Product Manager, AI Product Manager y perfiles builder. Los hallazgos servirán para ajustar palabras clave del CV, LinkedIn y GitHub sin cambiar la identidad basada en capacidades.
+Después de aprobar la web, la siguiente etapa recomendada es investigar oportunidades compatibles con Product Management, Data Science y AI Builder. Los hallazgos servirán para ajustar palabras clave del CV, LinkedIn y GitHub sin cambiar la identidad ni inventar experiencia.
 
 La investigación inicial está documentada en `../../docs/06-investigacion-diseno-interfaces.md`. La siguiente etapa es alinear CV, LinkedIn y GitHub con la misma identidad profesional y con palabras clave verificadas contra vacantes reales.

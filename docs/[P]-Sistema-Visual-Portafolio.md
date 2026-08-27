@@ -6,6 +6,22 @@
 
 Este documento registra la dirección visual implementada para el portafolio. El contenido público en español e inglés permanece como fuente aprobada y no depende de este sistema para conservar su significado.
 
+La dirección es una implementación pública del sistema de marca Hugo. Comparte paleta, voz, geometría y principios editoriales con la marca; documenta aquí únicamente las decisiones específicas de la aplicación React.
+
+## Relación entre marca e implementación
+
+| Decisión | Alcance |
+|---|---|
+| Identidad `Product Management · Data Science · AI Builder` | Global de Hugo |
+| Voz directa, factual y centrada en evidencia | Global de Hugo |
+| Carbón, marfil, cobalto y verde señal | Global de Hugo |
+| Composición editorial y espacio negativo | Global de Hugo |
+| Concepto expediente de producto | Portafolio web |
+| Órbita de contacto y señal líquida | Portafolio web |
+| React, Vite, Tailwind y rutas bilingües | Implementación técnica |
+
+La doctrina completa permanece en documentación privada. Este archivo debe poder publicarse sin revelar trayectoria, inventarios internos o decisiones confidenciales.
+
 ## Problema que resuelve el rediseño
 
 La versión anterior usaba un tema oscuro con acentos índigo, tarjetas repetidas, degradados y escalados al pasar el cursor. Era funcional, pero se parecía a una plantilla genérica de portafolio creada con componentes estándar.
