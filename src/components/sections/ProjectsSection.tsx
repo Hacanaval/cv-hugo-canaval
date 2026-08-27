@@ -14,7 +14,7 @@ const ProjectsSection: React.FC = () => {
       <div className="section-frame">
         <div className="mb-20 grid gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
           <div>
-            <p className="section-kicker text-[var(--cobalt)]">04 / Evidencia</p>
+            <p className="section-kicker text-[var(--cobalt)]">04 / {t.sectionLabels.evidence}</p>
             <h2 className="section-heading mb-0">{t.projectsTitle}</h2>
           </div>
           <p className="body-copy text-body border-t border-[var(--line)] pt-6 text-black/65">{t.projectsIntro}</p>

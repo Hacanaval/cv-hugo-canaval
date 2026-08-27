@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           <div className="relative border-t border-white/20 pt-7 lg:mt-36">
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">01 / Perfil</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/40">01 / {t.sectionLabels.profile}</span>
             <div className="body-copy mt-8 space-y-6 text-base leading-relaxed text-white/72 sm:text-lg">
               {t.welcomeText.split("\n\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>

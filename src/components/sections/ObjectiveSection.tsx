@@ -11,7 +11,7 @@ const ObjectiveSection: React.FC = () => {
       <div className="section-frame">
         <div className="grid gap-12 lg:grid-cols-[0.6fr_1.4fr] lg:gap-24">
           <div>
-            <p className="section-kicker text-white/65">07 / Dirección</p>
+            <p className="section-kicker text-white/65">07 / {t.sectionLabels.direction}</p>
             <h2 className="section-heading text-white">{t.objectiveTitle}</h2>
           </div>
           <div className="body-copy space-y-7 border-t border-white/35 pt-8 text-xl leading-relaxed tracking-[-0.02em] text-white/88 sm:text-2xl">

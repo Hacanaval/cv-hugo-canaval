@@ -37,7 +37,7 @@ const CoursesSection: React.FC = () => {
       <div className="section-frame">
         <div className="grid gap-12 lg:grid-cols-[0.62fr_1.38fr] lg:gap-24">
           <div>
-            <p className="section-kicker text-[var(--cobalt)]">06 / Aprendizaje</p>
+            <p className="section-kicker text-[var(--cobalt)]">06 / {t.sectionLabels.learning}</p>
             <h2 className="section-heading">{t.coursesTitle}</h2>
           </div>
 

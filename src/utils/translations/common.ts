@@ -10,6 +10,15 @@ export const commonTranslations: Record<LanguageType, {
   contactTitle: string;
   contactText: string;
   footerText: string;
+  sectionLabels: {
+    profile: string;
+    capabilities: string;
+    evidence: string;
+    background: string;
+    learning: string;
+    direction: string;
+    contact: string;
+  };
 }> = {
   es: {
     viewLinkedIn: "Ver LinkedIn",
@@ -20,6 +29,15 @@ export const commonTranslations: Record<LanguageType, {
     contactTitle: "Contacto",
     contactText: "Me interesa conversar con equipos que estén construyendo productos de datos o inteligencia artificial y necesiten llevar una idea hasta una versión que pueda ponerse a prueba.",
     footerText: "Product Management · Data Science · AI Builder",
+    sectionLabels: {
+      profile: "Perfil",
+      capabilities: "Capacidades",
+      evidence: "Evidencia",
+      background: "Trayectoria",
+      learning: "Aprendizaje",
+      direction: "Dirección",
+      contact: "Contacto",
+    },
   },
   en: {
     viewLinkedIn: "View LinkedIn",
@@ -30,5 +48,14 @@ export const commonTranslations: Record<LanguageType, {
     contactTitle: "Contact",
     contactText: "I am interested in talking with teams that are building data or artificial intelligence products and need to take an idea to a version that can be tested.",
     footerText: "Product Management · Data Science · AI Builder",
+    sectionLabels: {
+      profile: "Profile",
+      capabilities: "Capabilities",
+      evidence: "Evidence",
+      background: "Background",
+      learning: "Learning",
+      direction: "Direction",
+      contact: "Contact",
+    },
   }
 };

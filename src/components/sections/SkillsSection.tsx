@@ -53,7 +53,7 @@ const SkillsSection: React.FC = () => {
       <div className="section-frame">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
           <div>
-            <p className="section-kicker text-[var(--signal)]">03 / Capacidades</p>
+            <p className="section-kicker text-[var(--signal)]">03 / {t.sectionLabels.capabilities}</p>
             <h2 className="section-heading text-white">{t.skillsTitle}</h2>
             <SkillsToggle
               technical={technical}

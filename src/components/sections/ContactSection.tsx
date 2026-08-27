@@ -12,7 +12,7 @@ const ContactSection: React.FC = () => {
   return (
     <footer id="contact" className="ink-section relative py-24 text-white reveal-section sm:py-32">
       <div className="section-frame">
-        <p className="section-kicker text-[var(--signal)]">08 / Contacto</p>
+        <p className="section-kicker text-[var(--signal)]">08 / {t.sectionLabels.contact}</p>
         <div className="grid gap-14 lg:grid-cols-[1.4fr_0.6fr] lg:items-end lg:gap-20">
           <div>
             <h2 className="contact-heading max-w-5xl">{t.contactTitle}</h2>

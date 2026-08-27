@@ -37,7 +37,7 @@ const EducationSection: React.FC = () => {
       <div className="section-frame">
         <div className="grid gap-12 lg:grid-cols-[0.62fr_1.38fr] lg:gap-24">
           <div>
-            <p className="section-kicker text-[var(--signal)]">05 / Trayectoria</p>
+            <p className="section-kicker text-[var(--signal)]">05 / {t.sectionLabels.background}</p>
             <h2 className="section-heading text-white">{t.educationTitle}</h2>
           </div>
           <div className="lg:pt-8">

@@ -14,7 +14,7 @@ const AboutSection: React.FC = () => {
       <div className="section-frame">
         <div className="grid gap-12 lg:grid-cols-[0.58fr_1fr] lg:gap-20">
           <div>
-            <p className="section-kicker text-[var(--cobalt)]">02 / Perfil</p>
+            <p className="section-kicker text-[var(--cobalt)]">02 / {t.sectionLabels.profile}</p>
             <h2 className="section-heading">{t.aboutTitle}</h2>
             <div className="relative mt-12 max-w-md lg:mt-24">
               <div className="absolute -bottom-5 -right-5 h-full w-full bg-[var(--cobalt)]" />
