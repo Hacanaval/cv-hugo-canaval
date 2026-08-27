@@ -51,8 +51,6 @@ I am an economist, I have a postgraduate degree in Data Analytics, and I trained
 
 A solution starts to feel like a product when it has users, rules, metrics, and exceptions. This is why I like to stay close after deployment, see what failed, and decide what is worth changing.
 
-Most of this work belongs to private projects. On this website, I share the problem, the decisions I made, the general architecture, and the results that can be shared publicly.
-
 ## What makes me different
 
 ### I start with the problem

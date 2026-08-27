@@ -50,8 +50,6 @@ Soy economista, tengo un posgrado en Analítica de Datos y me formé en Data Sci
 
 Una solución empieza a parecerme un producto cuando tiene usuarios, reglas, métricas y excepciones. Por eso me interesa seguir cerca después del despliegue, ver qué falló y decidir qué vale la pena cambiar.
 
-La mayor parte de este trabajo pertenece a proyectos privados. En esta página comparto el problema, las decisiones que tomé, la arquitectura general y los resultados que pueden comunicarse públicamente.
-
 ## Lo que me diferencia
 
 ### Empiezo por el problema

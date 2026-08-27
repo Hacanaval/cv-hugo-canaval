@@ -13,8 +13,7 @@ export const aboutTranslations: Record<LanguageType, {
     aboutParagraphs: [
       "Me gusta trabajar en problemas donde hay que entender la operación y la tecnología. Antes de pensar en un modelo o una herramienta, busco saber quién toma la decisión, qué información tiene y dónde se está perdiendo tiempo o calidad.",
       "Soy economista, tengo un posgrado en Analítica de Datos y me formé en Data Science. Esa base me ha servido para construir modelos predictivos, agentes con IA, APIs y automatizaciones. Suelo participar desde las primeras conversaciones hasta la validación de una versión que ya puede usarse.",
-      "Una solución empieza a parecerme un producto cuando tiene usuarios, reglas, métricas y excepciones. Por eso me interesa seguir cerca después del despliegue, ver qué falló y decidir qué vale la pena cambiar.",
-      "La mayor parte de este trabajo pertenece a proyectos privados. En esta página comparto el problema, las decisiones que tomé, la arquitectura general y los resultados que pueden comunicarse públicamente."
+      "Una solución empieza a parecerme un producto cuando tiene usuarios, reglas, métricas y excepciones. Por eso me interesa seguir cerca después del despliegue, ver qué falló y decidir qué vale la pena cambiar."
     ],
     differenceTitle: "Lo que me diferencia",
     differenceItems: [
@@ -31,8 +30,7 @@ export const aboutTranslations: Record<LanguageType, {
     aboutParagraphs: [
       "I like working on problems that require understanding both operations and technology. Before thinking about a model or a tool, I try to understand who makes the decision, what information they have, and where time or quality is being lost.",
       "I am an economist, I have a postgraduate degree in Data Analytics, and I trained in Data Science. This background has helped me build predictive models, AI agents, APIs, and automations. I usually take part from the first conversations until we validate a version that people can use.",
-      "A solution starts to feel like a product when it has users, rules, metrics, and exceptions. This is why I like to stay close after deployment, see what failed, and decide what is worth changing.",
-      "Most of this work belongs to private projects. On this website, I share the problem, the decisions I made, the general architecture, and the results that can be shared publicly."
+      "A solution starts to feel like a product when it has users, rules, metrics, and exceptions. This is why I like to stay close after deployment, see what failed, and decide what is worth changing."
     ],
     differenceTitle: "What makes me different",
     differenceItems: [
