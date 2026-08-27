@@ -1,177 +1,40 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
 import { Button } from "@/components/ui/button";
-import { FileDown, Github, Linkedin, Mail, Copy, Check, ExternalLink, Smartphone } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { toast } from "@/components/ui/use-toast";
-
-type SocialPlatform = "linkedin" | "github" | "email" | "whatsapp";
+import { FileDown } from "lucide-react";
+import { contactLinks } from "@/utils/contact";
+import ContactOrbit from "@/components/visual/ContactOrbit";
 
 const ContactSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
-  const [copied, setCopied] = useState<SocialPlatform | null>(null);
-  
-  // Social links
-  const socialLinks = {
-    linkedin: "https://www.linkedin.com/in/hugo-canaval/",
-    github: "https://github.com/Hacanaval",
-    email: "hacanaval@hotmail.com",
-    whatsapp: "+57 310 4153555",
-    whatsappUrl: "https://wa.me/573104153555",
-    cvDrive: "https://drive.google.com/drive/folders/12Qbaw-A-fZOzItcqYn17MQ4J7KdkGrQ7?usp=sharing"
-  };
-
-  const copyToClipboard = (text: string, platform: SocialPlatform) => {
-    navigator.clipboard.writeText(text);
-    setCopied(platform);
-    toast({
-      title: t.linkCopied,
-      description: text,
-      duration: 2000,
-    });
-    setTimeout(() => setCopied(null), 2000);
-  };
-
   return (
-    <footer id="contact" className="py-24 dark-section reveal-section">
-      <div className="container mx-auto px-6 text-center">
-        <div className="max-w-md mx-auto">
-          <Button 
-            className="w-full mb-4 text-lg py-6 bg-indigo-600 hover:bg-indigo-700"
-            onClick={() => window.open(socialLinks.cvDrive, "_blank")}
-          >
-            <FileDown className="mr-2" size={20} />
-            {t.downloadCV}
-          </Button>
-          
-          <div className="flex justify-center gap-4 mt-8">
-            <TooltipProvider delayDuration={500}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
-                    onClick={() => window.open(socialLinks.linkedin, "_blank")}
-                  >
-                    <Linkedin size={20} />
-                    <span className="sr-only">{t.viewLinkedIn}</span>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent side="top" className="flex items-center gap-2">
-                  <span>{socialLinks.linkedin}</span>
-                  <Button 
-                    size="icon"
-                    variant="ghost"
-                    className="h-6 w-6"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      copyToClipboard(socialLinks.linkedin, "linkedin");
-                    }}
-                  >
-                    {copied === "linkedin" ? <Check size={14} /> : <Copy size={14} />}
-                  </Button>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            
-            <TooltipProvider delayDuration={500}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
-                    onClick={() => window.open(socialLinks.github, "_blank")}
-                  >
-                    <Github size={20} />
-                    <span className="sr-only">{t.viewGitHub}</span>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent side="top" className="flex items-center gap-2">
-                  <span>{socialLinks.github}</span>
-                  <Button 
-                    size="icon"
-                    variant="ghost"
-                    className="h-6 w-6"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      copyToClipboard(socialLinks.github, "github");
-                    }}
-                  >
-                    {copied === "github" ? <Check size={14} /> : <Copy size={14} />}
-                  </Button>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            
-            <TooltipProvider delayDuration={500}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
-                    onClick={() => copyToClipboard(socialLinks.email, "email")}
-                  >
-                    <Mail size={20} />
-                    <span className="sr-only">{t.contactMe}</span>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent side="top" className="flex items-center gap-2">
-                  <span>{socialLinks.email}</span>
-                  <Button 
-                    size="icon" 
-                    variant="ghost" 
-                    className="h-6 w-6" 
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      copyToClipboard(socialLinks.email, "email");
-                    }}
-                  >
-                    {copied === "email" ? <Check size={14} /> : <Copy size={14} />}
-                  </Button>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            
-            <TooltipProvider delayDuration={500}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="h-12 w-12 rounded-full border-indigo-800 hover:border-indigo-600 hover:bg-indigo-900/50 text-indigo-400"
-                    onClick={() => window.open(socialLinks.whatsappUrl, "_blank")}
-                  >
-                    <Smartphone size={20} />
-                    <span className="sr-only">WhatsApp</span>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent side="top" className="flex items-center gap-2">
-                  <span>{socialLinks.whatsapp}</span>
-                  <Button 
-                    size="icon"
-                    variant="ghost"
-                    className="h-6 w-6"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      copyToClipboard(socialLinks.whatsapp, "whatsapp");
-                    }}
-                  >
-                    {copied === "whatsapp" ? <Check size={14} /> : <Copy size={14} />}
-                  </Button>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+    <footer id="contact" className="ink-section relative py-24 text-white reveal-section sm:py-32">
+      <div className="section-frame">
+        <p className="section-kicker text-[var(--signal)]">08 / Contacto</p>
+        <div className="grid gap-14 lg:grid-cols-[1.4fr_0.6fr] lg:items-end lg:gap-20">
+          <div>
+            <h2 className="contact-heading max-w-5xl">{t.contactTitle}</h2>
+            <p className="body-copy mt-8 max-w-2xl text-lg text-white/62 sm:text-xl">{t.contactText}</p>
           </div>
-          
-          <p className="mt-10 text-gray-500">
-            © {new Date().getFullYear()} · Data Science Portfolio
-          </p>
+
+          <div className="border-t border-white/20 pt-7">
+            <div className="mb-3">
+              <ContactOrbit emphasis="signal" fullWidth label={t.contactMe} />
+            </div>
+            <Button
+              variant="outline"
+              className="focus-ring h-auto w-full justify-between rounded-none border-white/25 bg-transparent px-5 py-5 text-white hover:bg-white hover:text-[var(--ink)]"
+              onClick={() => window.open(contactLinks.cvDrive, "_blank")}
+            >
+              <span className="flex items-center"><FileDown className="mr-2" size={19} />{t.downloadCV}</span><span>↓</span>
+            </Button>
+          </div>
+        </div>
+
+        <div className="mt-20 flex justify-end border-t border-white/20 pt-7">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/35">© {new Date().getFullYear()} · {t.footerText}</p>
         </div>
       </div>
     </footer>

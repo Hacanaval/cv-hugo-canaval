@@ -16,7 +16,7 @@ export const navigationTranslations: Record<LanguageType, {
     skills: "Habilidades",
     projects: "Proyectos",
     education: "Formación",
-    objective: "Objetivo",
+    objective: "Qué busco",
     contact: "Contacto",
   },
   en: {
@@ -25,7 +25,7 @@ export const navigationTranslations: Record<LanguageType, {
     skills: "Skills",
     projects: "Projects",
     education: "Education",
-    objective: "Objective",
+    objective: "What I am looking for",
     contact: "Contact",
   }
 };

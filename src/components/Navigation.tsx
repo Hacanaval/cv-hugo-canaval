@@ -38,16 +38,16 @@ const Navigation: React.FC<NavigationProps> = ({ className, activeSection = "hom
   };
 
   return (
-    <nav className={cn("mx-auto", className)}>
-      <ul className="flex space-x-6">
+    <nav className={cn("mx-auto", className)} aria-label="Primary">
+      <ul className="flex items-center gap-1">
         {navItems.map((item) => (
           <li key={item.href}>
             <a
               href={item.href}
-              className={`text-sm font-medium transition-colors relative ${
+              className={`focus-ring relative px-2.5 py-2 text-[11px] font-medium transition-colors lg:px-3 ${
                 activeSection === item.href.substring(1) 
-                  ? "text-indigo-400 after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-full after:h-0.5 after:bg-indigo-500"
-                  : "text-gray-300 hover:text-indigo-400"
+                  ? "text-white after:absolute after:inset-x-2.5 after:bottom-0 after:h-px after:bg-[var(--signal)]"
+                  : "text-white/55 hover:text-white"
               }`}
               onClick={(e) => handleClick(e, item.href)}
             >

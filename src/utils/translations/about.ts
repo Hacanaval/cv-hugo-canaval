@@ -1,56 +1,47 @@
 import { LanguageType } from "@/contexts/LanguageContext";
 
+type DifferenceItem = { title: string; description: string };
+
 export const aboutTranslations: Record<LanguageType, {
   aboutTitle: string;
-  aboutHtml: string;
+  aboutParagraphs: string[];
   differenceTitle: string;
-  differenceItem1: string;
-  differenceItem2: string;
-  differenceItem3: string;
-  differenceItem4: string;
-  differenceItem5: string;
-  differenceItem6: string;
+  differenceItems: DifferenceItem[];
 }> = {
   es: {
-    aboutTitle: "¿Quién soy?",
-    aboutHtml:
-      "Soy economista, científico de datos y tengo un posgrado en Analítica de Datos. Cuento con más de seis años de experiencia en multinacionales, donde lideré:<br><br>" +
-      "• Proyectos de pricing y estrategia comercial<br>" +
-      "• Iniciativas de trade marketing y automatización de procesos<br>" +
-      "• Procesos de analítica para la toma de decisiones<br><br>" +
-      "Usando datos como base, alcancé resultados de alto impacto. Con el tiempo descubrí que mi vocación está en crear soluciones que unan negocio y tecnología.<br><br>" +
-      "Hoy me desarrollo como profesional híbrido en ciencia de datos y gestión de producto, con formación intensiva en:<br><br>" +
-      "• Estadística, programación y aprendizaje automático<br>" +
-      "• Diseño y desarrollo de productos digitales basados en datos<br>" +
-      "• Un enfoque técnico con visión estratégica de negocio<br><br>" +
-      "<span class='text-indigo-400 font-semibold'>Mi diferencial:</span> Conozco el negocio desde dentro, lidero equipos y domino las herramientas para transformar procesos y productos desde la tecnología.",
+    aboutTitle: "Sobre mí",
+    aboutParagraphs: [
+      "Me gusta trabajar en problemas donde hay que entender la operación y la tecnología. Antes de pensar en un modelo o una herramienta, busco saber quién toma la decisión, qué información tiene y dónde se está perdiendo tiempo o calidad.",
+      "Soy economista, tengo un posgrado en Analítica de Datos y me formé en Data Science. Esa base me ha servido para construir modelos predictivos, agentes con IA, APIs y automatizaciones. Suelo participar desde las primeras conversaciones hasta la validación de una versión que ya puede usarse.",
+      "Una solución empieza a parecerme un producto cuando tiene usuarios, reglas, métricas y excepciones. Por eso me interesa seguir cerca después del despliegue, ver qué falló y decidir qué vale la pena cambiar.",
+      "La mayor parte de este trabajo pertenece a proyectos privados. En esta página comparto el problema, las decisiones que tomé, la arquitectura general y los resultados que pueden comunicarse públicamente."
+    ],
     differenceTitle: "Lo que me diferencia",
-    differenceItem1: "6+ años impulsando decisiones comerciales con datos en empresas líderes",
-    differenceItem2: "Visión de negocio, habilidades analíticas y liderazgo para alinear equipos",
-    differenceItem3: "Formación sólida en Ciencia de Datos, Machine Learning e IA",
-    differenceItem4: "Capacidad para traducir necesidades del cliente en soluciones accionables",
-    differenceItem5: "Proyectos con métricas claras y foco en impacto real del negocio",
-    differenceItem6: "Adaptabilidad en entornos ágiles y orientación a producto y resultados",
+    differenceItems: [
+      { title: "Empiezo por el problema", description: "Hablo con las personas que conocen el proceso y reviso cómo toman decisiones antes de proponer una solución." },
+      { title: "Convierto ideas en algo que se puede probar", description: "Defino una primera versión, una métrica y las condiciones necesarias para probarla con usuarios y datos reales." },
+      { title: "Me mantengo cerca de la ejecución técnica", description: "Puedo discutir un modelo, una API o un pipeline y entender cómo cada decisión afecta el producto." },
+      { title: "Elijo la herramienta según el caso", description: "He resuelto problemas con modelos, LLM y reglas deterministas. La elección depende de la variabilidad del proceso, el riesgo y el costo de equivocarse." },
+      { title: "Pienso en lo que ocurre después del despliegue", description: "Tengo en cuenta horarios, permisos, excepciones y seguimiento. Después del despliegue reviso errores, casos límite, uso y cambios en el proceso." },
+      { title: "Mido lo que cambió", description: "Uso fallos evitados, tiempo ahorrado, adopción o capacidad liberada. La métrica tiene que responder a la decisión que originó el proyecto." }
+    ]
   },
   en: {
-    aboutTitle: "Who am I?",
-    aboutHtml:
-      "I am an economist and data scientist with a postgraduate degree in Data Analytics. I have more than six years of experience in multinational companies, where I led:<br><br>" +
-      "• Pricing and commercial strategy projects<br>" +
-      "• Trade marketing initiatives and process automation<br>" +
-      "• Analytics processes for decision-making<br><br>" +
-      "Using data as a foundation, I achieved high-impact results. Over time, I realized my path is to create solutions that connect business and technology.<br><br>" +
-      "Today I work as a hybrid professional in data science and product management, with intensive training in:<br><br>" +
-      "• Statistics, programming, and machine learning<br>" +
-      "• Designing and developing data-driven digital products<br>" +
-      "• A technical approach with a strategic business view<br><br>" +
-      "<span class='text-indigo-400 font-semibold'>My value:</span> I know business from the inside, I lead teams, and I master the tools to transform processes and products through technology.",
+    aboutTitle: "About me",
+    aboutParagraphs: [
+      "I like working on problems that require understanding both operations and technology. Before thinking about a model or a tool, I try to understand who makes the decision, what information they have, and where time or quality is being lost.",
+      "I am an economist, I have a postgraduate degree in Data Analytics, and I trained in Data Science. This background has helped me build predictive models, AI agents, APIs, and automations. I usually take part from the first conversations until we validate a version that people can use.",
+      "A solution starts to feel like a product when it has users, rules, metrics, and exceptions. This is why I like to stay close after deployment, see what failed, and decide what is worth changing.",
+      "Most of this work belongs to private projects. On this website, I share the problem, the decisions I made, the general architecture, and the results that can be shared publicly."
+    ],
     differenceTitle: "What makes me different",
-    differenceItem1: "6+ years driving data-informed business decisions in leading companies",
-    differenceItem2: "Business vision, analytical skills, and leadership to align teams",
-    differenceItem3: "Solid training in Data Science, Machine Learning, and AI",
-    differenceItem4: "Ability to translate customer needs into actionable solutions",
-    differenceItem5: "Projects with clear metrics and real business impact",
-    differenceItem6: "Adaptability in agile environments with a product and results mindset",
+    differenceItems: [
+      { title: "I start with the problem", description: "I speak with the people who know the process and review how they make decisions before I propose a solution." },
+      { title: "I turn ideas into something we can test", description: "I define a first version, a metric, and the conditions needed to test it with real users and data." },
+      { title: "I stay close to the technical work", description: "I can discuss a model, an API, or a pipeline and understand how each decision affects the product." },
+      { title: "I choose the tool based on the case", description: "I have solved problems with models, LLMs, and deterministic rules. The choice depends on how variable the process is, the risk, and the cost of making a mistake." },
+      { title: "I think about what happens after deployment", description: "I consider schedules, permissions, exceptions, and monitoring. After deployment, I review errors, edge cases, usage, and changes in the process." },
+      { title: "I measure what changed", description: "I measure avoided failures, time saved, adoption, or available capacity. The metric must be connected to the decision that led to the project." }
+    ]
   }
 };

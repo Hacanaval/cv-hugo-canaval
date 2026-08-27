@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
@@ -9,29 +8,32 @@ import ProjectsList from "@/components/projects/ProjectsList";
 const ProjectsSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
-  
-  return (
-    <section id="projects" className="section-spacing dark-section">
-      <div className="container mx-auto px-6">
-        <h2 className="section-heading text-center">{t.projectsTitle}</h2>
-        
-        <ProjectsList />
 
-        {/* Call to action text before the button */}
-        <div className="text-center element-spacing">
-          <p className="text-body text-medium-contrast max-w-4xl mx-auto">
-            {t.githubInvitation}
-          </p>
+  return (
+    <section id="projects" className="paper-section-alt section-spacing reveal-section">
+      <div className="section-frame">
+        <div className="mb-20 grid gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+          <div>
+            <p className="section-kicker text-[var(--cobalt)]">04 / Evidencia</p>
+            <h2 className="section-heading mb-0">{t.projectsTitle}</h2>
+          </div>
+          <p className="body-copy text-body border-t border-[var(--line)] pt-6 text-black/65">{t.projectsIntro}</p>
         </div>
 
-        <div className="flex justify-center">
-          <Button 
-            variant="outline" 
+        <ProjectsList />
+
+        <div className="mt-16 grid gap-8 border-t border-[var(--line)] pt-10 sm:grid-cols-[1fr_auto] sm:items-end">
+          <div>
+            <h3 className="mb-3 text-2xl font-semibold tracking-[-0.03em]">{t.githubTitle}</h3>
+            <p className="body-copy text-body max-w-3xl text-black/60">{t.githubInvitation}</p>
+          </div>
+          <Button
+            variant="outline"
             size="lg"
-            className="gap-2 border-gray-700 hover:bg-indigo-900/20 hover:border-indigo-600 text-gray-300 hover:text-indigo-400 transition-all duration-300"
+            className="focus-ring h-auto rounded-none border-black bg-transparent px-6 py-4 text-black hover:bg-black hover:text-white"
             onClick={() => window.open("https://github.com/Hacanaval", "_blank")}
           >
-            <Github size={20} />
+            <Github size={19} />
             <span>{t.viewAllProjects}</span>
           </Button>
         </div>

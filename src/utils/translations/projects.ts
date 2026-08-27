@@ -1,171 +1,90 @@
-
 import { LanguageType } from "@/contexts/LanguageContext";
+
+type Project = {
+  title: string;
+  description: string[];
+  results: string[];
+  stack: string[];
+};
 
 export const projectsTranslations: Record<LanguageType, {
   projectsTitle: string;
-  projectDescription: string;
-  viewProjectBtn: string;
-  viewCodeBtn: string;
-  project1Title: string;
-  project1Description: string;
-  project1Technologies: string[];
-  project2Title: string;
-  project2Description: string;
-  project2Technologies: string[];
-  project3Title: string;
-  project3Description: string;
-  project3Technologies: string[];
-  cvOptimizerTitle: string;
-  cvOptimizerDesc: string;
-  project1Desc: string;
-  project2Desc: string;
-  project3Desc: string;
-  projectButton: string;
-  accuracyLabel: string;
-  errorLabel: string;
-  accuracyMetricLabel: string;
-  recallLabel: string;
-  precisionLabel: string;
-  viewAllProjects: string;
-  highlightsLabel: string;
+  projectsIntro: string;
+  resultsLabel: string;
+  technologiesLabel: string;
+  projectCases: Project[];
+  githubTitle: string;
   githubInvitation: string;
-  saasAgentTitle: string;
-  saasAgentDesc: string;
-  saasAgentHighlights: string[];
-  saasAgentStack: string[];
-  ageClassificationTitle: string;
-  ageClassificationDesc: string;
-  ageClassificationHighlights: string[];
-  ageClassificationStack: string[];
-  sentimentAnalysisTitle: string;
-  sentimentAnalysisDesc: string;
-  sentimentAnalysisHighlights: string[];
-  sentimentAnalysisStack: string[];
-  taxiDemandTitle: string;
-  taxiDemandDesc: string;
-  taxiDemandHighlights: string[];
-  taxiDemandStack: string[];
+  viewAllProjects: string;
 }> = {
   es: {
-    projectsTitle: "Proyectos de Aprendizaje",
-    projectDescription: "Proyectos personales desarrollados durante mi formación en ciencia de datos y desarrollo.",
-    viewProjectBtn: "Ver proyecto",
-    viewCodeBtn: "Ver código",
-    project1Title: "Predicción de Abandono",
-    project1Description: "Modelo de machine learning para predecir la probabilidad de abandono de clientes (churn) en una empresa de telecomunicaciones. Incluye análisis exploratorio, feature engineering, selección de modelo y evaluación de resultados.",
-    project1Technologies: ["Python", "Scikit-learn", "Pandas", "Seaborn", "Random Forest"],
-    project2Title: "Dashboard de Ventas",
-    project2Description: "Dashboard interactivo para análisis de datos de ventas. Permite la visualización de tendencias, compararación de métricas y segmentar datos por diferentes dimensiones.",
-    project2Technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "NumPy"],
-    project3Title: "Web Scraping de Precios",
-    project3Description: "Herramienta automatizada para extraer y monitorear precios de productos competidores en e-commerce. Incluye visualización de evolución temporal y alertas de cambios significativos.",
-    project3Technologies: ["Python", "Beautiful Soup", "Pandas", "Matplotlib", "Selenium"],
-    cvOptimizerTitle: "Optimizador de CV",
-    cvOptimizerDesc: "Herramienta basada en NLP que analiza ofertas de trabajo y optimiza el CV para aumentar la compatibilidad con la posición deseada.",
-    project1Desc: "Modelo de machine learning para predecir la probabilidad de abandono de clientes en una empresa de telecomunicaciones.",
-    project2Desc: "Análisis estadístico avanzado utilizando técnicas de bootstrapping para mejorar la precisión de modelos de regresión.",
-    project3Desc: "Solución para el manejo de clases desbalanceadas en problemas de clasificación mediante técnicas de remuestreo y algoritmos especializados.",
-    projectButton: "Ver en GitHub",
-    accuracyLabel: "Incremento de precisión",
-    errorLabel: "Reducción de error",
-    accuracyMetricLabel: "Exactitud",
-    recallLabel: "Sensibilidad",
-    precisionLabel: "Precisión",
-    viewAllProjects: "Ver todos los proyectos",
-    highlightsLabel: "Características técnicas",
-    githubInvitation: "En mi GitHub encontrarás estos y otros proyectos que he desarrollado como parte de mi aprendizaje en ciencia de datos, machine learning y desarrollo de aplicaciones.",
-    saasAgentTitle: "Agente Vendedor SaaS",
-    saasAgentDesc: "Chatbot experimental con arquitectura RAG para automatización de consultas vía WhatsApp y Telegram.",
-    saasAgentHighlights: [
-      "Integración de LLMs con memoria conversacional",
-      "Vector search implementado con FAISS",
-      "API REST con FastAPI y PostgreSQL"
+    projectsTitle: "Productos y sistemas",
+    projectsIntro: "Estos cuatro casos resumen el tipo de productos que he construido. Comparto lo suficiente para entender el problema y el resultado, sin exponer información privada.",
+    resultsLabel: "Resultados",
+    technologiesLabel: "Tecnologías",
+    projectCases: [
+      {
+        title: "Predicción de riesgo de entrega",
+        description: ["Desarrollé un sistema de machine learning que estima el riesgo de una entrega antes del despacho. La predicción se traduce en cuatro acciones operativas según el nivel de riesgo."],
+        results: ["Entrenamiento con más de 100 millones de registros históricos.", "Entre 210.000 y 220.000 casos analizados al día.", "Cerca de 15% menos entregas fallidas."],
+        stack: ["Python", "Scikit-learn", "BigQuery", "Cloud Run", "Optuna"]
+      },
+      {
+        title: "Gestión de tareas con IA",
+        description: ["Construí un producto para asignar y seguir tareas desde Telegram y una aplicación web. El bot usa function calling, mientras que los permisos se controlan desde el código."],
+        results: ["Catálogo de 268 usuarios.", "Diez herramientas disponibles mediante function calling.", "Tareas sincronizadas en tiempo real entre el bot y la web."],
+        stack: ["Gemini", "Firestore", "FastAPI", "Next.js", "Cloud Run"]
+      },
+      {
+        title: "Conciliación operativa de depósitos",
+        description: ["Automaticé el procesamiento de extractos bancarios mediante reglas específicas para cada formato. El sistema elimina duplicados, valida la información y prepara la carga al proceso operativo.", "Las reglas son deterministas. En este caso importaban más la trazabilidad y el control de excepciones que usar un modelo de IA."],
+        results: ["Cerca de 3.000 conciliaciones procesadas al día.", "El volumen equivale a unas 13 jornadas manuales de ocho horas cada día.", "Ejecuciones programadas con manejo separado de excepciones."],
+        stack: ["Python", "BigQuery", "Cloud Run Jobs", "Google Sheets"]
+      },
+      {
+        title: "Validación de evidencia fotográfica",
+        description: ["Desarrollé un sistema con Gemini Vision para revisar imágenes de evidencia. Clasifica la imagen y explica el motivo cuando encuentra un problema. Los desacuerdos quedan disponibles para revisión humana."],
+        results: ["Miles de imágenes procesadas al día.", "96,77% de recall en una validación offline de 301 casos.", "Prompt versionado y trazabilidad de las decisiones."],
+        stack: ["Gemini Vision", "BigQuery", "Python", "Cloud Run Jobs"]
+      }
     ],
-    saasAgentStack: ["Python", "FastAPI", "PostgreSQL", "FAISS", "JWT", "OpenAI API"],
-    ageClassificationTitle: "Clasificación de Edad con Visión por Computadora",
-    ageClassificationDesc: "Modelo de clasificación de edad usando CNN (ResNet50) y transfer learning con imágenes faciales.",
-    ageClassificationHighlights: [
-      "Clasificación binaria con transfer learning",
-      "Preprocesamiento y aumento de datos",
-      "Evaluación de métricas de clasificación"
-    ],
-    ageClassificationStack: ["Python", "TensorFlow", "Keras", "ResNet50", "Matplotlib", "PIL"],
-    sentimentAnalysisTitle: "Comparación de Modelos de Sentimiento con NLP",
-    sentimentAnalysisDesc: "Comparación de modelos de NLP para análisis de sentimiento en reseñas de películas.",
-    sentimentAnalysisHighlights: [
-      "Comparación de preprocesadores (NLTK vs spaCy)",
-      "Evaluación de múltiples clasificadores",
-      "Métricas de evaluación multiclase"
-    ],
-    sentimentAnalysisStack: ["Python", "NLP", "NLTK", "spaCy", "TF-IDF", "LGBMClassifier", "Scikit-learn"],
-    taxiDemandTitle: "Predicción de Demanda de Taxis por Hora",
-    taxiDemandDesc: "Predicción de demanda de taxis usando modelos de series de tiempo y machine learning.",
-    taxiDemandHighlights: [
-      "Ingeniería de features temporales",
-      "Comparación de modelos (SARIMA, XGBoost, Prophet)",
-      "Evaluación de métricas de regresión"
-    ],
-    taxiDemandStack: ["Python", "Pandas", "SARIMA", "XGBoost", "Prophet", "Scikit-learn"],
+    githubTitle: "Proyectos personales en GitHub",
+    githubInvitation: "En mi GitHub comparto proyectos personales de ciencia de datos, machine learning y desarrollo de aplicaciones.",
+    viewAllProjects: "Ver todos los proyectos"
   },
   en: {
-    projectsTitle: "Learning Projects",
-    projectDescription: "Personal projects developed during my training in data science and software development.",
-    viewProjectBtn: "View project",
-    viewCodeBtn: "View code",
-    project1Title: "Customer Churn Prediction",
-    project1Description: "Machine learning model to predict the probability of customer churn in a telecommunications company. Includes exploratory analysis, feature engineering, model selection, and evaluation of results.",
-    project1Technologies: ["Python", "Scikit-learn", "Pandas", "Seaborn", "Random Forest"],
-    project2Title: "Sales Dashboard",
-    project2Description: "Interactive dashboard for sales data analysis. Allows visualization of trends, comparison of metrics, and data segmentation across different dimensions.",
-    project2Technologies: ["Python", "Pandas", "Matplotlib", "Seaborn", "NumPy"],
-    project3Title: "E-commerce Price Scraper",
-    project3Description: "Automated tool for extracting and monitoring competitor product prices in e-commerce. Includes time-series visualization and alerts for significant changes.",
-    project3Technologies: ["Python", "Beautiful Soup", "Pandas", "Matplotlib", "Selenium"],
-    cvOptimizerTitle: "CV Optimizer",
-    cvOptimizerDesc: "NLP-based tool that analyzes job offers and optimizes your resume to increase compatibility with the desired position.",
-    project1Desc: "Machine learning model to predict customer churn probability in a telecommunications company.",
-    project2Desc: "Advanced statistical analysis using bootstrapping techniques to improve the accuracy of regression models.",
-    project3Desc: "Solution for handling imbalanced classes in classification problems using resampling techniques and specialized algorithms.",
-    projectButton: "View on GitHub",
-    accuracyLabel: "Accuracy Increase",
-    errorLabel: "Error Reduction",
-    accuracyMetricLabel: "Accuracy",
-    recallLabel: "Recall",
-    precisionLabel: "Precision",
-    viewAllProjects: "View all projects",
-    highlightsLabel: "Technical features",
-    githubInvitation: "On my GitHub you'll find these and other projects I've developed as part of my learning journey in data science, machine learning, and application development.",
-    saasAgentTitle: "SaaS Sales Agent",
-    saasAgentDesc: "Experimental chatbot with RAG architecture for query automation via WhatsApp and Telegram.",
-    saasAgentHighlights: [
-      "LLM integration with conversational memory",
-      "Vector search implemented with FAISS",
-      "REST API with FastAPI and PostgreSQL"
+    projectsTitle: "Products and systems",
+    projectsIntro: "These four cases show the type of products I have built. I share enough to understand the problem and the result, without exposing private information.",
+    resultsLabel: "Results",
+    technologiesLabel: "Technologies",
+    projectCases: [
+      {
+        title: "Delivery risk prediction",
+        description: ["I developed a machine learning system that estimates the risk of a delivery before dispatch. The prediction is translated into four operational actions based on the level of risk."],
+        results: ["Training based on more than 100 million historical records.", "Between 210,000 and 220,000 cases analyzed every day.", "Close to 15% fewer failed deliveries."],
+        stack: ["Python", "Scikit-learn", "BigQuery", "Cloud Run", "Optuna"]
+      },
+      {
+        title: "AI task management",
+        description: ["I built a product to assign and track tasks from Telegram and a web application. The bot uses function calling, while permissions are controlled in the code."],
+        results: ["A directory with 268 registered users.", "Ten tools available through function calling.", "Tasks synchronized in real time between the bot and the web application."],
+        stack: ["Gemini", "Firestore", "FastAPI", "Next.js", "Cloud Run"]
+      },
+      {
+        title: "Bank deposit reconciliation",
+        description: ["I automated the processing of bank statements using specific rules for each format. The system removes duplicates, validates the information, and prepares the data for the operational process.", "The rules are deterministic. In this case, traceability and exception control were more important than using an AI model."],
+        results: ["Around 3,000 reconciliations processed every day.", "Processing the same daily volume by hand would take around thirteen eight-hour workdays.", "Scheduled runs with separate exception handling."],
+        stack: ["Python", "BigQuery", "Cloud Run Jobs", "Google Sheets"]
+      },
+      {
+        title: "Photo evidence validation",
+        description: ["I developed a system with Gemini Vision to review evidence images. It classifies each image and explains the reason when it finds a problem. Disagreements are available for human review."],
+        results: ["Thousands of images processed every day.", "96.77% recall in an offline validation with 301 cases.", "A versioned prompt and a record of every decision."],
+        stack: ["Gemini Vision", "BigQuery", "Python", "Cloud Run Jobs"]
+      }
     ],
-    saasAgentStack: ["Python", "FastAPI", "PostgreSQL", "FAISS", "JWT", "OpenAI API"],
-    ageClassificationTitle: "Image-Based Age Classification with Computer Vision",
-    ageClassificationDesc: "Age classification model using CNN (ResNet50) and transfer learning with facial images.",
-    ageClassificationHighlights: [
-      "Binary classification with transfer learning",
-      "Data preprocessing and augmentation",
-      "Classification metrics evaluation"
-    ],
-    ageClassificationStack: ["Python", "TensorFlow", "Keras", "ResNet50", "Matplotlib", "PIL"],
-    sentimentAnalysisTitle: "Sentiment Model Comparison with NLP",
-    sentimentAnalysisDesc: "NLP model comparison for sentiment analysis on movie reviews.",
-    sentimentAnalysisHighlights: [
-      "Preprocessing comparison (NLTK vs spaCy)",
-      "Multiple classifier evaluation",
-      "Multiclass evaluation metrics"
-    ],
-    sentimentAnalysisStack: ["Python", "NLP", "NLTK", "spaCy", "TF-IDF", "LGBMClassifier", "Scikit-learn"],
-    taxiDemandTitle: "Hourly Taxi Demand Forecasting",
-    taxiDemandDesc: "Taxi demand prediction using time series and machine learning models.",
-    taxiDemandHighlights: [
-      "Temporal feature engineering",
-      "Model comparison (SARIMA, XGBoost, Prophet)",
-      "Regression metrics evaluation"
-    ],
-    taxiDemandStack: ["Python", "Pandas", "SARIMA", "XGBoost", "Prophet", "Scikit-learn"],
+    githubTitle: "Personal projects on GitHub",
+    githubInvitation: "On my GitHub, I share personal projects in data science, machine learning, and application development.",
+    viewAllProjects: "View all projects"
   }
 };

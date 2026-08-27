@@ -11,6 +11,7 @@ import { translations } from "@/utils/translations";
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
 
@@ -43,9 +44,9 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    // Initial check for active section
-    handleScroll();
+    const initialCheck = window.requestAnimationFrame(handleScroll);
     return () => {
+      window.cancelAnimationFrame(initialCheck);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -72,13 +73,13 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-black/90 backdrop-blur-md border-b border-gray-800 shadow-lg"
-          : "py-5 bg-transparent"
+          ? "border-b border-white/10 bg-[rgba(21,22,19,0.88)] py-2 backdrop-blur-xl"
+          : "py-4 sm:py-5"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="section-frame flex items-center justify-between">
         <div className="flex items-center">
           <LanguageSelector />
         </div>
@@ -86,29 +87,29 @@ const Header: React.FC = () => {
         <Navigation className="hidden md:flex" activeSection={activeSection} onNavClick={handleNavClick} />
         
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="border-gray-700 bg-gray-900/70 hover:bg-gray-800/80 backdrop-blur-sm">
-                <Menu className="text-gray-300" />
+              <Button variant="outline" size="icon" className="rounded-none border-white/20 bg-black/10 text-white hover:bg-white/10">
+                <Menu />
+                <span className="sr-only">Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent className="flex flex-col pt-16 bg-gray-900/95 backdrop-blur-md border-gray-800">
+            <SheetContent className="flex flex-col border-white/10 bg-[var(--ink)] pt-16 text-white">
               <nav>
                 <ul className="flex flex-col space-y-4">
                   {navItems.map((item) => (
                     <li key={item.href}>
                       <a
                         href={item.href}
-                        className={`text-lg font-medium transition duration-300 block py-3 px-4 rounded-lg ${
+                        className={`block border-b border-white/10 px-1 py-4 text-lg font-medium transition-colors ${
                           activeSection === item.href.substring(1) 
-                            ? "text-indigo-400 bg-indigo-900/20 border-l-4 border-indigo-400"
-                            : "text-gray-300 hover:text-indigo-400 hover:bg-gray-800/50"
+                            ? "text-[var(--signal)]"
+                            : "text-white/65 hover:text-white"
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
                           handleNavClick(item.href);
-                          // Close sheet on nav click
-                          document.body.click();
+                          setMobileOpen(false);
                         }}
                       >
                         {item.label}

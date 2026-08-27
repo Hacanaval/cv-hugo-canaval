@@ -12,11 +12,10 @@ import ContactSection from "@/components/sections/ContactSection";
 
 const Index = () => {
   useEffect(() => {
-    // Fade-in effect for sections on scroll
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.1
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.08,
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -29,25 +28,15 @@ const Index = () => {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     
-    document.querySelectorAll('.reveal-section').forEach(section => {
+    document.querySelectorAll(".reveal-section").forEach(section => {
       observer.observe(section);
-    });
-
-    // Add hover effects for project cards
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.classList.add('hover:shadow-lg', 'hover:border-indigo-500', 'transition-all', 'duration-300', 'hover:scale-[1.02]');
-    });
-
-    // Add hover effects for education timeline items
-    document.querySelectorAll('.timeline-item .dark-card').forEach(card => {
-      card.classList.add('hover:shadow-lg', 'hover:border-indigo-500', 'transition-all', 'duration-300', 'hover:scale-[1.02]');
     });
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-gray-100">
+    <div className="site-shell min-h-screen">
       <Header />
       <main>
         <HeroSection />

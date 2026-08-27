@@ -24,7 +24,7 @@ export const educationTranslations: Record<LanguageType, {
   sparkCourseDesc: string;
 }> = {
   es: {
-    educationTitle: "Mi Formación",
+    educationTitle: "Formación",
     education1Title: "Posgrado en Analítica de Datos Aplicada a los Negocios",
     education1Place: "Universidad Icesi – Cali, Colombia",
     education1Period: "2020 – 2021",
@@ -32,9 +32,9 @@ export const educationTranslations: Record<LanguageType, {
     education2Place: "Universidad Icesi – Cali, Colombia",
     education2Period: "2012 – 2018",
     education3Title: "Programa en Data Science",
-    education3Place: "TripleTen (Remoto – Internacional)",
-    education3Period: "2025",
-    coursesTitle: "Cursos y Certificaciones",
+    education3Place: "TripleTen · Python, SQL, estadística, machine learning y proyectos aplicados",
+    education3Period: "2024 – 2025",
+    coursesTitle: "Cursos y certificaciones",
     coursesPlatformTitle: "Plataformas de aprendizaje",
     totalCoursesCompleted: "certificados completados",
     coursesRecentTitle: "Certificaciones recientes",
@@ -46,7 +46,7 @@ export const educationTranslations: Record<LanguageType, {
     sparkCourseDesc: "Fundamentos de Apache Spark para procesamiento de grandes volúmenes de datos. Arquitectura, RDDs y operaciones básicas.",
   },
   en: {
-    educationTitle: "My Education",
+    educationTitle: "Education",
     education1Title: "Postgraduate Degree in Data Analytics for Business",
     education1Place: "Universidad Icesi – Cali, Colombia",
     education1Period: "2020 – 2021",
@@ -54,9 +54,9 @@ export const educationTranslations: Record<LanguageType, {
     education2Place: "Universidad Icesi – Cali, Colombia",
     education2Period: "2012 – 2018",
     education3Title: "Data Science Program",
-    education3Place: "TripleTen (Remote – International)",
-    education3Period: "2025",
-    coursesTitle: "Courses and Certifications",
+    education3Place: "TripleTen · Python, SQL, statistics, machine learning, and applied projects",
+    education3Period: "2024 – 2025",
+    coursesTitle: "Courses and certifications",
     coursesPlatformTitle: "Learning platforms",
     totalCoursesCompleted: "completed certificates",
     coursesRecentTitle: "Recent certifications",

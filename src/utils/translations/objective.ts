@@ -2,32 +2,20 @@ import { LanguageType } from "@/contexts/LanguageContext";
 
 export const objectiveTranslations: Record<LanguageType, {
   objectiveTitle: string;
-  objectiveHtml: string;
+  objectiveParagraphs: string[];
 }> = {
   es: {
-    objectiveTitle: "Mi Objetivo Profesional",
-    objectiveHtml:
-      "Estoy en una misión clara:<br><br>" +
-      "• Crear valor donde negocio y tecnología se encuentran<br>" +
-      "• Diseñar y liderar soluciones basadas en datos y producto que impacten métricas del negocio<br>" +
-      "• Trabajar 100% remoto con equipos internacionales<br><br>" +
-      "Mi propósito no es solo cambiar de industria, sino transformar mi carrera desde la experiencia comercial hacia el mundo IT, con una ventaja competitiva única:<br><br>" +
-      "• Conocimiento profundo del negocio<br>" +
-      "• Entendimiento del consumidor<br>" +
-      "• Dominio de datos y analítica aplicada<br><br>" +
-      "Trabajo cada día por ese objetivo, estudiando con disciplina, desarrollando proyectos propios y preparándome para aportar valor en equipos globales."
+    objectiveTitle: "Qué busco ahora",
+    objectiveParagraphs: [
+      "Quiero seguir construyendo productos de datos e inteligencia artificial que lleguen a usuarios reales. Me interesa participar en las decisiones de producto y mantenerme cerca de la implementación.",
+      "Me interesa trabajar con equipos distribuidos en distintos países y con proyectos de mayor alcance. Quiero tener espacio para tomar decisiones y conocer otras formas de construir. Los sistemas que todavía no conozco también me atraen. Buena parte de lo que sé lo aprendí resolviendo problemas reales."
+    ]
   },
   en: {
-    objectiveTitle: "My Professional Objective",
-    objectiveHtml:
-      "I have a clear mission:<br><br>" +
-      "• Create value where business and technology meet<br>" +
-      "• Design and lead data- and product-driven solutions that impact business metrics<br>" +
-      "• Work 100% remotely with international teams<br><br>" +
-      "My purpose is not just to change industries, but to transform my career from a commercial background into the IT world, with a unique competitive advantage:<br><br>" +
-      "• Deep understanding of business<br>" +
-      "• Insight into consumer behavior<br>" +
-      "• Strong command of data and applied analytics<br><br>" +
-      "I work toward this goal every day, studying with discipline, developing personal projects, and preparing to deliver value in global teams."
+    objectiveTitle: "What I am looking for now",
+    objectiveParagraphs: [
+      "I want to continue building data and artificial intelligence products that reach real users. I want to take part in product decisions and stay close to the implementation.",
+      "I am interested in working with distributed teams across different countries and on projects with a bigger scope. I want the freedom to make decisions and learn different ways of building. I am also interested in systems that are new to me. Much of what I know comes from solving real problems."
+    ]
   }
 };

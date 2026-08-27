@@ -1,101 +1,55 @@
-
 import React from "react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Bot, Eye, Brain, TrendingUp, Cpu } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ArrowUpRight, Bot, Camera, Landmark, TrendingUp } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
-  description: string;
-  highlights: string[];
+  description: string[];
+  results: string[];
   stack: string[];
-  githubUrl: string;
-  highlightsLabel: string;
-  projectButton: string;
+  resultsLabel: string;
+  technologiesLabel: string;
+  index: number;
 }
 
-const getProjectIcon = (title: string) => {
-  if (title.toLowerCase().includes('agente') || title.toLowerCase().includes('agent') || title.toLowerCase().includes('chatbot')) {
-    return <Bot size={20} className="text-indigo-200" />;
-  }
-  if (title.toLowerCase().includes('clasificación') || title.toLowerCase().includes('classification') || title.toLowerCase().includes('age')) {
-    return <Eye size={20} className="text-indigo-200" />;
-  }
-  if (title.toLowerCase().includes('sentimiento') || title.toLowerCase().includes('sentiment') || title.toLowerCase().includes('nlp')) {
-    return <Brain size={20} className="text-indigo-200" />;
-  }
-  if (title.toLowerCase().includes('demanda') || title.toLowerCase().includes('demand') || title.toLowerCase().includes('predicción')) {
-    return <TrendingUp size={20} className="text-indigo-200" />;
-  }
-  return <Cpu size={20} className="text-indigo-200" />;
-};
+const icons = [TrendingUp, Bot, Landmark, Camera];
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
-  title,
-  description,
-  highlights,
-  stack,
-  githubUrl,
-  highlightsLabel,
-  projectButton,
-}) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, results, stack, resultsLabel, technologiesLabel, index }) => {
+  const Icon = icons[index] ?? TrendingUp;
+
   return (
-    <Card className="glass-card border-gray-800 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-indigo-500/25 hover:border-indigo-400 hover:scale-[1.03] hover:bg-gray-900/80 group touch-manipulation active:scale-[0.98] sm:active:scale-[1.03]">
-      <CardHeader className="bg-gradient-to-r from-indigo-800 to-indigo-900 text-white relative overflow-hidden p-4 sm:p-6">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-indigo-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div className="relative z-10 flex items-center gap-3">
-          <div className="flex-shrink-0">
-            {getProjectIcon(title)}
+    <article className="grid gap-8 border-t border-[var(--line)] py-10 first:pt-0 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16 lg:py-14">
+      <div className="flex flex-col justify-between">
+        <div>
+          <div className="mb-7 flex items-center justify-between">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--cobalt)]">Caso 0{index + 1}</span>
+            <Icon size={21} className="text-[var(--cobalt)]" />
           </div>
-          <CardTitle className="group-hover:text-indigo-100 transition-colors duration-300 text-hierarchy-3 text-high-contrast">{title}</CardTitle>
+          <h3 className="max-w-xl text-3xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-4xl">{title}</h3>
         </div>
-      </CardHeader>
-      <CardContent className="pt-4 sm:pt-6 px-4 sm:px-6">
-        <p className="text-medium-contrast mb-4 group-hover:text-gray-200 transition-colors duration-300 text-body-small">{description}</p>
-        
-        <div className="mb-4">
-          <h4 className="text-sm font-semibold text-indigo-400 mb-3 group-hover:text-indigo-300 transition-colors duration-300">{highlightsLabel}:</h4>
-          <ul className="text-xs sm:text-sm text-gray-300 space-y-2">
-            {highlights.map((highlight, index) => (
-              <li 
-                key={index} 
-                className="flex items-start opacity-90 group-hover:opacity-100 transition-all duration-300"
-                style={{ transitionDelay: `${index * 50}ms` }}
-              >
-                <span className="text-indigo-400 mr-2 group-hover:text-indigo-300 transition-colors duration-300 mt-1">•</span>
-                <span className="group-hover:text-gray-200 transition-colors duration-300 text-body-small text-medium-contrast">{highlight}</span>
-              </li>
+        <ArrowUpRight className="mt-8 hidden text-black/25 lg:block" size={34} />
+      </div>
+
+      <div className="grid gap-9 sm:grid-cols-2">
+        <div>
+          <div className="body-copy space-y-4 text-body-small text-black/65">
+            {description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+          <p className="mb-3 mt-8 font-mono text-[10px] uppercase tracking-[0.18em] text-black/40">{technologiesLabel}</p>
+          <div className="flex flex-wrap gap-x-3 gap-y-2">
+            {stack.map((tech) => <span key={tech} className="border-b border-[var(--cobalt)] pb-0.5 text-xs font-medium">{tech}</span>)}
+          </div>
+        </div>
+
+        <div className="bg-[var(--cobalt)] p-6 text-white sm:p-7">
+          <h4 className="mb-5 font-mono text-[10px] uppercase tracking-[0.18em] text-white/65">{resultsLabel}</h4>
+          <ul className="space-y-5">
+            {results.map((result) => (
+              <li key={result} className="border-t border-white/30 pt-4 text-sm leading-relaxed sm:text-[15px]">{result}</li>
             ))}
           </ul>
         </div>
-        
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-          {stack.map((tech, index) => (
-            <Badge 
-              key={index} 
-              variant="outline" 
-              className="bg-indigo-900/30 text-indigo-300 border-indigo-700 group-hover:bg-indigo-800/40 group-hover:text-indigo-200 group-hover:border-indigo-600 transition-all duration-300 hover:scale-105 text-xs sm:text-sm px-2 py-1 touch-manipulation"
-              style={{ transitionDelay: `${index * 30}ms` }}
-            >
-              {tech}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-      
-      <CardFooter className="px-4 sm:px-6 pb-4 sm:pb-6">
-        <Button 
-          variant="outline" 
-          className="w-full flex items-center justify-center gap-2 border-gray-700 hover:bg-indigo-900/30 hover:border-indigo-600 text-gray-300 hover:text-indigo-200 transition-all duration-300 group/btn relative overflow-hidden min-h-[44px] touch-manipulation active:scale-95"
-          onClick={() => window.open(githubUrl, "_blank")}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-indigo-500/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-          <Github size={16} className="relative z-10 group-hover/btn:rotate-12 transition-transform duration-300" />
-          <span className="relative z-10 text-sm sm:text-base">{projectButton}</span>
-        </Button>
-      </CardFooter>
-    </Card>
+      </div>
+    </article>
   );
 };
 

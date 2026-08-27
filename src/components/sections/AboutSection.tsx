@@ -1,107 +1,54 @@
-
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import { Award, Lightbulb, Target, TrendingUp, Users, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { TrendingUp, Users, Target, Zap, Award, Lightbulb } from "lucide-react";
+
+const icons = [TrendingUp, Users, Target, Zap, Award, Lightbulb];
 
 const AboutSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const getDifferenceIcon = (index: number) => {
-    const icons = [
-      <TrendingUp size={16} className="text-indigo-400" />,
-      <Users size={16} className="text-indigo-400" />,
-      <Target size={16} className="text-indigo-400" />,
-      <Zap size={16} className="text-indigo-400" />,
-      <Award size={16} className="text-indigo-400" />,
-      <Lightbulb size={16} className="text-indigo-400" />
-    ];
-    return icons[index] || <TrendingUp size={16} className="text-indigo-400" />;
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="section-spacing dark-section reveal-section">
-      <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="section-heading text-center animate-fade-in">{t.aboutTitle}</h2>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-12 max-w-6xl mx-auto element-spacing">
-          <div className="md:w-1/3 flex justify-center">
-            <div className={`w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden bg-gradient-to-br from-indigo-400 to-indigo-600 p-1 transition-all duration-1000 ${isVisible ? 'animate-fade-in scale-100' : 'scale-95 opacity-0'}`}>
-              <Avatar className="w-full h-full">
-                <AvatarImage 
-                  src={isVisible ? "/lovable-uploads/hugo-profile-2024.png" : ""}
-                  alt="Hugo Canaval" 
-                  className={`w-full h-full object-cover transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                  onLoad={() => setImageLoaded(true)}
-                  loading="lazy"
-                />
-                <AvatarFallback className={`text-3xl sm:text-4xl transition-opacity duration-500 ${imageLoaded ? 'opacity-0' : 'opacity-100'}`}>
-                  HC
-                </AvatarFallback>
-              </Avatar>
+    <section id="about" className="paper-section section-spacing reveal-section">
+      <div className="section-frame">
+        <div className="grid gap-12 lg:grid-cols-[0.58fr_1fr] lg:gap-20">
+          <div>
+            <p className="section-kicker text-[var(--cobalt)]">02 / Perfil</p>
+            <h2 className="section-heading">{t.aboutTitle}</h2>
+            <div className="relative mt-12 max-w-md lg:mt-24">
+              <div className="absolute -bottom-5 -right-5 h-full w-full bg-[var(--cobalt)]" />
+              <img
+                src="/lovable-uploads/hugo-profile-2024.png"
+                alt="Hugo Canaval"
+                className="relative aspect-[4/5] w-full object-cover grayscale transition-[filter] duration-500 hover:grayscale-0"
+              />
             </div>
           </div>
-          <div className="md:w-2/3 w-full">
-            <Card className="dark-card border-gray-800">
-              <CardContent className="p-6 sm:p-8 md:p-10">
-                <div className="text-body text-medium-contrast content-spacing max-w-4xl">
-                  <div dangerouslySetInnerHTML={{ __html: t.aboutHtml }} />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-        
-        <div className="mt-16 sm:mt-24">
-          <h3 className="section-subheading text-center">{t.differenceTitle}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
-            {/* Add 6 items instead of 5 */}
-            {[
-              t.differenceItem1,
-              t.differenceItem2,
-              t.differenceItem3,
-              t.differenceItem4,
-              t.differenceItem5,
-              t.differenceItem6,
-            ].map((item, index) => (
-              <Card 
-                key={index}
-                className="glass-card hover:border-indigo-700 transition-all hover:transform hover:scale-[1.02] touch-manipulation"
-              >
-                <div className="h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
-                <CardContent className="p-4 sm:p-6 flex">
-                  <div className="h-8 w-8 sm:h-10 sm:w-10 min-w-8 sm:min-w-10 rounded-full bg-indigo-900/60 flex items-center justify-center mr-3 sm:mr-4 mt-1 flex-shrink-0 relative">
-                    <span className="text-xs sm:text-sm font-bold text-indigo-400 absolute">{index + 1}</span>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                      {getDifferenceIcon(index)}
-                    </div>
-                  </div>
-                  <p className="text-body-small text-medium-contrast">{item}</p>
-                </CardContent>
-              </Card>
-            ))}
+
+          <div className="lg:pt-28">
+            <div className="body-copy space-y-7 border-t border-[var(--line)] pt-8 text-lg leading-relaxed sm:text-xl">
+              {t.aboutParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+
+            <div className="mt-20">
+              <h3 className="section-subheading max-w-xl">{t.differenceTitle}</h3>
+              <div className="grid border-t border-[var(--line)] sm:grid-cols-2">
+                {t.differenceItems.map((item, index) => {
+                  const Icon = icons[index];
+                  return (
+                    <article key={item.title} className="group border-b border-[var(--line)] py-7 sm:px-6 sm:odd:border-r sm:odd:pl-0">
+                      <div className="mb-4 flex items-center justify-between">
+                        <Icon size={19} className="text-[var(--cobalt)]" />
+                        <span className="font-mono text-[10px] text-black/35">0{index + 1}</span>
+                      </div>
+                      <h4 className="mb-3 text-lg font-semibold tracking-[-0.02em]">{item.title}</h4>
+                      <p className="text-body-small text-black/65">{item.description}</p>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,100 +1,62 @@
-
 import { LanguageType } from "@/contexts/LanguageContext";
+
+type SkillGroup = { title: string; description: string };
 
 export const skillsTranslations: Record<LanguageType, {
   skillsTitle: string;
+  productSkillsBtn: string;
   technicalSkillsBtn: string;
-  professionalSkillsBtn: string;
-  languagesTitle: string;
-  languageSkills: string[];
-  programmingTitle: string;
-  dataTitle: string;
-  mlTitle: string;
-  statsTitle: string;
-  visualizationTitle: string;
-  versionControlTitle: string;
-  officeTitle: string;
-  communicationTitle: string;
-  communicationSkill: string;
-  leadershipTitle: string;
-  leadershipSkill: string;
-  analyticalTitle: string;
-  analyticalSkill: string;
-  storytellingTitle: string;
-  storytellingSkill: string;
-  adaptabilityTitle: string;
-  adaptabilitySkill: string;
-  resultsTitle: string;
-  resultsSkill: string;
-  productDiscoveryTitle: string;
-  productDiscoverySkill: string;
-  roadmapTitle: string;
-  roadmapSkill: string;
-  stakeholderTitle: string;
-  stakeholderSkill: string;
+  productSkills: SkillGroup[];
+  technicalSkills: SkillGroup[];
 }> = {
   es: {
-    skillsTitle: "Habilidades y Herramientas",
-    technicalSkillsBtn: "Habilidades Técnicas",
-    professionalSkillsBtn: "Aptitudes",
-    languagesTitle: "Idiomas",
-    languageSkills: ["Español (Nativo)", "Inglés (Alto)", "Alemán (Conversacional)"],
-    programmingTitle: "Programación",
-    dataTitle: "Manejo de Datos",
-    mlTitle: "Aprendizaje Automático",
-    statsTitle: "Estadística",
-    visualizationTitle: "Visualización",
-    versionControlTitle: "Control de Versiones",
-    officeTitle: "Herramientas Ofimáticas",
-    communicationTitle: "Comunicación",
-    communicationSkill: "Habilidad para transmitir conceptos técnicos complejos de forma clara y persuasiva a diferentes audiencias. Experiencia presentando resultados a directivos y equipos comerciales.",
-    leadershipTitle: "Liderazgo",
-    leadershipSkill: "Capacidad para inspirar y guiar equipos hacia objetivos comunes. Experiencia liderando proyectos multidisciplinarios con resultados exitosos en plazos ajustados.",
-    analyticalTitle: "Pensamiento Analítico",
-    analyticalSkill: "Enfoque estructurado para resolver problemas complejos, identificar patrones y extraer insights accionables de grandes volúmenes de datos.",
-    storytellingTitle: "Data Storytelling",
-    storytellingSkill: "Habilidad para convertir datos en narrativas impactantes que influyen en la toma de decisiones organizacionales.",
-    adaptabilityTitle: "Adaptabilidad",
-    adaptabilitySkill: "Capacidad para aprender rápidamente, adaptarme a nuevas tecnologías y prosperar en entornos cambiantes.",
-    resultsTitle: "Orientación a Resultados",
-    resultsSkill: "Enfoque claro en generar valor medible. Experiencia comprobada en la consecución de objetivos comerciales y de negocio a través de soluciones basadas en datos.",
-    productDiscoveryTitle: "Product Discovery",
-    productDiscoverySkill: "Identificación y validación de necesidades del usuario. Definición de problemas, hipótesis y métricas de producto para guiar el desarrollo de soluciones.",
-    roadmapTitle: "Roadmaps y Priorización",
-    roadmapSkill: "Creación de roadmaps de producto basados en impacto de negocio. Priorización de features usando frameworks como RICE y análisis costo-beneficio.",
-    stakeholderTitle: "Stakeholder Management",
-    stakeholderSkill: "Gestión de expectativas y comunicación efectiva con equipos técnicos, comerciales y directivos. Traducción entre lenguaje de negocio y técnico.",
+    skillsTitle: "Habilidades y herramientas",
+    productSkillsBtn: "Producto",
+    technicalSkillsBtn: "Capacidades técnicas",
+    productSkills: [
+      { title: "Descubrimiento de producto", description: "Conversaciones con usuarios, observación del proceso y revisión de datos para entender qué decisión necesita apoyo." },
+      { title: "Definición de problemas", description: "Convierto una necesidad amplia en una pregunta concreta, una hipótesis y una condición de éxito." },
+      { title: "MVP y priorización", description: "Defino qué debe entrar en la primera versión y qué puede esperar. Comparo impacto, esfuerzo, dependencias y riesgo." },
+      { title: "Requerimientos y criterios de aceptación", description: "Documento reglas, flujos, excepciones y condiciones de prueba antes de implementar." },
+      { title: "Métricas de producto", description: "Elijo métricas que muestran si el producto cambió una decisión, redujo errores o liberó capacidad." },
+      { title: "Trabajo con usuarios y perfiles técnicos", description: "Aclaro con cada parte el problema, las restricciones y qué significa que una solución esté lista." },
+      { title: "Experimentación e iteración", description: "Pruebo con datos y usuarios reales, reviso fallas y ajusto a partir de la evidencia." },
+      { title: "Documentación y continuidad", description: "Dejo registradas las decisiones, la arquitectura, la operación y los pendientes para que el sistema pueda mantenerse." }
+    ],
+    technicalSkills: [
+      { title: "Datos y SQL", description: "BigQuery, SQL, Python y Pandas para consultar, preparar y conectar datos con productos." },
+      { title: "Machine Learning aplicado", description: "Modelos supervisados, feature engineering, validación temporal, calibración y matrices de costo." },
+      { title: "IA generativa", description: "Gemini para texto e imagen, extracción estructurada, clasificación y prompts versionados." },
+      { title: "Agentes", description: "Function calling, sesiones persistentes, bots conversacionales y orquestación de tareas con IA." },
+      { title: "Cloud y despliegue", description: "Cloud Run Services y Jobs, Workflows, Scheduler, Cloud Storage y Secret Manager." },
+      { title: "APIs e integraciones", description: "FastAPI, JWT, Firestore, webhooks, Google Sheets, Telegram y conexiones con sistemas internos." },
+      { title: "Operación de sistemas", description: "Idempotencia, permisos, auditoría, manejo de excepciones, logging y seguimiento de ejecuciones." },
+      { title: "Desarrollo asistido por IA", description: "Trabajo con agentes a partir de especificaciones y criterios de validación. Configuro y manejo el agent harness mediante instrucciones, skills, herramientas, contexto y controles." }
+    ]
   },
   en: {
-    skillsTitle: "Skills and Tools",
-    technicalSkillsBtn: "Technical Skills",
-    professionalSkillsBtn: "Professional Skills",
-    languagesTitle: "Languages",
-    languageSkills: ["Spanish (Native)", "English (Proficient)", "German (Conversational)"],
-    programmingTitle: "Programming",
-    dataTitle: "Data Handling",
-    mlTitle: "Machine Learning",
-    statsTitle: "Statistics",
-    visualizationTitle: "Visualization",
-    versionControlTitle: "Version Control",
-    officeTitle: "Office Tools",
-    communicationTitle: "Communication",
-    communicationSkill: "Ability to clearly and persuasively communicate complex technical concepts to different audiences. Experience presenting results to executives and commercial teams.",
-    leadershipTitle: "Leadership",
-    leadershipSkill: "Capacity to inspire and guide teams toward common goals. Experience leading multidisciplinary projects with successful outcomes under tight deadlines.",
-    analyticalTitle: "Analytical Thinking",
-    analyticalSkill: "Structured approach to solving complex problems, identifying patterns, and extracting actionable insights from large volumes of data.",
-    storytellingTitle: "Data Storytelling",
-    storytellingSkill: "Ability to transform data into impactful narratives that influence organizational decision-making.",
-    adaptabilityTitle: "Adaptability",
-    adaptabilitySkill: "Capacity to learn quickly, adapt to new technologies, and thrive in changing environments.",
-    resultsTitle: "Results-Oriented",
-    resultsSkill: "Clear focus on generating measurable value. Proven experience in achieving business and commercial objectives through data-driven solutions.",
-    productDiscoveryTitle: "Product Discovery",
-    productDiscoverySkill: "User needs identification and validation. Problem definition, hypothesis formulation, and product metrics to guide solution development.",
-    roadmapTitle: "Roadmaps & Prioritization",
-    roadmapSkill: "Product roadmap creation based on business impact. Feature prioritization using frameworks like RICE and cost-benefit analysis.",
-    stakeholderTitle: "Stakeholder Management",
-    stakeholderSkill: "Expectation management and effective communication with technical, commercial, and executive teams. Translation between business and technical language.",
+    skillsTitle: "Skills and tools",
+    productSkillsBtn: "Product",
+    technicalSkillsBtn: "Technical skills",
+    productSkills: [
+      { title: "Product discovery", description: "Conversations with users, process observation, and data review to understand which decision needs support." },
+      { title: "Problem definition", description: "I turn a broad need into a clear question, a hypothesis, and a success condition." },
+      { title: "MVP and prioritization", description: "I define what must be part of the first version and what can wait. I compare impact, effort, dependencies, and risk." },
+      { title: "Requirements and acceptance criteria", description: "I document rules, flows, exceptions, and test conditions before implementation." },
+      { title: "Product metrics", description: "I choose metrics that show if the product changed a decision, reduced errors, or released capacity." },
+      { title: "Working with users and technical teams", description: "I clarify the problem, the limits, and what it means for a solution to be ready." },
+      { title: "Testing and iteration", description: "I test with real users and data, review failures, and adjust based on evidence." },
+      { title: "Documentation and continuity", description: "I document decisions, architecture, operations, and pending work so the system can be maintained." }
+    ],
+    technicalSkills: [
+      { title: "Data and SQL", description: "BigQuery, SQL, Python, and Pandas to query, prepare, and connect data to products." },
+      { title: "Applied Machine Learning", description: "Supervised models, feature engineering, time-based validation, calibration, and cost matrices." },
+      { title: "Generative AI", description: "Gemini for text and images, structured extraction, classification, and versioned prompts." },
+      { title: "Agents", description: "Function calling, persistent sessions, conversational bots, and AI task orchestration." },
+      { title: "Cloud and deployment", description: "Cloud Run Services and Jobs, Workflows, Scheduler, Cloud Storage, and Secret Manager." },
+      { title: "APIs and integrations", description: "FastAPI, JWT, Firestore, webhooks, Google Sheets, Telegram, and connections with internal systems." },
+      { title: "System operations", description: "Idempotency, permissions, audit trails, exception handling, logging, and execution monitoring." },
+      { title: "AI-assisted development", description: "I work with agents using specifications and validation criteria. I configure and manage the agent harness through instructions, skills, tools, context, and controls." }
+    ]
   }
 };
