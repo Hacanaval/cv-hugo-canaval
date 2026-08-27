@@ -30,6 +30,7 @@ La dirección se denomina **expediente de producto**. Combina referencias editor
 | Composición | Estructura asimétrica, reglas de separación y numeración; fondos planos sin cuadrícula decorativa |
 | Proyectos | Casos horizontales con resultados separados en bloques cobalto |
 | Movimiento | Revelado corto por scroll y señal líquida decorativa |
+| Favicon | `H` geométrica marfil sobre carbón y punto verde señal, sin tipografía ni gradientes |
 
 La página conserva Inter desde Google Fonts para no alterar la dirección aprobada. No usa imágenes generadas ni librerías externas para las animaciones distintivas.
 
@@ -42,6 +43,7 @@ La página conserva Inter desde Google Fonts para no alterar la dirección aprob
 - `src/components/visual/ContactOrbit.tsx`: menú orbital reutilizado en hero y contacto, con temporizadores de hover controlados.
 - `src/components/projects/ProjectCard.tsx`: estructura de cada caso con descripción, tecnologías y resultados.
 - `src/index.css`: tokens, composición, movimiento y respuesta a movimiento reducido.
+- `public/favicon.svg`: fuente vectorial del favicon; los PNG y el ICO reproducen la misma geometría en tamaños compatibles.
 
 ## Aplicación de las referencias investigadas
 

@@ -61,6 +61,7 @@ Verificado el 27 de agosto de 2026:
 - Las órbitas de contacto funcionan en el hero y en la sección final, con cierre controlado y estado accesible mediante `aria-expanded`.
 - Los textos largos del cuerpo están justificados sin separar palabras mediante guiones.
 - Las cuadrículas decorativas del fondo fueron retiradas durante la revisión visual.
+- El favicon usa una `H` geométrica en marfil, fondo carbón y punto verde señal; reemplaza el monograma índigo de la plantilla anterior.
 - Contenido completo visible en ambos idiomas.
 - Modal de cursos funcional y consola limpia en una sesión nueva del navegador.
 - Vista móvil comprobada en un viewport de 390 por 844 píxeles.

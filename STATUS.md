@@ -26,6 +26,7 @@ Este archivo resume la versión activa, el despliegue y las verificaciones neces
 - Cuatro casos profesionales sanitizados.
 - Formación, cursos, dirección profesional y contacto.
 - Órbitas de contacto en el hero y la sección final.
+- Favicon alineado con la paleta y la geometría del sistema visual.
 - PDF históricos del CV conservados por compatibilidad.
 
 ## Verificación de la entrega
