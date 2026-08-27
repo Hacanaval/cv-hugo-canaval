@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Award, Lightbulb, Target, TrendingUp, Users, Zap } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/utils/translations";
@@ -8,6 +8,42 @@ const icons = [TrendingUp, Users, Target, Zap, Award, Lightbulb];
 const AboutSection: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
+
+  const photoRef = useRef<HTMLImageElement>(null);
+  const [grayscale, setGrayscale] = useState(100);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateGrayscale = () => {
+      frame = 0;
+      const el = photoRef.current;
+      if (!el) return;
+
+      const rect = el.getBoundingClientRect();
+      const photoCenter = rect.top + rect.height / 2;
+      const viewportCenter = window.innerHeight / 2;
+      const maxDistance = window.innerHeight / 2 + rect.height / 2;
+      const ratio = Math.min(Math.abs(photoCenter - viewportCenter) / maxDistance, 1);
+
+      setGrayscale(Math.round(ratio * 100));
+    };
+
+    const onScrollOrResize = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(updateGrayscale);
+    };
+
+    updateGrayscale();
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+    };
+  }, []);
 
   return (
     <section id="about" className="paper-section section-spacing reveal-section">
@@ -19,9 +55,11 @@ const AboutSection: React.FC = () => {
             <div className="relative mt-12 max-w-md lg:mt-24">
               <div className="absolute -bottom-5 -right-5 h-full w-full bg-[var(--cobalt)]" />
               <img
+                ref={photoRef}
                 src="/lovable-uploads/hugo-profile-2024.png"
                 alt="Hugo Canaval"
-                className="relative aspect-[4/5] w-full object-cover grayscale transition-[filter] duration-500 hover:grayscale-0"
+                className="relative aspect-[4/5] w-full object-cover transition-[filter] duration-300 ease-out"
+                style={{ filter: `grayscale(${grayscale}%)` }}
               />
             </div>
           </div>

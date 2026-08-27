@@ -44,7 +44,7 @@ export const projectsTranslations: Record<LanguageType, {
       {
         title: "Validación de evidencia fotográfica",
         description: ["Desarrollé un sistema con Gemini Vision para revisar imágenes de evidencia. Clasifica la imagen y explica el motivo cuando encuentra un problema. Los desacuerdos quedan disponibles para revisión humana."],
-        results: ["Miles de imágenes procesadas al día.", "96,77% de recall en una validación offline de 301 casos.", "Prompt versionado y trazabilidad de las decisiones."],
+        results: ["Miles de imágenes procesadas al día.", "Más de 50.000 registros evaluados en producción durante más de 3 meses, con métricas de validación cercanas al 95%.", "Prompt versionado y trazabilidad de las decisiones."],
         stack: ["Gemini Vision", "BigQuery", "Python", "Cloud Run Jobs"]
       }
     ],
@@ -79,7 +79,7 @@ export const projectsTranslations: Record<LanguageType, {
       {
         title: "Photo evidence validation",
         description: ["I developed a system with Gemini Vision to review evidence images. It classifies each image and explains the reason when it finds a problem. Disagreements are available for human review."],
-        results: ["Thousands of images processed every day.", "96.77% recall in an offline validation with 301 cases.", "A versioned prompt and a record of every decision."],
+        results: ["Thousands of images processed every day.", "More than 50,000 records evaluated in production over more than 3 months, with validation metrics close to 95%.", "A versioned prompt and a record of every decision."],
         stack: ["Gemini Vision", "BigQuery", "Python", "Cloud Run Jobs"]
       }
     ],
