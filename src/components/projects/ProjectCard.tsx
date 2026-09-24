@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, results, 
   const Icon = icons[index] ?? TrendingUp;
 
   return (
-    <article className="grid gap-8 border-t border-[var(--line)] py-10 first:pt-0 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16 lg:py-14">
+    <article className="grid gap-8 border-t border-[var(--line)] py-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16 lg:py-14">
       <div className="flex flex-col justify-between">
         <div>
           <div className="mb-7 flex items-center justify-between">
